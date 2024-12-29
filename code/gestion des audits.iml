@@ -7,5 +7,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="fasterxml.jackson.core.annotations" level="project" />
+    <orderEntry type="library" name="fasterxml.jackson.core.databind" level="project" />
+    <orderEntry type="library" name="autonomouslogic.jacksonobjectstream.jackson.object.stream" level="project" />
+    <orderEntry type="library" name="autonomouslogic.jacksonobjectstream.jackson.object.stream1" level="project" />
+    <orderEntry type="library" name="io.jsonwebtoken.jjwt" level="project" />
+    <orderEntry type="library" name="github.shyiko.dotenv" level="project" />
+    <orderEntry type="library" name="io.github.cdimascio.dotenv.java" level="project" />
+    <orderEntry type="library" name="10duke.client.jwt.jjwt" level="project" />
   </component>
 </module>
