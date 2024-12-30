@@ -1,0 +1,55 @@
+[
+	{
+		"idOrg": 1,
+		"nom": "",
+        "arrSite":[
+            {
+                "idArrSite":1,
+                "address":"",
+                "description":"",
+                "nom":""
+            }
+        ],
+		"arrSystemManagement": [
+			{
+				"idSystemManagement": 1,
+				"description": "",
+				"certificate": "",
+				"Standard": [
+					{
+						"idStandard": 1,
+						"description": "",
+						"nome": "",
+						"reference": "",
+						"process": {
+							"idProcess": "",
+							"description": "",
+							"nom": ""
+						},
+						"clause": [
+							{
+								"idClause": "",
+								"description": "",
+								"reference": "",
+								"nome": ""
+							}
+						]
+					}
+				],
+				"AutreExigence": [
+					{
+						"idAutreExigence": 1,
+						"description": "",
+						"reference": "",
+						"nome": "",
+						"process": {
+							"idProcess": "",
+							"description": "",
+							"nom": ""
+						}
+					}
+				]
+			}
+		]
+	}
+]

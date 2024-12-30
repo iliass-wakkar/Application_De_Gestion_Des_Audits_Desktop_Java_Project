@@ -21,7 +21,7 @@ public class PageSwitcher {
 
     public PageSwitcher() {
 //        AccountSessionHandler.loadCurrentAccountSession();
-        System.out.println("The current Account session has been loaded" + ControllersGetter.currentAccountSession);
+
         frame = new JFrame("Audit management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);
