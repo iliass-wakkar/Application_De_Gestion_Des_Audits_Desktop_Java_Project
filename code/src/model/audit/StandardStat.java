@@ -1,16 +1,16 @@
 package model.audit;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class StandardStat {
     private final String idStandard;
-    private List<ClauseStat> arrClauseStat;
+    private List<ClauseStat> arrClauseStat = new ArrayList<ClauseStat>();
 
     // Default Constructor
     public StandardStat() {
         this.idStandard = UUID.randomUUID().toString();
-        this.arrClauseStat = null;
     }
 
     // Parameterized Constructor

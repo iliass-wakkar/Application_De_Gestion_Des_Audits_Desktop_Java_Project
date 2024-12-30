@@ -4,18 +4,18 @@ import java.util.UUID;
 
 public class FinalReport {
     private final String idRapport;
-    private String url;
+    private String content;
 
     // Default Constructor
     public FinalReport() {
         this.idRapport = UUID.randomUUID().toString();
-        this.url = "unknown";
+        this.content = "unknown";
     }
 
     // Parameterized Constructor
-    public FinalReport(String url) {
+    public FinalReport(String content) {
         this.idRapport = UUID.randomUUID().toString();
-        this.url = url;
+        this.content = content;
     }
 
     // Getters and Setters
@@ -23,19 +23,19 @@ public class FinalReport {
         return idRapport;
     }
 
-    public String getUrl() {
-        return url;
+    public String getContent() {
+        return content;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override
     public String toString() {
         return "FinalRapport{" +
                 "idRapport='" + idRapport + '\'' +
-                ", url='" + url + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 }

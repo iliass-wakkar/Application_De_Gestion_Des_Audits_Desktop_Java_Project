@@ -5,19 +5,18 @@ import java.util.UUID;
 public class ClauseStat {
     private final String idClause;
     private String passStat;
-    private ClauseSolution clauseSolution;
+    private ClauseSolution clauseSolution  = new ClauseSolution();
 
     // Default Constructor
     public ClauseStat() {
         this.idClause = UUID.randomUUID().toString();
         this.passStat = "notYet";
-        this.clauseSolution = new ClauseSolution();
     }
 
     // Parameterized Constructor
     public ClauseStat(String passStat, ClauseSolution clauseSolution) {
         this.idClause = UUID.randomUUID().toString();
-        this.passStat = passStat;
+        this.setPassStat(passStat);
         this.clauseSolution = clauseSolution;
     }
 
@@ -31,7 +30,14 @@ public class ClauseStat {
     }
 
     public void setPassStat(String passStat) {
-        this.passStat = passStat;
+
+        if(passStat.equals("notYet") || passStat.equals("pass") || passStat.equals("fail"))  {
+            this.passStat = passStat;
+        }
+        else {
+            System.out.println("Invalid passStat");
+        }
+
     }
 
     public ClauseSolution getClauseSolution() {

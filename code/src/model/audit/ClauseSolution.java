@@ -17,7 +17,7 @@ public class ClauseSolution {
     // Parameterized Constructor
     public ClauseSolution(String type, String idResponsable) {
         this.idSolution = UUID.randomUUID().toString();
-        this.type = type;
+        this.setType(type);
         this.idResponsable = idResponsable;
     }
 
@@ -31,7 +31,13 @@ public class ClauseSolution {
     }
 
     public void setType(String type) {
-        this.type = type;
+
+        if(type.equals("correction") || type.equals("action"))  {
+            this.type = type;
+        }
+        else {
+            System.out.println("Invalid pass");
+        }
     }
 
     public String getIdResponsable() {

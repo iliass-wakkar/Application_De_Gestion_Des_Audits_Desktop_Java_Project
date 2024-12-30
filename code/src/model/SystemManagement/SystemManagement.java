@@ -10,7 +10,7 @@ public class SystemManagement {
     private String idSystemManagement;
     private String description;
     private String certificate;
-    private Organization organization = new Organization();
+    private String idOrganization;
     private ArrayList<Standard> standards = new ArrayList<>();
     private ArrayList<OtherRequirement> otherRequirements = new ArrayList<>();
 
@@ -20,21 +20,21 @@ public class SystemManagement {
         this.certificate = "unknown";
     }
 
-    public SystemManagement(String idSystemManagement, String description, String certificate, ArrayList<Standard> standards, ArrayList<OtherRequirement> otherRequirements, Organization organization) {
+    public SystemManagement(String idSystemManagement, String description, String certificate, ArrayList<Standard> standards, ArrayList<OtherRequirement> otherRequirements, String idOrganization) {
         this.idSystemManagement = idSystemManagement;
         this.description = description;
         this.certificate = certificate;
         this.standards = standards;
         this.otherRequirements = otherRequirements;
-        this.organization = organization;
+        this.idOrganization = idOrganization;
     }
 
-    public Organization getOrganization() {
-        return organization;
+    public String getOrganization() {
+        return idOrganization;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
     public String getIdSystemManagement() {

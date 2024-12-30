@@ -14,11 +14,11 @@ public class Audit {
     private String idAuditor;
     private String idOrg;
     private String idSystemManagement;
-    private FinalReport finalReport;
+    private FinalReport finalReport = new FinalReport();
     private boolean isTakeCertificate;
     private String isPass;
-    private List<StandardStat> arrStandardStat;
-    private List<ExigenceStat> arrExigenceStat;
+    private List<StandardStat> arrStandardStat=  new ArrayList<StandardStat>();
+    private List<ExigenceStat> arrExigenceStat= new ArrayList<ExigenceStat>();
 
     // Default Constructor
     public Audit() {
@@ -30,11 +30,8 @@ public class Audit {
         this.idAuditor = "unknown";
         this.idOrg = "unknown";
         this.idSystemManagement = "unknown";
-        this.finalReport = new FinalReport();
         this.isTakeCertificate = false;
         this.isPass = "notYet";
-        this.arrStandardStat =  new ArrayList<StandardStat>();
-        this.arrExigenceStat = new ArrayList<ExigenceStat>();
     }
 
     // Parameterized Constructor
@@ -45,13 +42,13 @@ public class Audit {
         this.dateDebut = dateDebut;
         this.ExpDate = ExpDate;
         this.intitule = intitule;
-        this.status = status;
+        this.setStatus(status);
         this.idAuditor = idAuditor;
         this.idOrg = idOrg;
         this.idSystemManagement = idSystemManagement;
         this.finalReport = finalRapport;
         this.isTakeCertificate = isTakeCertificate;
-        this.isPass = isPass;
+        this.setIsPass(isPass);
         this.arrStandardStat = arrStandardStat;
         this.arrExigenceStat = arrExigenceStat;
     }
