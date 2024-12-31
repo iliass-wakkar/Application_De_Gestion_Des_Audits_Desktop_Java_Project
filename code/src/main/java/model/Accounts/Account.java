@@ -1,4 +1,6 @@
 package model.Accounts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.UUID;
 public class Account {
     private final String idAccount;
@@ -102,6 +104,16 @@ public class Account {
     public String getAccountType() {
         return accountType;
     }
+    @JsonIgnore
+    public boolean isAdmin(){
+
+        return  accountType.equals("admin");
+    }
+    @JsonIgnore
+    public boolean isAuditor(){
+        return  accountType.equals("auditor");
+    }
+
 
     public void setAccountType(String accountType) {
         this.accountType = accountType;

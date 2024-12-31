@@ -1,0 +1,22 @@
+[
+  {
+    "idAccount": "SDK1213E",
+    "email": "ayoubMajid71@gmail.com",
+    "password": "majid061345majid",
+    "firstName": "ayoub",
+    "lastName": "majid",
+    "phoneNumber": "0771798765",
+    "domain": "the admin of the application",
+    "accountType": "admin"
+  },
+  {
+    "idAccount": "SE1233D",
+    "email": "auditor@gmail.com",
+    "password": "auditor061345majid",
+    "firstName": "Nasim",
+    "lastName": "Niko",
+    "phoneNumber": "01121123",
+    "domain": "a Quality Auditor",
+    "accountType": "auditor"
+  }
+]

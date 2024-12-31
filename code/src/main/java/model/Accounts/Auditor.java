@@ -8,7 +8,6 @@ public class Auditor extends Account {
 
     }
 
-
     @Override
     public String toString() {
         return "Auditor{"

@@ -30,13 +30,15 @@ public class LoginPageController {
             return;
         }
 
-        // Perform login logic, e.g., checking credentials
 
-        Account account = ControllersGetter.accountsController.getAccountAdmin(email,password);
+        Account account = ControllersGetter.accountsController.getAccount(email,password);
 
         if (account != null) {
             AccountSessionHandler.UpdateCurrentAccountSession(account.getIdAccount(),account.getAccountType());
-            PageSwitcher.switchPage("home");
+            if(account.isAdmin())
+            PageSwitcher.switchPage("adminDashboard");
+            if(account.isAuditor())
+                PageSwitcher.switchPage("auditorDashboard");
         } else {
             JOptionPane.showMessageDialog(view, "Invalid credentials!", "Error", JOptionPane.ERROR_MESSAGE);
         }

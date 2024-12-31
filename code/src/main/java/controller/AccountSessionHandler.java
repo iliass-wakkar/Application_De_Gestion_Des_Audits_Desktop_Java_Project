@@ -4,20 +4,25 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import model.Accounts.AccountToken;
 import utils.ControllersGetter;
 import utils.JsonFileHandler;
+import utils.PageSwitcher;
 import utils.TokenHandler;
 
 import java.io.IOException;
 
 public class AccountSessionHandler {
   static    public  void loadCurrentAccountSession() {
-        try {
+
+      try {
            ControllersGetter.currentAccountSession   = JsonFileHandler.loadDataObject(JsonFileHandler.ACCOUNTS_SESSION_FILE_PATH, new TypeReference<AccountToken>() {});
-             if(ControllersGetter.currentAccountSession.getToken().equals("unknown")) ControllersGetter.currentAccountSession=null;
+//  to do check token :
+
+           if(ControllersGetter.currentAccountSession==null || !TokenHandler.checkToken(ControllersGetter.currentAccountSession.getToken())) {
+               ClearCurrentAccountSession();
+           }
+
         } catch (IOException e) {
             System.err.println("Error loading current Session: " + e.getMessage());
             ControllersGetter.currentAccountSession=null;
-            throw new RuntimeException(e);
-
         }
     }
   static   public void UpdateCurrentAccountSession(String accountId, String accountType ) {
@@ -31,6 +36,7 @@ public class AccountSessionHandler {
     }
     static   public void ClearCurrentAccountSession( ) {
         ControllersGetter.currentAccountSession= null;
+        PageSwitcher.switchPage("login");
         try {
             JsonFileHandler.saveDataObject(JsonFileHandler.ACCOUNTS_SESSION_FILE_PATH,ControllersGetter.currentAccountSession);
         } catch (IOException e) {

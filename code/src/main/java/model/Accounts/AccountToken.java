@@ -1,27 +1,27 @@
 package model.Accounts;
 
-import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AccountToken {
-    private final String token;
-    private final String idAccount;
-    private final String accountType;
 
+    private final String idAccountToken;
+    private final String accountType;
+    private final String token;
 
     AccountToken(){
-       token="unknown";
-       idAccount="unknown";
+       idAccountToken ="unknown";
        accountType="unknown";
+        token="unknown";
     }
     public String getIdAccountToken() {
-        return idAccount;
+        return idAccountToken;
     }
 
-    public AccountToken(String Token,String idAccount, String accountType) {
-        this.token = Token;
-        this.idAccount= idAccount;
-
+    public AccountToken(String idAccountToken, String accountType, String Token) {
+        this.idAccountToken = idAccountToken;
         this.accountType = accountType;
+        this.token = Token;
     }
 
     public String getToken() {
@@ -32,16 +32,26 @@ public class AccountToken {
     public String getAccountType() {
         return accountType;
     }
+    @JsonIgnore
+    public boolean isAdmin(){
 
+        return  accountType.equals("admin");
+    }
+    @JsonIgnore // Exclude from JSON serialization
+    public boolean isAuditor(){
+        return  accountType.equals("auditor");
+    }
 
     @Override
     public String toString() {
         return "AccountToken{" +
-                "idAccount='" + idAccount + '\'' +
+                "idAccount='" + idAccountToken + '\'' +
                 ", accountType='" + accountType + '\'' +
                 ", token='" + token + '\'' +
                 '}';
     }
+
+
 
 
 }

@@ -20,31 +20,49 @@ public class PageSwitcher {
 
 
     public PageSwitcher() {
-//        AccountSessionHandler.loadCurrentAccountSession();
-
-        frame = new JFrame("Audit management");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
-
-
-
         // Initialize CardLayout and main panel
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
         pages = new HashMap<>();
 
+        AccountSessionHandler.loadCurrentAccountSession();
+        System.out.println("the current user session : " + ControllersGetter.currentAccountSession);
+
+        frame = new JFrame("Audit management");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(800, 600);
+
+
+
+
         // Add pages
         addPage("login", PagesGetter.LoginPage );
+        addPage("adminDashboard", PagesGetter.AdminDashBoardPage );
+        addPage("auditorDashboard", PagesGetter.AuditorDashboardPage );
 
 
-        // Set the initial page
-
-        switchPage("login");
 
         // Add the main panel to the frame
         frame.add(mainPanel);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        handleFirstPageLoading();
+    }
+
+    private void  handleFirstPageLoading(){
+        // Set the initial page
+        if(ControllersGetter.currentAccountSession==null){
+            switchPage("login");
+        }
+        else if(ControllersGetter.currentAccountSession.isAdmin()){
+
+            switchPage("adminDashboard");
+        }
+        else {
+            switchPage("auditorDashboard");
+        }
+
     }
 
     // Method to add a page
