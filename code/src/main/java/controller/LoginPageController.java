@@ -32,7 +32,7 @@ public class LoginPageController {
 
 
         Account account = ControllersGetter.accountsController.getAccount(email,password);
-
+        System.out.println(account);
         if (account != null) {
             AccountSessionHandler.UpdateCurrentAccountSession(account.getIdAccount(),account.getAccountType());
             if(account.isAdmin())
