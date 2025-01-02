@@ -5,34 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6329370b-68a8-49a8-a87e-0509d6db995c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AdminDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AuditorDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AuditorDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/components/RoundedButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Application_De_Gestion_Des_Audits_Desktop_Java_Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AccountSession.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccountSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountSessionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/AccountToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/AccountToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/Auditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/Auditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dbFormat/Account.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dbFormat/audit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dbFormat/organisation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dbFormat/responsable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +43,7 @@
     "Application.TokenHandler.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -94,6 +71,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,12 +88,16 @@
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="utils.PageSwitcher" />
       <module name="Application_De_Gestion_Des_Audits_Desktop_Java_Project_new" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="code" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,8 +122,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -151,6 +142,7 @@
       <workItem from="1735647532005" duration="277000" />
       <workItem from="1735647827343" duration="87000" />
       <workItem from="1735648825629" duration="16451000" />
+      <workItem from="1735821477291" duration="519000" />
     </task>
     <servers />
   </component>
