@@ -79,7 +79,6 @@ public class AccountsController {
     }
     // Get an account by email
     public Account getAccount(String email, String password) {
-        loadAccounts();
         Optional<Account> account = accounts.stream()
                 .filter(acc -> acc.getEmail().equals(email)
                 && acc.getPassword().equals(password))
