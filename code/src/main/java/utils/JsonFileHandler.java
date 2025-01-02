@@ -9,8 +9,8 @@ import java.util.List;
 
 public class JsonFileHandler {
 
-   public  static final String  ACCOUNTS_FILE_PATH=System.getProperty("user.dir") + File.separator + "code" + File.separator + "Accounts.json";
-    public  static final String  ACCOUNTS_SESSION_FILE_PATH=System.getProperty("user.dir") + File.separator + "code" + File.separator + "AccountSession.json";
+   public  static final String  ACCOUNTS_FILE_PATH=System.getProperty("user.dir") + File.separator + "code" + File.separator + "Data" + File.separator + "Accounts.json";
+    public  static final String  ACCOUNTS_SESSION_FILE_PATH=System.getProperty("user.dir") + File.separator + "code" + File.separator + "Data" + File.separator + "AccountSession.json";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
 
