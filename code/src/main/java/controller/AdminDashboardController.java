@@ -1,9 +1,7 @@
 package controller;
 
-import utils.PageSwitcher;
-import view.AdminDashboard;
+import view.AdminDashboard.AdminDashboard;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

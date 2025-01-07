@@ -15,12 +15,13 @@ import  utils.JsonFileHandler;
 public class AccountsController {
     private static final String ACCOUNTS_FILE_PATH = JsonFileHandler.ACCOUNTS_FILE_PATH;
     private static ArrayList<Account> accounts = new ArrayList<>();
-   static public String ADMIN_ACCOUNT_TYPE="Admin";
-    static public String AUDITOR_ACCOUNT_TYPE="Auditor";
+   static public String ADMIN_ACCOUNT_TYPE="admin";
+    static public String AUDITOR_ACCOUNT_TYPE="auditor";
 
 
     public AccountsController() {
         loadAccounts();
+        System.out.println("Accounts loaded successfully."+accounts);
     }
 
     // Load accounts from the JSON file

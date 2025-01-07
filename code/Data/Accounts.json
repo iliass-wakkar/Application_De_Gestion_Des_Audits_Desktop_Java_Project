@@ -1,8 +1,8 @@
 [
   {
     "idAccount": "SDK1213E",
-    "email": "ayoubMajid71@gmail.com",
-    "password": "majid061345majid",
+    "email": "me@gmail.com",
+    "password": "string",
     "firstName": "ayoub",
     "lastName": "majid",
     "phoneNumber": "0771798765",
@@ -11,8 +11,8 @@
   },
   {
     "idAccount": "SE1233D",
-    "email": "auditor@gmail.com",
-    "password": "auditor061345majid",
+    "email": "me2@gmail.com",
+    "password": "string",
     "firstName": "Nasim",
     "lastName": "Niko",
     "phoneNumber": "01121123",
