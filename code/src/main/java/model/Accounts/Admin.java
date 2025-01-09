@@ -10,10 +10,10 @@ public class Admin extends Account {
 
 
 
-    @Override
+    /*@Override
     public String toString() {
         return "Admin{" +
               super.getString() +
                 '}';
-    }
+    }*/
 }

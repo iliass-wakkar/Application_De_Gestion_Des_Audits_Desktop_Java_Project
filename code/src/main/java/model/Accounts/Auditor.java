@@ -8,10 +8,10 @@ public class Auditor extends Account {
 
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Auditor{"
                 + super.getString() +
                 '}';
-    }
+    }*/
 }

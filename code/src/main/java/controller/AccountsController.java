@@ -61,6 +61,12 @@ public class AccountsController {
 
         saveAccounts();
     }
+    public void creatAccount(Account accountData) {
+        accounts.add(accountData);
+        System.out.println("New account added successfully.");
+
+        saveAccounts();
+    }
 
 
     public boolean deleteAccount(String idAccount) {

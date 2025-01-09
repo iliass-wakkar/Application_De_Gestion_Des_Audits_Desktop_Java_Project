@@ -135,7 +135,7 @@ public class Account {
                 '}';
     }
 
-    public String getString() {
+    /*public String getString() {
         return
                 ", idAccount='" + idAccount + '\'' +
                 ", firstName='" + firstName + '\'' +
@@ -146,5 +146,5 @@ public class Account {
                 ", domain='" + domain + '\'' +
                 ", accountType='" + accountType + '\''
                 ;
-    }
+    }*/
 }

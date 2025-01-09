@@ -22,6 +22,7 @@ public class JsonFileHandler {
     }
 
     public static <T> void saveData(String filePath, List<T> data) throws IOException {
+        System.out.println(data);
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), data);
     }
     public static <T> void saveDataObject(String filePath, T data) throws IOException {

@@ -5,24 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6329370b-68a8-49a8-a87e-0509d6db995c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AuditorManagementTabController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ButtonEditorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/AccountTableUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/AuditorManagementTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/ButtonEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/FormDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ButtonRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/objectConerter/AccountConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/objectConerter/ObjectConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CreatAuditorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/SaveUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AccountSession.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Accounts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AuditorDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AuditorDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AuditorManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AuditorManagementTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ButtonEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ButtonEditorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Accounts/Auditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Accounts/Auditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/AuditorManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/AuditorManagementTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/FormDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AdminDashboard/FormDialog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Test" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -48,35 +53,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AdminDashboard.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AuditorManagementTab.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CreateAuditorForm.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginPage.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PageSwitcher.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TokenHandler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/vs code/GitHub/Application_De_Gestion_Des_Audits_Desktop_Java_Project_new/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37891078&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AdminDashboard.executor": "Run",
+    "Application.AuditorManagementTab.executor": "Run",
+    "Application.CreateAuditorForm.executor": "Run",
+    "Application.FormDialog.executor": "Run",
+    "Application.LoginPage.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.PageSwitcher.executor": "Run",
+    "Application.TokenHandler.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/vs code/GitHub/Application_De_Gestion_Des_Audits_Desktop_Java_Project_new/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.37891078",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration name="AdminDashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.AdminDashboard.AdminDashboard" />
@@ -164,7 +170,9 @@
       <workItem from="1736178432126" duration="5275000" />
       <workItem from="1736183876835" duration="2738000" />
       <workItem from="1736236904973" duration="15675000" />
-      <workItem from="1736260332189" duration="7172000" />
+      <workItem from="1736260332189" duration="7651000" />
+      <workItem from="1736323555286" duration="248000" />
+      <workItem from="1736414057639" duration="28656000" />
     </task>
     <servers />
   </component>

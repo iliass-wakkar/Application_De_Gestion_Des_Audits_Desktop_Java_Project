@@ -8,28 +8,27 @@ import view.ButtonRenderer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class AuditorManagementTab extends JPanel {
 
-    private JButton createButton ;
-    private ButtonRenderer buttonRenderer= new ButtonRenderer();
+    private JButton createButton;
+    private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Account> data = ControllersGetter.accountsController.getAccountsAuditor();
     private AuditorManagementTabController auditorManagementTabController;
-    private static String[] columnNames = { "firstName", "lastName", "phoneNumber", "email", "password", "domain"};
+    private static String[] formColumnNames = {"firstName", "lastName", "phoneNumber", "email", "password", "domain"};
+    private JTable auditTable;
+    private DefaultTableModel model;
 
     public AuditorManagementTab() {
         setUpUi();
         auditorManagementTabController = new AuditorManagementTabController(this);
     }
 
-    public static String[] getColumnNames() {
-        return columnNames;
+    public static String[] getFormColumnNames() {
+        return formColumnNames;
     }
 
     public JButton getCreateButton() {
@@ -39,10 +38,10 @@ public class AuditorManagementTab extends JPanel {
     public JButton getEditeButton() {
         return buttonRenderer.getEditButton();
     }
+
     public JButton getDeleteButton() {
         return buttonRenderer.getDeleteButton();
     }
-
 
     private void setUpUi() {
         // Set the layout manager for the panel
@@ -69,22 +68,19 @@ public class AuditorManagementTab extends JPanel {
         // Add the button panel to the top of the tab
         this.add(buttonPanel, BorderLayout.NORTH);
 
-            // Define column names
-            String[] columnNames = {"idAccount", "firstName", "lastName", "phoneNumber", "email", "password", "domain", "Actions"};
-
-            Object[][] tableData = AccountTableUtils.convertToTableData(data, columnNames);
-
+        // Define column names
+        String[] columnNames = {"idAccount", "firstName", "lastName", "phoneNumber", "email", "password", "domain", "Actions"};
 
         // Create and return the table model
-        DefaultTableModel model = new DefaultTableModel(tableData, columnNames) {
-                @Override
-                public boolean isCellEditable(int row, int column) {
-                    // Only the "Actions" column (column index 7) is editable
-                    return column == 7;
-                }
-            };
+        model = new DefaultTableModel(AccountTableUtils.convertToTableData(data, columnNames), columnNames) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                // Only the "Actions" column (column index 7) is editable
+                return column == 7;
+            }
+        };
 
-        JTable auditTable = new JTable(model);
+        auditTable = new JTable(model);
         auditTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         auditTable.setRowHeight(30);
         auditTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -103,8 +99,34 @@ public class AuditorManagementTab extends JPanel {
         this.add(scrollPane, BorderLayout.CENTER);
     }
 
-    // Custom renderer for buttons in the table
+    /**
+     * Refreshes the table data by fetching the latest data from the AccountsController.
+     */
+    public void refreshTable() {
+        // Fetch the latest data
+        data = ControllersGetter.accountsController.getAccountsAuditor();
+        System.out.println(data);
+        // Clear the existing table data
+        model.setRowCount(0);
 
+        // Add the new data to the table
+        for (Account account : data) {
+            Object[] rowData = {
+                    account.getIdAccount(),
+                    account.getFirstName(),
+                    account.getLastName(),
+                    account.getPhoneNumber(),
+                    account.getEmail(),
+                    account.getPassword(),
+                    account.getDomain(),
+                    "Actions" // Placeholder for the action buttons
+            };
+            model.addRow(rowData);
+        }
+
+        // Repaint the table to reflect the changes
+        auditTable.repaint();
+    }
 
     // Main method to test the AuditorManagementTab
     public static void main(String[] args) {
