@@ -24,6 +24,7 @@ public class Account {
         this.accountType = "unknown";
 
     }
+
     public Account(String firstName, String lastName, String email,
                    String password, String phoneNumber, String domain, String accountType) {
         this.idAccount=UUID.randomUUID().toString();

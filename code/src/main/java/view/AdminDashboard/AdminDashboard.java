@@ -1,8 +1,7 @@
 package view.AdminDashboard;
 
-import controller.AdminDashboardController;
+import controller.AdminDashboard.AdminDashboardController;
 import utils.PageSwitcher;
-import view.AdminDashboard.AdminDashboard;
 
 import javax.swing.*;
 import java.awt.*;

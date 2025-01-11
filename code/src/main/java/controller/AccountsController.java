@@ -45,21 +45,22 @@ public class AccountsController {
     }
 
     // Add or edit an account
-    public void editAccount(Account updatedAccount) {
+    public void editAccount(String id, Account updatedAccount) {
+        // Search for the existing account with the given ID
         Optional<Account> existingAccount = accounts.stream()
-                .filter(account -> account.getIdAccount().equals(updatedAccount.getIdAccount()))
+                .filter(account -> account.getIdAccount().equals(id))
                 .findFirst();
 
         if (existingAccount.isPresent()) {
-            accounts.remove(existingAccount.get());
-            accounts.add(updatedAccount);
+            // If the account exists, update it
+            int index = accounts.indexOf(existingAccount.get()); // Find the index of the existing account
+            accounts.set(index, updatedAccount); // Replace the old account with the updated one
             System.out.println("Account updated successfully.");
         } else {
-            accounts.add(updatedAccount);
-            System.out.println("New account added successfully.");
+            System.out.println("no account founf!");
         }
 
-        saveAccounts();
+        saveAccounts(); // Save the updated list of accounts
     }
     public void creatAccount(Account accountData) {
         accounts.add(accountData);
@@ -124,4 +125,5 @@ public class AccountsController {
     public List<Account> getAccountsAuditor() {
         return accounts.stream().filter(acc->acc.getAccountType().equals(AUDITOR_ACCOUNT_TYPE)).toList();
     }
+
 }

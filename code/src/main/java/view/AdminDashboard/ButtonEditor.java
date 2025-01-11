@@ -1,9 +1,10 @@
 package view.AdminDashboard;
 
-import controller.ButtonEditorController;
+import controller.AdminDashboard.ButtonEditorController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.Method;
 
 public class ButtonEditor extends DefaultCellEditor {
     private JPanel panel;
@@ -13,6 +14,9 @@ public class ButtonEditor extends DefaultCellEditor {
     private int currentRow;
     private ButtonEditorController buttonEditorController;
     private Object[] rowData;
+    private Runnable refreshCallback; // Callback to execute on button click
+    private String id;
+
 
     public Object[] getRowData() {
         return rowData;
@@ -26,9 +30,18 @@ public class ButtonEditor extends DefaultCellEditor {
         return deleteButton;
     }
 
-    public ButtonEditor(JCheckBox checkBox, JTable table) {
+    public Runnable getRefreshCallback() {
+        return refreshCallback;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public ButtonEditor(JCheckBox checkBox, JTable table, Runnable refrech) {
         super(checkBox);
         this.table = table;
+        refreshCallback = refrech;
 
         // Create Edit button
         editButton = new JButton("Edit");
@@ -55,6 +68,7 @@ public class ButtonEditor extends DefaultCellEditor {
         panel.add(editButton);
         panel.add(deleteButton);
         buttonEditorController = new ButtonEditorController(this);
+
     }
 
     @Override
@@ -62,10 +76,11 @@ public class ButtonEditor extends DefaultCellEditor {
         currentRow = row; // Store the current row index
 
         // Save the row data to the instance variable
-        rowData = new Object[table.getColumnCount()];
-        for (int col = 0; col < table.getColumnCount(); col++) {
-            rowData[col] = table.getModel().getValueAt(row, col);
+        rowData = new Object[table.getColumnCount()-1];
+        for (int col = 0; col < table.getColumnCount()-1; col++) {
+            rowData[col] = table.getModel().getValueAt(row, col+1);
         }
+        id= (String)table.getModel().getValueAt(row, 0);
 
         System.out.println("Row data saved for row: " + row);
         return panel; // Return the panel containing the buttons

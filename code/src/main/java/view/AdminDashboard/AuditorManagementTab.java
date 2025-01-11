@@ -1,6 +1,6 @@
 package view.AdminDashboard;
 
-import controller.AuditorManagementTabController;
+import controller.AdminDashboard.AuditorManagementTabController;
 import model.Accounts.Account;
 import utils.AccountTableUtils;
 import utils.ControllersGetter;
@@ -10,7 +10,11 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.List;
+
+import static utils.JsonFileHandler.ACCOUNTS_FILE_PATH;
 
 public class AuditorManagementTab extends JPanel {
 
@@ -25,6 +29,72 @@ public class AuditorManagementTab extends JPanel {
     public AuditorManagementTab() {
         setUpUi();
         auditorManagementTabController = new AuditorManagementTabController(this);
+    }
+
+
+    public void refreshTable() {
+        System.out.println("Refreshing table...");
+        // Fetch the latest data
+        data = ControllersGetter.accountsController.getAccountsAuditor();
+        System.out.println(data);
+
+        // Clear the existing table data
+        model.setRowCount(0);
+
+        // Add the new data to the table
+        for (Account account : data) {
+            Object[] rowData = {
+                    account.getIdAccount(),
+                    account.getFirstName(),
+                    account.getLastName(),
+                    account.getPhoneNumber(),
+                    account.getEmail(),
+                    account.getPassword(),
+                    account.getDomain(),
+                    "Actions" // Placeholder for the action buttons
+            };
+            model.addRow(rowData);
+        }
+
+        // Remove the "Actions" column
+        TableColumn actionsColumn = auditTable.getColumnModel().getColumn(7);
+        auditTable.removeColumn(actionsColumn);
+
+        // Recreate the "Actions" column with a new ButtonRenderer and ButtonEditor
+        actionsColumn = new TableColumn(7);
+        actionsColumn.setHeaderValue("Actions");
+        actionsColumn.setCellRenderer(new ButtonRenderer());
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), auditTable, this::refreshTable));
+
+        // Re-add the "Actions" column to the table
+        auditTable.addColumn(actionsColumn);
+
+        // Repaint the table to reflect the changes
+        auditTable.repaint();
+    }
+
+    // Added file polling as an alternative
+    private long lastModified = 0;
+
+    private void startFilePoller() {
+        new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(1000); // Check every second
+                    Path path = Paths.get(ACCOUNTS_FILE_PATH);
+                    if (Files.exists(path)) {
+                        long currentModified = Files.getLastModifiedTime(path).toMillis();
+                        if (currentModified != lastModified) {
+                            lastModified = currentModified;
+                            System.out.println("File modified. Refreshing table...");
+                            SwingUtilities.invokeLater(this::refreshTable);
+                        }
+                    }
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     public static String[] getFormColumnNames() {
@@ -91,41 +161,12 @@ public class AuditorManagementTab extends JPanel {
         // Add action buttons (Edit and Delete) to each row
         TableColumn actionsColumn = auditTable.getColumnModel().getColumn(7);
         actionsColumn.setCellRenderer(buttonRenderer);
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), auditTable));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), auditTable, this::refreshTable));
 
         // Add the table to a scroll pane
         JScrollPane scrollPane = new JScrollPane(auditTable);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         this.add(scrollPane, BorderLayout.CENTER);
-    }
-
-    /**
-     * Refreshes the table data by fetching the latest data from the AccountsController.
-     */
-    public void refreshTable() {
-        // Fetch the latest data
-        data = ControllersGetter.accountsController.getAccountsAuditor();
-        System.out.println(data);
-        // Clear the existing table data
-        model.setRowCount(0);
-
-        // Add the new data to the table
-        for (Account account : data) {
-            Object[] rowData = {
-                    account.getIdAccount(),
-                    account.getFirstName(),
-                    account.getLastName(),
-                    account.getPhoneNumber(),
-                    account.getEmail(),
-                    account.getPassword(),
-                    account.getDomain(),
-                    "Actions" // Placeholder for the action buttons
-            };
-            model.addRow(rowData);
-        }
-
-        // Repaint the table to reflect the changes
-        auditTable.repaint();
     }
 
     // Main method to test the AuditorManagementTab
