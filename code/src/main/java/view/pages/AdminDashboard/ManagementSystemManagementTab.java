@@ -18,7 +18,7 @@ public class ManagementSystemManagementTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<ManagementSystem> data;
     private ManagementSystemManagementTabController managementSystemManagementTabController;
-    private static String[] columnNamesCreateEdit = {"IdOrg", "description", "certificate" };
+    private static String[] columnNamesCreateEdit = {"IdOrganization", "Description", "Certificate" };
     DefaultTableModel model;
     JTable managementSystemTable;
 
@@ -69,7 +69,7 @@ public class ManagementSystemManagementTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = { "idManagementSystem", "idOrg", "description", "certificate", "Actions" };
+        String[] columnNames = { "IdManagementSystem", "IdOrganization", "Description", "Certificate", "Actions" };
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -112,7 +112,7 @@ public class ManagementSystemManagementTab extends JPanel {
         for (ManagementSystem managementSystem : data) {
             Object[] rowData = {
                     managementSystem.getIdManagementSystem(),
-                    managementSystem.getIdOrg(), // Include the organization ID
+                    managementSystem.getIdOrganization(), // Include the organization ID
                     managementSystem.getDescription(),
                     managementSystem.getCertificate(),
                     "Actions" // Placeholder for the action buttons

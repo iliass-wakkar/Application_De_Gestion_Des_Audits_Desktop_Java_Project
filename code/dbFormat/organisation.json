@@ -3,7 +3,7 @@
 		"idOrg": 1,
 		"name": "",
 		"description": "",
-        "arrSite":[
+        "sites":[
             {
                 "idSite":1,
                 "address":"",
@@ -11,7 +11,7 @@
                 "name":""
             }
         ],
-		"arrSystemManagement": [
+		"ManagementSystems": [
 			{
 				"idSystemManagement": 1,
 				"description": "",
@@ -33,9 +33,9 @@
 						]
 					}
 				],
-				"OtherRequirement": [
+				"requirement": [
 					{
-						"idOtherRequirement": 1,
+						"idRequirement": 1,
 						"description": "",
 						"reference": "",
 						"name": ""

@@ -1,6 +1,6 @@
 package view.pages.AdminDashboard;
 
-import controller.uiControllers.adminDashboard.Taps.StandardTabController;
+import controller.uiControllers.adminDashboard.Tabs.StandardTabController;
 import model.SystemManagement.Standard.Standard;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
@@ -18,12 +18,13 @@ public class StandardTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Standard> data = ControllersGetter.organizationsController.getAllStandards();
     private StandardTabController standardTabController;
-    private static String[] columnNamesCreateEdit = {"idOrg", "idManagementSystem", "name", "description", "reference"};
+    private static String[] columnNamesCreateEdit = {"IdOrganization", "IdManagementSystem", "Name", "Description", "Reference"};
     DefaultTableModel model;
     JTable standardTable;
 
     public StandardTab() {
         standardTabController = new StandardTabController(this);
+        System.out.println("the data :" + data);
         setUpUi();
     }
 
@@ -68,7 +69,7 @@ public class StandardTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"idStandard", "idOrg", "idManagementSystem", "name", "description", "reference", "Actions"};
+        String[] columnNames = {"IdStandard", "IdOrganization", "IdManagementSystem", "Name", "Description", "Reference", "Actions"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -111,7 +112,7 @@ public class StandardTab extends JPanel {
         for (Standard standard : data) {
             Object[] rowData = {
                     standard.getIdStandard(),
-                    standard.getIdOrg(),
+                    standard.getIdOrganization(),
                     standard.getIdManagementSystem(),
                     standard.getName(),
                     standard.getDescription(),

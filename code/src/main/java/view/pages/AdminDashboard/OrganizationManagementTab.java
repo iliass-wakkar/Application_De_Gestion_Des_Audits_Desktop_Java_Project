@@ -18,7 +18,7 @@ public class OrganizationManagementTab extends JPanel {
     private ButtonRenderer buttonRenderer= new ButtonRenderer();
     private List<Organization> data = ControllersGetter.organizationsController.getOrganizations();
     private OrganizationManagementTabController organizationManagementTabController;
-    private static String[] columnNamesCreateEdit = { "name", "description"};
+    private static String[] columnNamesCreateEdit = { "Name", "Description"};
     DefaultTableModel model;
     JTable auditTable;
 
@@ -70,7 +70,7 @@ public class OrganizationManagementTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"idOrg", "name", "description","Actions"};
+        String[] columnNames = {"IdOrganization", "Name", "Description","Actions"};
 
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
@@ -114,7 +114,7 @@ public class OrganizationManagementTab extends JPanel {
         // Add the new data to the table
         for (Organization organization : data) {
             Object[] rowData = {
-                    organization.getIdOrg(),
+                    organization.getIdOrganization(),
                     organization.getName(),
                     organization.getDescription(),
                     "Actions" // Placeholder for the action buttons

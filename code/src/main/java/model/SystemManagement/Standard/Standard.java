@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Standard {
     private String idStandard;
-    private String idOrg;
+    private String idOrganization;
 
     public String getIdManagementSystem() {
         return idManagementSystem;
@@ -20,12 +20,12 @@ public class Standard {
     private String description;
     private String reference;
 
-    public String getIdOrg() {
-        return idOrg;
+    public String getIdOrganization() {
+        return idOrganization;
     }
 
-    public void setIdOrg(String idOrg) {
-        this.idOrg = idOrg;
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
     private ArrayList<Clause> clauses = new ArrayList<>();
@@ -40,8 +40,8 @@ public class Standard {
 
     }
 
-    public Standard(String idOrg , String idManagementSystem , String name, String description, String reference, Process process, ArrayList<Clause> clauses) {
-       this.idOrg = idOrg;
+    public Standard(String idOrganization, String idManagementSystem , String name, String description, String reference, Process process, ArrayList<Clause> clauses) {
+       this.idOrganization = idOrganization;
        this.idManagementSystem = idManagementSystem;
         this.idStandard = UUID.randomUUID().toString();
         this.name = name;
@@ -100,7 +100,7 @@ public class Standard {
     public String toString() {
         return "Standard{" +
                 "idStandard='" + idStandard + '\'' +
-                "idOrg='" + idOrg + '\'' +
+                "idOrg='" + idOrganization + '\'' +
                 "idManagementSystem='" + idManagementSystem + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

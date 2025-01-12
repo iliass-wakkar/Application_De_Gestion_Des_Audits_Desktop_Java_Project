@@ -5,10 +5,11 @@ import model.SystemManagement.Standard.Process;
 
 public class Requirement {
     private String idRequirement;
+    private String idManagementSystem;
+    private String idOrganization;
     private String description;
     private String reference;
     private String name;
-    private Process process = new Process();
 
     public Requirement() {
         this.idRequirement = UUID.randomUUID().toString();
@@ -24,15 +25,14 @@ public class Requirement {
         this.reference = reference;
     }
 
-    public void setIdRequirement(String idRequirement) {
-        this.idRequirement = idRequirement;
-    }
 
-    public Requirement(String idOtherRequirement, String description, String name, Process process, String reference) {
-        this.idRequirement = idOtherRequirement;
+    public Requirement(String idOrganization,String idManagementSystem, String description, String name, String reference) {
+        this.idOrganization=idOrganization;
+        this.idManagementSystem=idManagementSystem;
+
+        this.idRequirement = UUID.randomUUID().toString();
         this.description = description;
         this.name = name;
-        this.process = process;
         this.reference = reference;
     }
 
@@ -45,6 +45,7 @@ public class Requirement {
     public String getIdRequirement() {
         return idRequirement;
     }
+
 
     public String getDescription() {
         return description;
@@ -62,23 +63,30 @@ public class Requirement {
         this.name = name;
     }
 
-    public Process getProcess() {
-        return process;
+    public String getIdManagementSystem() {
+        return idManagementSystem;
     }
 
-    public void setProcess(Process process) {
-        this.process = process;
+    public void setIdManagementSystem(String idManagementSystem) {
+        this.idManagementSystem = idManagementSystem;
     }
 
+    public String getIdOrganization() {
+        return idOrganization;
+    }
 
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
+    }
 
     @Override
     public String toString() {
-        return "OtherRequirement{" +
+        return "Requirement{" +
+                ", idManagementSystem='" + idManagementSystem + '\'' +
+                ", idOrganization='" + idOrganization + '\'' +
                 "idRequirement='" + idRequirement + '\'' +
                 ", description='" + description + '\'' +
                 ", name='" + name + '\'' +
-                ", process=" + process +
                 ", reference=" + reference +
 
                 '}';

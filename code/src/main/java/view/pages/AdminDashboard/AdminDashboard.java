@@ -18,6 +18,7 @@ private  ManagementSystemManagementTab managementSystemManagementTab = new Manag
 private  ResponsibleTab responsibleTab = new ResponsibleTab();
 private  SiteTab siteTab = new SiteTab();
 private  StandardTab StandardTab = new StandardTab();
+private  RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
     public AdminDashboard() {
         setUpUi();
         adminDashboardController = new AdminDashboardController(this);
@@ -75,7 +76,7 @@ private  StandardTab StandardTab = new StandardTab();
         tabbedPane.addTab("Responsible Management", responsibleTab);
         tabbedPane.addTab("Organization Management", organizationManagementTab);
         tabbedPane.addTab("Site Management", siteTab);
-        tabbedPane.addTab("Requirements Management", createTabPanel("Requirements Management"));
+        tabbedPane.addTab("Requirements Management", requirementManagementTab);
         tabbedPane.addTab("Standards Management", StandardTab);
         tabbedPane.addTab("Clause Management", createTabPanel("Clause Management"));
 

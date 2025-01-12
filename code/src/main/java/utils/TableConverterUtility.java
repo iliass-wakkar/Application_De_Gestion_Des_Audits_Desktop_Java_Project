@@ -46,8 +46,11 @@ public class TableConverterUtility {
             // Iterate over each column name
             for (int j = 0; j < columnNames.length; j++) {
                 try {
+                    // Convert the column name to start with a lowercase letter
+                    String fieldName = columnNames[j].substring(0, 1).toLowerCase() + columnNames[j].substring(1);
+
                     // Use reflection to get the field value
-                    Field field = obj.getClass().getDeclaredField(columnNames[j]);
+                    Field field = obj.getClass().getDeclaredField(fieldName);
                     field.setAccessible(true); // Allow access to private fields
                     tableData[i][j] = field.get(obj); // Get the value of the field
                 } catch (NoSuchFieldException | IllegalAccessException e) {

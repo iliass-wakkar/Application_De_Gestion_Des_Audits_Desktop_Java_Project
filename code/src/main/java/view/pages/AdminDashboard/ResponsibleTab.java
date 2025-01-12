@@ -18,7 +18,7 @@ public class ResponsibleTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Responsible> data = ControllersGetter.responsiblesController.getAllResponsibles();
     private ResponsibleTabController responsibleTabController;
-    private static String[] columnNamesCreateEdit = {"firstName", "lastName", "phoneNumber","email", "domain"};
+    private static String[] columnNamesCreateEdit = {"FirstName", "LastName", "PhoneNumber","Email", "Domain"};
     DefaultTableModel model;
     JTable responsibleTable;
 
@@ -68,7 +68,7 @@ public class ResponsibleTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"idResponsible", "firstName", "lastName", "phoneNumber", "email","domain", "Actions"};
+        String[] columnNames = {"IdResponsible", "FirstName", "LastName", "PhoneNumber", "Email","Domain", "Actions"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 

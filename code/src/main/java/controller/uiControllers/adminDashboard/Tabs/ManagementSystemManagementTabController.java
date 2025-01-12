@@ -38,7 +38,7 @@ public class ManagementSystemManagementTabController {
         try {
             if (formDialog.validateForm()) {
                 ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = managementSystem.getIdOrg(); // Get the organization ID
+                String idOrg = managementSystem.getIdOrganization(); // Get the organization ID
                 System.out.println(idOrg+"\t"+formDialog.getId()+"here we go");
 
                 ControllersGetter.organizationsController.editManagementSystemInOrganization(idOrg, formDialog.getId(), managementSystem);
@@ -74,7 +74,7 @@ public class ManagementSystemManagementTabController {
         try {
             if (formDialog.validateForm()) {
                 ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = managementSystem.getIdOrg(); // Get the organization ID
+                String idOrg = managementSystem.getIdOrganization(); // Get the organization ID
                 ControllersGetter.organizationsController.addManagementSystemToOrganization(idOrg, managementSystem);
                 JOptionPane.showMessageDialog(
                         formDialog,

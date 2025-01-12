@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class Organization {
-    private String idOrg;
+    private String idOrganization;
     private String name;
     private String description;
     private ArrayList<Site> sites = new ArrayList<>();
@@ -16,20 +16,20 @@ public class Organization {
 
     // Constructors
     public Organization() {
-        this.idOrg = UUID.randomUUID().toString();
+        this.idOrganization = UUID.randomUUID().toString();
         this.name = "unknown";
         this.description = "unknown";
     }
 
-    public Organization(String idOrg, String name, String description) {
-        this.idOrg = idOrg;
+    public Organization(String idOrganization, String name, String description) {
+        this.idOrganization = idOrganization;
         this.name = name;
         this.description = description;
     }
 
     // Getters
-    public String getIdOrg() {
-        return idOrg;
+    public String getIdOrganization() {
+        return idOrganization;
     }
 
     public String getName() {
@@ -159,7 +159,7 @@ public class Organization {
     @Override
     public String toString() {
         return "Organization{" +
-                "idOrg='" + idOrg + '\'' +
+                "idOrg='" + idOrganization + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", sites=" + sites +

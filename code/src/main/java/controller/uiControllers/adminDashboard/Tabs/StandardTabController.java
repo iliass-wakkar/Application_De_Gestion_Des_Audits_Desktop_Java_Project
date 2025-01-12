@@ -1,3 +1,4 @@
+package controller.uiControllers.adminDashboard.Tabs;
 
 import model.SystemManagement.Standard.Standard;
 import utils.ControllersGetter;
@@ -37,7 +38,7 @@ public class StandardTabController {
         try {
             if (formDialog.validateForm()) {
                 Standard standard = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = standard.getIdOrg(); // Get the organization ID
+                String idOrg = standard.getIdOrganization(); // Get the organization ID
                 String idManagementSystem = standard.getIdManagementSystem(); // Get the management system ID
                 ControllersGetter.organizationsController.editSystemManagementStandardById(idOrg, idManagementSystem, formDialog.getId(), standard);
                 view.refreshTable();
@@ -72,7 +73,7 @@ public class StandardTabController {
         try {
             if (formDialog.validateForm()) {
                 Standard standard = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = standard.getIdOrg(); // Get the organization ID
+                String idOrg = standard.getIdOrganization(); // Get the organization ID
                 String idManagementSystem = standard.getIdManagementSystem(); // Get the management system ID
                 ControllersGetter.organizationsController.createSystemManagementStandard(idOrg, idManagementSystem, standard);
                 JOptionPane.showMessageDialog(

@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class ManagementSystem {
     private String idManagementSystem;
-    private String idOrg; // ID of the organization to which this system belongs
+    private String idOrganization; // ID of the organization to which this system belongs
     private String description;
     private String certificate;
     private ArrayList<Standard> standards = new ArrayList<>();
@@ -22,31 +22,32 @@ public class ManagementSystem {
     // Constructors
     public ManagementSystem() {
         this.idManagementSystem = UUID.randomUUID().toString();
-        this.idOrg = "unknown"; // Default value
+        this.idOrganization = "unknown"; // Default value
         this.description = "unknown";
         this.certificate = "unknown";
     }
 
-    public ManagementSystem(String idManagementSystem, String idOrg, String description, String certificate, ArrayList<Standard> standards, ArrayList<Requirement> requirements) {
+    public ManagementSystem(String idManagementSystem, String idOrganization, String description, String certificate, ArrayList<Standard> standards, ArrayList<Requirement> requirements) {
         this.idManagementSystem = idManagementSystem;
-        this.idOrg = idOrg;
+        this.idOrganization = idOrganization;
         this.description = description;
         this.certificate = certificate;
         this.standards = standards;
         this.requirements = requirements;
     }
 
+
     // Getters and Setters
     public String getIdManagementSystem() {
         return idManagementSystem;
     }
 
-    public String getIdOrg() {
-        return idOrg;
+    public String getIdOrganization() {
+        return idOrganization;
     }
 
-    public void setIdOrg(String idOrg) {
-        this.idOrg = idOrg;
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
     public String getDescription() {
@@ -84,7 +85,7 @@ public class ManagementSystem {
     // Method to update the ManagementSystem object
     public void editManagementSystem(ManagementSystem updatedManagementSystem) {
         if (updatedManagementSystem != null) {
-            this.setIdOrg(updatedManagementSystem.getIdOrg());
+            this.setIdOrganization(updatedManagementSystem.getIdOrganization());
             this.setDescription(updatedManagementSystem.getDescription());
             this.setCertificate(updatedManagementSystem.getCertificate());
         }
@@ -190,7 +191,7 @@ public class ManagementSystem {
     public String toString() {
         return "ManagementSystem{" +
                 "idManagementSystem='" + idManagementSystem + '\'' +
-                ", idOrg='" + idOrg + '\'' +
+                ", idOrg='" + idOrganization + '\'' +
                 ", description='" + description + '\'' +
                 ", certificate='" + certificate + '\'' +
                 ", standards=" + standards +

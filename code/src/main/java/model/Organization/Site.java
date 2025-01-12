@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Site {
     private String idSite;
-    private String idOrg ;
+    private String idOrganization;
     private String address;
     private String description;
     private String name;
@@ -13,12 +13,12 @@ public class Site {
         this.idSite = idSite;
     }
 
-    public String getIdOrg() {
-        return idOrg;
+    public String getIdOrganization() {
+        return idOrganization;
     }
 
-    public void setIdOrg(String idOrg) {
-        this.idOrg = idOrg;
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
     public Site() {
@@ -28,9 +28,9 @@ public class Site {
         this.name = "unknown";
     }
 
-    public Site(String idSite, String idOrg,String address, String description, String name) {
+    public Site(String idSite, String idOrganization, String address, String description, String name) {
         this.idSite = idSite;
-        this.idOrg = idOrg;
+        this.idOrganization = idOrganization;
         this.address = address;
         this.description = description;
         this.name = name;
@@ -75,7 +75,7 @@ public class Site {
     public String toString() {
         return "Site{" +
                 "idSite='" + idSite + '\'' +
-                "idOrg='" + idOrg + '\'' +
+                "idOrg='" + idOrganization + '\'' +
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
                 ", name='" + name + '\'' +

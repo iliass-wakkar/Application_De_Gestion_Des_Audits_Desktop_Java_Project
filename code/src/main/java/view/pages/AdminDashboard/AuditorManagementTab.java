@@ -23,7 +23,7 @@ public class AuditorManagementTab extends JPanel {
 
     private List<Account> data = ControllersGetter.accountsController.getAccountsAuditor();
     private AuditorManagementTabController auditorManagementTabController;
-    private static String[] columnNamesCreateEdit = { "firstName", "lastName", "phoneNumber", "email", "password", "domain"};
+    private static String[] columnNamesCreateEdit = { "FirstName", "LastName", "PhoneNumber", "Email", "Password", "Domain"};
 
     public AuditorManagementTab() {
         auditorManagementTabController = new AuditorManagementTabController(this);
@@ -72,7 +72,7 @@ public class AuditorManagementTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
             // Define column names
-            String[] columnNames = {"idAccount", "firstName", "lastName", "phoneNumber", "email", "password", "domain", "Actions"};
+            String[] columnNames = {"IdAccount", "FirstName", "LastName", "PhoneNumber", "Email", "Password", "Domain", "Actions"};
 
             Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 

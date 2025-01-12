@@ -38,7 +38,7 @@ public class SiteTabController {
         try {
             if (formDialog.validateForm()) {
                 Site site = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = site.getIdOrg(); // Get the organization ID
+                String idOrg = site.getIdOrganization(); // Get the organization ID
                 ControllersGetter.organizationsController.editSiteInOrganization(idOrg, formDialog.getId(), site);
                 view.refreshTable();
                 JOptionPane.showMessageDialog(
@@ -71,7 +71,7 @@ public class SiteTabController {
         try {
             if (formDialog.validateForm()) {
                 Site site = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = site.getIdOrg(); // Get the organization ID
+                String idOrg = site.getIdOrganization(); // Get the organization ID
                 ControllersGetter.organizationsController.addSiteToOrganization(idOrg, site);
                 JOptionPane.showMessageDialog(
                         formDialog,

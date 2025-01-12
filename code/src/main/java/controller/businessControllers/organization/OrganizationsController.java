@@ -55,7 +55,7 @@ public class OrganizationsController {
     // Add or edit an organization
     public boolean editOrganization(String id,Organization updatedOrganization) {
         Optional<Organization> existingOrganization = organizations.stream()
-                .filter(org -> org.getIdOrg().equals(id))
+                .filter(org -> org.getIdOrganization().equals(id))
                 .findFirst();
 
         if (existingOrganization.isPresent()) {
@@ -77,7 +77,7 @@ public class OrganizationsController {
     // Delete an organization by ID
     public boolean deleteOrganization(String idOrg) {
         Optional<Organization> organizationToDelete = organizations.stream()
-                .filter(org -> org.getIdOrg().equals(idOrg))
+                .filter(org -> org.getIdOrganization().equals(idOrg))
                 .findFirst();
 
         if (organizationToDelete.isPresent()) {
@@ -94,7 +94,7 @@ public class OrganizationsController {
     // Get an organization by ID
     public Organization getOrganizationById(String idOrg) {
         Optional<Organization> organization = organizations.stream()
-                .filter(org -> org.getIdOrg().equals(idOrg))
+                .filter(org -> org.getIdOrganization().equals(idOrg))
                 .findFirst();
         return organization.orElse(null);
     }
@@ -120,6 +120,7 @@ public class OrganizationsController {
 
     // Method to get a ManagementSystem by ID
     private ManagementSystem getSystemManagementById(String idOrg, String idManagementSystem) throws Exception {
+        System.out.println(idOrg);
         Organization organization = getOrganizationById(idOrg);
 
         if (organization != null) {
@@ -136,6 +137,7 @@ public class OrganizationsController {
 
     // Method to get a Standard by ID
     public Standard getSystemManagementStandardById(String idOrg, String idManagementSystem, String idStandard) throws Exception {
+
         ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
 
         if (managementSystem != null) {
@@ -258,6 +260,7 @@ public class OrganizationsController {
 
     // Method to delete a Requirement by ID
     public void deleteSystemManagementRequirementById(String idOrg, String idManagementSystem, String idRequirement) throws Exception {
+        System.out.println(idOrg);
         ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
 
         if (managementSystem != null) {

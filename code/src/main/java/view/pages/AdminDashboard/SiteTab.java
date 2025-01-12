@@ -18,7 +18,7 @@ public class SiteTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Site> data;
     private SiteTabController siteTabController;
-    private static String[] columnNamesCreateEdit = {"idOrg", "name", "address", "description"};
+    private static String[] columnNamesCreateEdit = {"IdOrganization", "Name", "Address", "Description"};
     DefaultTableModel model;
     JTable siteTable;
 
@@ -70,7 +70,7 @@ public class SiteTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"idSite", "idOrg", "name", "address", "description", "Actions"};
+        String[] columnNames = {"IdSite", "IdOrganization", "Name", "Address", "Description", "Actions"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -113,7 +113,7 @@ public class SiteTab extends JPanel {
         for (Site site : data) {
             Object[] rowData = {
                     site.getIdSite(),
-                    site.getIdOrg(), // Include the organization ID
+                    site.getIdOrganization(), // Include the organization ID
                     site.getName(),
                     site.getAddress(),
                     site.getDescription(),
