@@ -22,9 +22,11 @@
     "certificate" : "dsfsd",
     "standards" : [ {
       "idStandard" : "4",
-      "name" : "ISO 45001",
-      "description" : "ISO 45001 Occupational Health and Safety Management System",
-      "reference" : "ISO 45001:2018",
+      "idOrg" : "2",
+      "idManagementSystem" : "4",
+      "name" : "ISO 45001sdfs",
+      "description" : "dsfsdISO 45001 Occupational Health and Safety Management System",
+      "reference" : "sdfsdISO 45001:2018",
       "clauses" : [ {
         "idClause" : "5.1",
         "name" : "Leadership",
@@ -37,8 +39,8 @@
         "reference" : "ISO 45001:2018 Clause 6.1"
       } ]
     } ],
-    "otherRequirements" : [ {
-      "idOtherRequirement" : "6",
+    "requirements" : [ {
+      "idRequirement" : "6",
       "description" : "Emergency response requirements for workplace incidents.",
       "reference" : "Emergency Response Policy",
       "name" : "Emergency Response",
@@ -54,14 +56,14 @@
     "description" : "gfmkglkmfk;l",
     "certificate" : "dfjklnlnfrtkklmy444444",
     "standards" : [ ],
-    "otherRequirements" : [ ]
+    "requirements" : [ ]
   }, {
     "idManagementSystem" : "67e1c1f4-2c04-410c-b1e6-148de2461e58",
     "idOrg" : "2",
     "description" : "sdf",
     "certificate" : "sdf",
     "standards" : [ ],
-    "otherRequirements" : [ ]
+    "requirements" : [ ]
   } ]
 }, {
   "idOrg" : "938d3e0f-c702-4928-afce-298ef42baea2",

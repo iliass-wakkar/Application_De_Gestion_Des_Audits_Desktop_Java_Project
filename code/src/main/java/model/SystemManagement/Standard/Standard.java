@@ -5,23 +5,45 @@ import java.util.UUID;
 
 public class Standard {
     private String idStandard;
+    private String idOrg;
+
+    public String getIdManagementSystem() {
+        return idManagementSystem;
+    }
+
+    public void setIdManagementSystem(String idManagementSystem) {
+        this.idManagementSystem = idManagementSystem;
+    }
+
+    private String idManagementSystem;
     private String name;
     private String description;
     private String reference;
+
+    public String getIdOrg() {
+        return idOrg;
+    }
+
+    public void setIdOrg(String idOrg) {
+        this.idOrg = idOrg;
+    }
 
     private ArrayList<Clause> clauses = new ArrayList<>();
 
 
     public Standard() {
         this.idStandard = UUID.randomUUID().toString();
+
         this.name = "unknown";
         this.description = "unknown";
         this.reference = "unknown";
 
     }
 
-    public Standard(String idStandard, String name, String description, String reference, Process process, ArrayList<Clause> clauses) {
-        this.idStandard = idStandard;
+    public Standard(String idOrg , String idManagementSystem , String name, String description, String reference, Process process, ArrayList<Clause> clauses) {
+       this.idOrg = idOrg;
+       this.idManagementSystem = idManagementSystem;
+        this.idStandard = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.reference = reference;
@@ -77,7 +99,9 @@ public class Standard {
     @Override
     public String toString() {
         return "Standard{" +
-                "id='" + idStandard + '\'' +
+                "idStandard='" + idStandard + '\'' +
+                "idOrg='" + idOrg + '\'' +
+                "idManagementSystem='" + idManagementSystem + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", reference='" + reference + '\'' +
