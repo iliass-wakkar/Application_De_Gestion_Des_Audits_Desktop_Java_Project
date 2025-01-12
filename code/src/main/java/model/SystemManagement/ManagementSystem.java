@@ -36,6 +36,7 @@ public class ManagementSystem {
         this.requirements = requirements;
     }
 
+
     // Getters and Setters
     public String getIdManagementSystem() {
         return idManagementSystem;
@@ -156,7 +157,7 @@ public class ManagementSystem {
     // Method to edit a Requirement by ID
     public Boolean editRequirement(String idOtherRequirement, Requirement updatedRequirement) {
         Optional<Requirement> otherRequirementOptional = requirements.stream()
-                .filter(req -> req.getIdOtherRequirement().equals(idOtherRequirement))
+                .filter(req -> req.getIdRequirement().equals(idOtherRequirement))
                 .findFirst();
 
         if (otherRequirementOptional.isPresent()) {
@@ -172,7 +173,7 @@ public class ManagementSystem {
     // Method to delete a Requirement by ID
     public Boolean deleteRequirement(String idOtherRequirement) {
         Optional<Requirement> otherRequirementOptional = requirements.stream()
-                .filter(req -> req.getIdOtherRequirement().equals(idOtherRequirement))
+                .filter(req -> req.getIdRequirement().equals(idOtherRequirement))
                 .findFirst();
 
         if (otherRequirementOptional.isPresent()) {

@@ -120,6 +120,7 @@ public class OrganizationsController {
 
     // Method to get a ManagementSystem by ID
     private ManagementSystem getSystemManagementById(String idOrg, String idManagementSystem) throws Exception {
+        System.out.println(idOrg);
         Organization organization = getOrganizationById(idOrg);
 
         if (organization != null) {
@@ -136,6 +137,7 @@ public class OrganizationsController {
 
     // Method to get a Standard by ID
     public Standard getSystemManagementStandardById(String idOrg, String idManagementSystem, String idStandard) throws Exception {
+
         ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
 
         if (managementSystem != null) {
@@ -258,6 +260,7 @@ public class OrganizationsController {
 
     // Method to delete a Requirement by ID
     public void deleteSystemManagementRequirementById(String idOrg, String idManagementSystem, String idRequirement) throws Exception {
+        System.out.println(idOrg);
         ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
 
         if (managementSystem != null) {

@@ -14,9 +14,10 @@ public class AdminDashboard extends JPanel {
     private JButton logoutButton;
     private AuditorManagementTab auditorManagementTab = new AuditorManagementTab();
     private OrganizationManagementTab organizationManagementTab = new OrganizationManagementTab();
-private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
-private  ResponsibleTab responsibleTab = new ResponsibleTab();
-private  SiteTab siteTab = new SiteTab();
+    private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
+    private RequirementManagmentTab requirementManagmentTab = new RequirementManagmentTab();
+    private  ResponsibleTab responsibleTab = new ResponsibleTab();
+    private  SiteTab siteTab = new SiteTab();
     public AdminDashboard() {
         setUpUi();
         adminDashboardController = new AdminDashboardController(this);
@@ -74,7 +75,7 @@ private  SiteTab siteTab = new SiteTab();
         tabbedPane.addTab("Responsible Management", responsibleTab);
         tabbedPane.addTab("Organization Management", organizationManagementTab);
         tabbedPane.addTab("Site Management", siteTab);
-        tabbedPane.addTab("Requirements Management", createTabPanel("Requirements Management"));
+        tabbedPane.addTab("Requirements Management",requirementManagmentTab);
         tabbedPane.addTab("Standards Management", createTabPanel("Standards Management"));
         tabbedPane.addTab("Clause Management", createTabPanel("Clause Management"));
 

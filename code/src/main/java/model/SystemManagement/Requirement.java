@@ -4,14 +4,15 @@ import java.util.UUID;
 import model.SystemManagement.Standard.Process;
 
 public class Requirement {
-    private String idOtherRequirement;
+    private String idRequirement;
+    private String idManagmentSystem;
+    private String idOrganization;
     private String description;
     private String reference;
     private String name;
-    private Process process = new Process();
 
     public Requirement() {
-        this.idOtherRequirement = UUID.randomUUID().toString();
+        this.idRequirement = UUID.randomUUID().toString();
         this.description = "Unknown";
         this.name = "Unknown";
     }
@@ -24,15 +25,14 @@ public class Requirement {
         this.reference = reference;
     }
 
-    public void setIdOtherRequirement(String idOtherRequirement) {
-        this.idOtherRequirement = idOtherRequirement;
+    public void setIdRequirement(String idRequirement) {
+        this.idRequirement = idRequirement;
     }
 
-    public Requirement(String idOtherRequirement, String description, String name, Process process, String reference) {
-        this.idOtherRequirement = idOtherRequirement;
+    public Requirement(String idRequirement, String description, String name, String reference) {
+        this.idRequirement = idRequirement;
         this.description = description;
         this.name = name;
-        this.process = process;
         this.reference = reference;
     }
 
@@ -42,9 +42,10 @@ public class Requirement {
         this.setReference(updatedRequirement.getReference());
     }
 
-    public String getIdOtherRequirement() {
-        return idOtherRequirement;
+    public String getIdRequirement() {
+        return idRequirement;
     }
+
 
     public String getDescription() {
         return description;
@@ -62,23 +63,28 @@ public class Requirement {
         this.name = name;
     }
 
-    public Process getProcess() {
-        return process;
+    public String getIdManagmentSystem() {
+        return idManagmentSystem;
     }
 
-    public void setProcess(Process process) {
-        this.process = process;
+    public void setIdManagmentSystem(String idManagmentSystem) {
+        this.idManagmentSystem = idManagmentSystem;
     }
 
+    public String getIdOrganization() {
+        return idOrganization;
+    }
 
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
+    }
 
     @Override
     public String toString() {
-        return "OtherRequirement{" +
-                "idOtherRequirement='" + idOtherRequirement + '\'' +
+        return "Requirement{" +
+                "idRequirement='" + idRequirement + '\'' +
                 ", description='" + description + '\'' +
                 ", name='" + name + '\'' +
-                ", process=" + process +
                 ", reference=" + reference +
 
                 '}';
