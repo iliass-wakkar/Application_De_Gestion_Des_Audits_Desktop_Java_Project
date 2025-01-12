@@ -13,8 +13,7 @@
     "description" : "Research and development center for wind energy.",
     "name" : "Wind Energy Lab"
   } ],
-  "managementSystems" : [
-    {
+  "managementSystems" : [ {
     "idManagementSystem" : "3",
     "idOrg" : "2",
     "description" : "Environmental Management System for sustainability.",
@@ -57,10 +56,9 @@
         "description" : "Unknown"
       }
     } ]
-  },
-    {
+  }, {
     "idManagementSystem" : "4",
-      "idOrg" : "2",
+    "idOrg" : "2",
     "description" : "Occupational Health and Safety Management System for employee safety.",
     "certificate" : "ISO 45001:2018",
     "standards" : [ {
@@ -91,6 +89,13 @@
         "description" : "Unknown"
       }
     } ]
+  }, {
+    "idManagementSystem" : "fe0e912b-0ead-49db-b590-8d4cc0b37515",
+    "idOrg" : "2",
+    "description" : "gfmkglkmfk;l",
+    "certificate" : "dfjklnlnfrtkklmy444444",
+    "standards" : [ ],
+    "otherRequirements" : [ ]
   } ]
 }, {
   "idOrg" : "bc114a19-9c58-4165-85b7-5282408393b6",

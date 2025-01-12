@@ -5,38 +5,47 @@ import java.util.UUID;
 
 public class StandardStat {
     private final String idStandard;
-    private List<ClauseStat> arrClauseStat;
+    private String passStat;
+    private Solution solution;
+
 
     // Default Constructor
     public StandardStat() {
         this.idStandard = UUID.randomUUID().toString();
-        this.arrClauseStat = null;
     }
 
     // Parameterized Constructor
-    public StandardStat(List<ClauseStat> arrClauseStat) {
-        this.idStandard = UUID.randomUUID().toString();
-        this.arrClauseStat = arrClauseStat;
+
+
+    public StandardStat(String idStandard, String passStat, Solution solution) {
+        this.idStandard = idStandard;
+        this.passStat = passStat;
+        this.solution = solution;
     }
 
+    public String getPassStat() {
+        return passStat;
+    }
+    public Solution getSolution() {
+        return solution;
+    }
     // Getters and Setters
     public String getIdStandard() {
         return idStandard;
     }
 
-    public List<ClauseStat> getArrClauseStat() {
-        return arrClauseStat;
+    public void setPassStat(String passStat) {
+        this.passStat = passStat;
     }
 
-    public void setArrClauseStat(List<ClauseStat> arrClauseStat) {
-        this.arrClauseStat = arrClauseStat;
+    public void setSolution(Solution solution) {
+        this.solution = solution;
     }
 
     @Override
     public String toString() {
         return "StandardStat{" +
-                "idStandard='" + idStandard + '\'' +
-                ", arrClauseStat=" + arrClauseStat +
+                "idStandard='" + idStandard +
                 '}';
     }
 }

@@ -26,43 +26,6 @@ public class AuditorManagementTabController {
 
 
 
-    private IFormDialogEventHandler saveCreateAuditorIFormEventHandler = (formDialog)->{
-            try {
-                if (formDialog.validateForm()) {
-                    Account account = saveUtil.saveFormData(formDialog.getFormData()); // Save form data
-                    account.setAccountType("auditor");
-                    ControllersGetter.accountsController.createAccount(account); // Create account using AccountsController
-
-                    // Show success message
-                    JOptionPane.showMessageDialog(
-                            createAuditorForm,
-                            "New Auditor added successfully!",
-                            "Success",
-                            JOptionPane.INFORMATION_MESSAGE
-                    );
-
-                    // Refresh the table to show the new data
-                    view.refreshTable();
-
-                    formDialog.dispose(); // Close the form dialog
-                } else {
-                    JOptionPane.showMessageDialog(
-                            createAuditorForm,
-                            "Please fill in all fields.",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                    );
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(
-                        createAuditorForm,
-                        "An error occurred: " + e.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE
-                );
-            }
-    };
 //    public IFormDialogEventHandler getSaveDeleteAuditorIFormEventHandler() {
 //        return saveDeleteAuditorIFormEventHandler;
 //    }
@@ -162,13 +125,50 @@ public class AuditorManagementTabController {
         initController();
 
     }
+    private IFormDialogEventHandler saveCreateAuditorIFormEventHandler = (formDialog)->{
+        try {
+            if (formDialog.validateForm()) {
+                Account account = saveUtil.saveFormData(formDialog.getFormData()); // Save form data
+                account.setAccountType("auditor");
+                ControllersGetter.accountsController.createAccount(account); // Create account using AccountsController
+
+                // Show success message
+                JOptionPane.showMessageDialog(
+                        createAuditorForm,
+                        "New Auditor added successfully!",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+
+                // Refresh the table to show the new data
+                view.refreshTable();
+
+                formDialog.dispose(); // Close the form dialog
+            } else {
+                JOptionPane.showMessageDialog(
+                        createAuditorForm,
+                        "Please fill in all fields.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(
+                    createAuditorForm,
+                    "An error occurred: " + e.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
+    };
 
     private void initController() {
         addCreatAuditorButtonEvent();
     }
     private void addCreatAuditorButtonEvent() {
         view.getCreateButton().addActionListener(ActionEvent -> {
-            createAuditorForm= new FormDialog("Creat Auditor", columnNames, saveCreateAuditorIFormEventHandler);
+            createAuditorForm= new FormDialog("Create Auditor", columnNames, saveCreateAuditorIFormEventHandler);
 
         });
     }

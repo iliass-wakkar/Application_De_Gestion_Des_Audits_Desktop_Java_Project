@@ -18,7 +18,7 @@ public class ManagementSystemManagementTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<ManagementSystem> data;
     private ManagementSystemManagementTabController managementSystemManagementTabController;
-    private static String[] columnNamesCreateEdit = { "description", "certificate" };
+    private static String[] columnNamesCreateEdit = {"IdOrg", "description", "certificate" };
     DefaultTableModel model;
     JTable managementSystemTable;
 

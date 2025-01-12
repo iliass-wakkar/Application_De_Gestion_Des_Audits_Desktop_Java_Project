@@ -103,41 +103,37 @@ public class OrganizationController {
     }
 
     // Add a management system to an organization
-    public boolean addManagementSystemToOrganization(String idOrg, ManagementSystem managementSystem) {
+    public void addManagementSystemToOrganization(String idOrg, ManagementSystem managementSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
-            managementSystem.setIdOrg(idOrg); // Ensure the system is linked to the organization
             organization.addSystem(managementSystem);
             saveOrganizations();
             System.out.println("Management System added to organization successfully.");
-            return true;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            // Throw an exception if the organization is not found
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
 
     // Edit a management system in an organization
-    public boolean editManagementSystemInOrganization(String idOrg, String idManagementSystem, ManagementSystem updatedSystem) {
+    public boolean editManagementSystemInOrganization(String idOrg, String idManagementSystem, ManagementSystem updatedSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
-            updatedSystem.setIdOrg(idOrg); // Ensure the system is linked to the organization
-            boolean result = organization.editSystem(updatedSystem);
+            boolean result = organization.editSystem(idManagementSystem, updatedSystem);
             if (result) {
                 saveOrganizations();
                 System.out.println("Management System updated successfully.");
             } else {
-                System.out.println("Management System not found.");
+                throw new Exception("Management System not found." + idManagementSystem + " not found.");
             }
             return result;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
 
     // Delete a management system from an organization
-    public boolean deleteManagementSystemFromOrganization(String idOrg, String idManagementSystem) {
+    public boolean deleteManagementSystemFromOrganization(String idOrg, String idManagementSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
             boolean result = organization.deleteSystem(idManagementSystem);
@@ -145,12 +141,11 @@ public class OrganizationController {
                 saveOrganizations();
                 System.out.println("Management System deleted successfully.");
             } else {
-                System.out.println("Management System not found.");
+                throw new Exception("Management System not found." + idManagementSystem + " not found.");
             }
             return result;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
 

@@ -9,9 +9,9 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 public class FormDialog extends JDialog {
-    JButton saveButton = new JButton("Save");
-    JButton cancelButton = new JButton("Cancel");
-    FormDialogController formDialogController;
+    private JButton saveButton = new JButton("Save");
+    private JButton cancelButton = new JButton("Cancel");
+    private FormDialogController formDialogController;
 
 
 

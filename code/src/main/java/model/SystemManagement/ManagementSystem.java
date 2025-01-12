@@ -79,6 +79,15 @@ public class ManagementSystem {
         this.otherRequirements = otherRequirements;
     }
 
+    // Method to update the ManagementSystem object
+    public void editManagementSystem(ManagementSystem updatedManagementSystem) {
+        if (updatedManagementSystem != null) {
+            this.setIdOrg(updatedManagementSystem.getIdOrg());
+            this.setDescription(updatedManagementSystem.getDescription());
+            this.setCertificate(updatedManagementSystem.getCertificate());
+        }
+    }
+
     @Override
     public String toString() {
         return "ManagementSystem{" +
