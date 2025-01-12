@@ -1,0 +1,101 @@
+[ {
+  "idOrg" : "2",
+  "name" : "Green Energy Solutions",
+  "description" : "A company focused on renewable energy and sustainability.",
+  "sites" : [ {
+    "idSite" : "3",
+    "address" : "789 Solar Avenue, Green City, GC 54321",
+    "description" : "Primary office for solar energy projects.",
+    "name" : "Solar Energy Hub"
+  }, {
+    "idSite" : "4",
+    "address" : "101 Windmill Road, Eco Town, ET 98765",
+    "description" : "Research and development center for wind energy.",
+    "name" : "Wind Energy Lab"
+  } ],
+  "managementSystems" : [
+    {
+    "idManagementSystem" : "3",
+    "idOrg" : "2",
+    "description" : "Environmental Management System for sustainability.",
+    "certificate" : "ISO 14001:2015",
+    "standards" : [ {
+      "idStandard" : "3",
+      "name" : "ISO 14001",
+      "description" : "ISO 14001 Environmental Management System",
+      "reference" : "ISO 14001:2015",
+      "clauses" : [ {
+        "idClause" : "4.3",
+        "name" : "Scope of the EMS",
+        "description" : "Determining the scope of the environmental management system.",
+        "reference" : "ISO 14001:2015 Clause 4.3"
+      }, {
+        "idClause" : "6.1",
+        "name" : "Environmental Risk Assessment",
+        "description" : "Actions to address risks and opportunities.",
+        "reference" : "ISO 14001:2015 Clause 6.1"
+      } ]
+    } ],
+    "otherRequirements" : [ {
+      "idOtherRequirement" : "4",
+      "description" : "Waste management requirements for recycling.",
+      "reference" : "Waste Management Policy",
+      "name" : "Waste Management",
+      "process" : {
+        "idProcess" : "1c9ae7ee-588e-4805-aa34-0e9acd7a2e51",
+        "name" : "Unknown",
+        "description" : "Unknown"
+      }
+    }, {
+      "idOtherRequirement" : "5",
+      "description" : "Energy efficiency requirements for facilities.",
+      "reference" : "Energy Efficiency Policy",
+      "name" : "Energy Efficiency",
+      "process" : {
+        "idProcess" : "a57e6bb8-d11e-43b2-b161-6dc65d49af4b",
+        "name" : "Unknown",
+        "description" : "Unknown"
+      }
+    } ]
+  },
+    {
+    "idManagementSystem" : "4",
+      "idOrg" : "2",
+    "description" : "Occupational Health and Safety Management System for employee safety.",
+    "certificate" : "ISO 45001:2018",
+    "standards" : [ {
+      "idStandard" : "4",
+      "name" : "ISO 45001",
+      "description" : "ISO 45001 Occupational Health and Safety Management System",
+      "reference" : "ISO 45001:2018",
+      "clauses" : [ {
+        "idClause" : "5.1",
+        "name" : "Leadership",
+        "description" : "Leadership and commitment for occupational health and safety.",
+        "reference" : "ISO 45001:2018 Clause 5.1"
+      }, {
+        "idClause" : "6.1",
+        "name" : "Hazard Identification and Risk Assessment",
+        "description" : "Actions to address risks and opportunities.",
+        "reference" : "ISO 45001:2018 Clause 6.1"
+      } ]
+    } ],
+    "otherRequirements" : [ {
+      "idOtherRequirement" : "6",
+      "description" : "Emergency response requirements for workplace incidents.",
+      "reference" : "Emergency Response Policy",
+      "name" : "Emergency Response",
+      "process" : {
+        "idProcess" : "bf88bb3f-8e60-4c65-8cf1-638d3499690b",
+        "name" : "Unknown",
+        "description" : "Unknown"
+      }
+    } ]
+  } ]
+}, {
+  "idOrg" : "bc114a19-9c58-4165-85b7-5282408393b6",
+  "name" : "Tech nationd",
+  "description" : "A company focused on renewable tech hhhddddd",
+  "sites" : [ ],
+  "managementSystems" : [ ]
+} ]
