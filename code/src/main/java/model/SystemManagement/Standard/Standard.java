@@ -28,6 +28,11 @@ public class Standard {
 
         this.clauses = clauses;
     }
+    public void editStandard(Standard updatedStandard){
+         this.setName(updatedStandard.getName());
+         this.setDescription(updatedStandard.getDescription());
+         this.setReference(updatedStandard.getReference());
+    }
 
 
 

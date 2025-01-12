@@ -2,16 +2,15 @@ package model.SystemManagement;
 
 import java.util.UUID;
 import model.SystemManagement.Standard.Process;
-import model.SystemManagement.Standard.Standard;
 
-public class OtherRequirement {
+public class Requirement {
     private String idOtherRequirement;
     private String description;
     private String reference;
     private String name;
     private Process process = new Process();
 
-    public OtherRequirement() {
+    public Requirement() {
         this.idOtherRequirement = UUID.randomUUID().toString();
         this.description = "Unknown";
         this.name = "Unknown";
@@ -29,12 +28,18 @@ public class OtherRequirement {
         this.idOtherRequirement = idOtherRequirement;
     }
 
-    public OtherRequirement(String idOtherRequirement, String description, String name, Process process, String reference) {
+    public Requirement(String idOtherRequirement, String description, String name, Process process, String reference) {
         this.idOtherRequirement = idOtherRequirement;
         this.description = description;
         this.name = name;
         this.process = process;
         this.reference = reference;
+    }
+
+    public void editRequirement(Requirement updatedRequirement){
+        this.setName(updatedRequirement.getName());
+        this.setDescription(updatedRequirement.getDescription());
+        this.setReference(updatedRequirement.getReference());
     }
 
     public String getIdOtherRequirement() {

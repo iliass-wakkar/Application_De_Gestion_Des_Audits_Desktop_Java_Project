@@ -1,8 +1,10 @@
 package model.SystemManagement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import model.SystemManagement.Standard.Standard;
 
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.UUID;
 
 public class ManagementSystem {
@@ -11,7 +13,7 @@ public class ManagementSystem {
     private String description;
     private String certificate;
     private ArrayList<Standard> standards = new ArrayList<>();
-    private ArrayList<OtherRequirement> otherRequirements = new ArrayList<>();
+    private ArrayList<Requirement> requirements = new ArrayList<>();
 
     public void setIdManagementSystem(String idManagementSystem) {
         this.idManagementSystem = idManagementSystem;
@@ -25,13 +27,13 @@ public class ManagementSystem {
         this.certificate = "unknown";
     }
 
-    public ManagementSystem(String idManagementSystem, String idOrg, String description, String certificate, ArrayList<Standard> standards, ArrayList<OtherRequirement> otherRequirements) {
+    public ManagementSystem(String idManagementSystem, String idOrg, String description, String certificate, ArrayList<Standard> standards, ArrayList<Requirement> requirements) {
         this.idManagementSystem = idManagementSystem;
         this.idOrg = idOrg;
         this.description = description;
         this.certificate = certificate;
         this.standards = standards;
-        this.otherRequirements = otherRequirements;
+        this.requirements = requirements;
     }
 
     // Getters and Setters
@@ -71,12 +73,12 @@ public class ManagementSystem {
         this.standards = standards;
     }
 
-    public ArrayList<OtherRequirement> getOtherRequirements() {
-        return otherRequirements;
+    public ArrayList<Requirement> getRequirements() {
+        return requirements;
     }
 
-    public void setOtherRequirements(ArrayList<OtherRequirement> otherRequirements) {
-        this.otherRequirements = otherRequirements;
+    public void setRequirements(ArrayList<Requirement> requirements) {
+        this.requirements = requirements;
     }
 
     // Method to update the ManagementSystem object
@@ -87,6 +89,102 @@ public class ManagementSystem {
             this.setCertificate(updatedManagementSystem.getCertificate());
         }
     }
+    // Method to get a Standard by ID
+    @JsonIgnore
+    public Standard getStandardById(String idStandard) {
+        Optional<Standard> standard = standards.stream()
+                .filter(std -> std.getIdStandard().equals(idStandard))
+                .findFirst();
+        return standard.orElse(null);
+    }
+
+    // Method to create a new Standard
+    public void createStandard(Standard newStandard) {
+        if (newStandard != null) {
+            standards.add(newStandard);
+            System.out.println("New Standard added successfully.");
+        }
+    }
+
+    // Method to edit a Standard by ID
+    public Boolean editStandard(String idStandard, Standard updatedStandard) {
+        Optional<Standard> standardOptional = standards.stream()
+                .filter(std -> std.getIdStandard().equals(idStandard))
+                .findFirst();
+
+        if (standardOptional.isPresent()) {
+            standardOptional.get().editStandard(updatedStandard);
+            System.out.println("The standard is updated.");
+            return true;
+        } else {
+            System.out.println("Standard not found.");
+            return false;
+        }
+    }
+
+    // Method to delete a Standard by ID
+    public Boolean deleteStandard(String idStandard) {
+        Optional<Standard> standardOptional = standards.stream()
+                .filter(std -> std.getIdStandard().equals(idStandard))
+                .findFirst();
+
+        if (standardOptional.isPresent()) {
+            standards.remove(standardOptional.get());
+            System.out.println("Standard deleted successfully.");
+            return true;
+        } else {
+            System.out.println("Standard not found.");
+            return false;
+        }
+    }
+
+    // Method to create a new Requirement
+    @JsonIgnore
+    public Standard getRequirementById(String idStandard) {
+        Optional<Standard> standard = standards.stream()
+                .filter(std -> std.getIdStandard().equals(idStandard))
+                .findFirst();
+        return standard.orElse(null);
+    }
+    public void createRequirement(Requirement newRequirement) {
+        if (newRequirement != null) {
+            requirements.add(newRequirement);
+            System.out.println("New Requirement added successfully.");
+        }
+    }
+
+    // Method to edit a Requirement by ID
+    public Boolean editRequirement(String idOtherRequirement, Requirement updatedRequirement) {
+        Optional<Requirement> otherRequirementOptional = requirements.stream()
+                .filter(req -> req.getIdOtherRequirement().equals(idOtherRequirement))
+                .findFirst();
+
+        if (otherRequirementOptional.isPresent()) {
+            otherRequirementOptional.get().editRequirement(updatedRequirement);
+            System.out.println("The Requirement is updated.");
+            return true;
+        } else {
+            System.out.println("Requirement not found.");
+            return false;
+        }
+    }
+
+    // Method to delete a Requirement by ID
+    public Boolean deleteRequirement(String idOtherRequirement) {
+        Optional<Requirement> otherRequirementOptional = requirements.stream()
+                .filter(req -> req.getIdOtherRequirement().equals(idOtherRequirement))
+                .findFirst();
+
+        if (otherRequirementOptional.isPresent()) {
+            requirements.remove(otherRequirementOptional.get());
+            System.out.println("Requirement deleted successfully.");
+            return true;
+        } else {
+            System.out.println("Requirement not found.");
+            return false;
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -96,7 +194,7 @@ public class ManagementSystem {
                 ", description='" + description + '\'' +
                 ", certificate='" + certificate + '\'' +
                 ", standards=" + standards +
-                ", otherRequirements=" + otherRequirements +
+                ", otherRequirements=" + requirements +
                 '}';
     }
 }

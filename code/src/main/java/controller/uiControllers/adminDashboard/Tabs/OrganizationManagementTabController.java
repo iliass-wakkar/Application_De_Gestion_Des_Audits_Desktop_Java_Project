@@ -1,4 +1,4 @@
-package controller.uiControllers.adminDashboard.Taps;
+package controller.uiControllers.adminDashboard.Tabs;
 
 import model.Organization.Organization;
 import utils.ControllersGetter;
@@ -12,7 +12,7 @@ import view.pages.AdminDashboard.OrganizationManagementTab;
 
 import javax.swing.*;
 
-import static utils.ControllersGetter.organizationController;
+import static utils.ControllersGetter.organizationsController;
 
 
 public class OrganizationManagementTabController  {
@@ -54,7 +54,7 @@ public class OrganizationManagementTabController  {
             if (formDialog.validateForm()) {
 
                 Organization organization = saveUtil.saveFormData(formDialog.getFormData()); // Save form data
-                organizationController.editOrganization(formDialog.getId(),organization); // Create account using AccountsController
+                organizationsController.editOrganization(formDialog.getId(),organization); // Create account using AccountsController
                 view.refreshTable();
                 // Show success message
                 JOptionPane.showMessageDialog(
@@ -93,7 +93,7 @@ public class OrganizationManagementTabController  {
             if (formDialog.validateForm()) {
                 Organization organization = saveUtil.saveFormData(formDialog.getFormData());
 
-                ControllersGetter.organizationController.createOrganization(organization);
+                ControllersGetter.organizationsController.createOrganization(organization);
                 // Show success message
                 JOptionPane.showMessageDialog(
                         formDialog,
@@ -164,7 +164,7 @@ public class OrganizationManagementTabController  {
 
             // Check the user's response
             if (response == JOptionPane.YES_OPTION) {
-                organizationController.deleteOrganization(ButtonEditorView.getId());
+                organizationsController.deleteOrganization(ButtonEditorView.getId());
                 view.refreshTable();
                 System.out.println("Deleting Organization ");
             } else {

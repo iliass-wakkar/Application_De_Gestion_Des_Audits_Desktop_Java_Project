@@ -1,7 +1,7 @@
 package view.pages.AdminDashboard;
 
-import controller.uiControllers.adminDashboard.Tabs.SiteTabController;
-import model.Organization.Site;
+import controller.uiControllers.adminDashboard.Tabs.ResponsibleTabController;
+import model.Responsible;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
 import view.components.ButtonRenderer;
@@ -12,20 +12,18 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.List;
 
-public class SiteTab extends JPanel {
+public class ResponsibleTab extends JPanel {
 
-    private JButton createButton = new JButton("Create New Site");
+    private JButton createButton = new JButton("Create New Responsible");
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
-    private List<Site> data;
-    private SiteTabController siteTabController;
-    private static String[] columnNamesCreateEdit = {"idOrg", "name", "address", "description"};
+    private List<Responsible> data = ControllersGetter.responsiblesController.getAllResponsibles();
+    private ResponsibleTabController responsibleTabController;
+    private static String[] columnNamesCreateEdit = {"firstName", "lastName", "phoneNumber","email", "domain"};
     DefaultTableModel model;
-    JTable siteTable;
+    JTable responsibleTable;
 
-    public SiteTab() {
-        this.data = ControllersGetter.organizationsController.getAllSites(); // Get all sites
-
-        siteTabController = new SiteTabController(this);
+    public ResponsibleTab() {
+        responsibleTabController = new ResponsibleTabController(this);
         setUpUi();
     }
 
@@ -70,7 +68,7 @@ public class SiteTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"idSite", "idOrg", "name", "address", "description", "Actions"};
+        String[] columnNames = {"idResponsible", "firstName", "lastName", "phoneNumber", "email","domain", "Actions"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -78,76 +76,77 @@ public class SiteTab extends JPanel {
         model = new DefaultTableModel(tableData, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only the "Actions" column (column index 5) is editable {accept event}
-                return column == 5;
+                // Only the "Actions" column (column index 6) is editable {accept event}
+                return column == 6;
             }
         };
 
-        siteTable = new JTable(model);
-        siteTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        siteTable.setRowHeight(30);
-        siteTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        siteTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
-        siteTable.getTableHeader().setForeground(Color.WHITE);
-        siteTable.setFillsViewportHeight(true);
+        responsibleTable = new JTable(model);
+        responsibleTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        responsibleTable.setRowHeight(30);
+        responsibleTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
+        responsibleTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        responsibleTable.getTableHeader().setForeground(Color.WHITE);
+        responsibleTable.setFillsViewportHeight(true);
 
         // Add action buttons (Edit and Delete) to each row
-        TableColumn actionsColumn = siteTable.getColumnModel().getColumn(5);
+        TableColumn actionsColumn = responsibleTable.getColumnModel().getColumn(6);
         actionsColumn.setCellRenderer(buttonRenderer);
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), siteTable, siteTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), responsibleTable, responsibleTabController.getIButtonEditorEventsHandler()));
 
         // Add the table to a scroll pane
-        JScrollPane scrollPane = new JScrollPane(siteTable);
+        JScrollPane scrollPane = new JScrollPane(responsibleTable);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         this.add(scrollPane, BorderLayout.CENTER);
     }
 
     public void refreshTable() {
         // Fetch the latest data
-        data = ControllersGetter.organizationsController.getAllSites();
+        data = ControllersGetter.responsiblesController.getAllResponsibles();
         System.out.println(data);
         // Clear the existing table data
         model.setRowCount(0);
 
         // Add the new data to the table
-        for (Site site : data) {
+        for (Responsible responsible : data) {
             Object[] rowData = {
-                    site.getIdSite(),
-                    site.getIdOrg(), // Include the organization ID
-                    site.getName(),
-                    site.getAddress(),
-                    site.getDescription(),
+                    responsible.getIdResponsible(),
+                    responsible.getFirstName(),
+                    responsible.getLastName(),
+                    responsible.getEmail(),
+                    responsible.getPhoneNumber(),
+                    responsible.getDomain(),
                     "Actions" // Placeholder for the action buttons
             };
             model.addRow(rowData);
         }
 
-        TableColumn actionsColumn = siteTable.getColumnModel().getColumn(5);
-        siteTable.removeColumn(actionsColumn);
+        TableColumn actionsColumn = responsibleTable.getColumnModel().getColumn(6);
+        responsibleTable.removeColumn(actionsColumn);
 
         // Recreate the "Actions" column with a new ButtonRenderer and ButtonEditor
-        actionsColumn = new TableColumn(5);
+        actionsColumn = new TableColumn(6);
         actionsColumn.setHeaderValue("Actions");
         actionsColumn.setCellRenderer(new ButtonRenderer());
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), siteTable, siteTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), responsibleTable, responsibleTabController.getIButtonEditorEventsHandler()));
 
         // Re-add the "Actions" column to the table
-        siteTable.addColumn(actionsColumn);
+        responsibleTable.addColumn(actionsColumn);
 
         // Repaint the table to reflect the changes
-        siteTable.repaint();
+        responsibleTable.repaint();
     }
 
     public static void main(String[] args) {
-        // Create a JFrame to display the SiteTab
-        JFrame frame = new JFrame("Sites Management");
+        // Create a JFrame to display the ResponsibleTab
+        JFrame frame = new JFrame("Responsibles Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1024, 768);
         frame.setLocationRelativeTo(null); // Center the frame
 
-        // Add the SiteTab panel to the frame
-        SiteTab siteTab = new SiteTab();
-        frame.add(siteTab);
+        // Add the ResponsibleTab panel to the frame
+        ResponsibleTab responsibleTab = new ResponsibleTab();
+        frame.add(responsibleTab);
 
         // Display the frame
         frame.setVisible(true);

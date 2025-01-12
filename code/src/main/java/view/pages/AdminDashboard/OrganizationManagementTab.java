@@ -1,6 +1,6 @@
 package view.pages.AdminDashboard;
 
-import controller.uiControllers.adminDashboard.Taps.OrganizationManagementTabController;
+import controller.uiControllers.adminDashboard.Tabs.OrganizationManagementTabController;
 import model.Organization.Organization;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
@@ -16,7 +16,7 @@ public class OrganizationManagementTab extends JPanel {
 
     private JButton createButton =new JButton("Create New Organization");
     private ButtonRenderer buttonRenderer= new ButtonRenderer();
-    private List<Organization> data = ControllersGetter.organizationController.getOrganizations();
+    private List<Organization> data = ControllersGetter.organizationsController.getOrganizations();
     private OrganizationManagementTabController organizationManagementTabController;
     private static String[] columnNamesCreateEdit = { "name", "description"};
     DefaultTableModel model;
@@ -106,7 +106,7 @@ public class OrganizationManagementTab extends JPanel {
 
     public void refreshTable() {
         // Fetch the latest data
-        data = ControllersGetter.organizationController.getOrganizations();
+        data = ControllersGetter.organizationsController.getOrganizations();
         System.out.println(data);
         // Clear the existing table data
         model.setRowCount(0);

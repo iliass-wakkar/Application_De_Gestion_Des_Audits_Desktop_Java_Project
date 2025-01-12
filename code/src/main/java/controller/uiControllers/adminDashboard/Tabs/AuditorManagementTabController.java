@@ -1,4 +1,4 @@
-package controller.uiControllers.adminDashboard.Taps;
+package controller.uiControllers.adminDashboard.Tabs;
 
 import model.Accounts.Account;
 import utils.ControllersGetter;

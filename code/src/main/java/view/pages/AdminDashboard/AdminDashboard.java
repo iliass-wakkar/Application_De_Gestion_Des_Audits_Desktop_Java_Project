@@ -15,6 +15,7 @@ public class AdminDashboard extends JPanel {
     private AuditorManagementTab auditorManagementTab = new AuditorManagementTab();
     private OrganizationManagementTab organizationManagementTab = new OrganizationManagementTab();
 private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
+private  ResponsibleTab responsibleTab = new ResponsibleTab();
 private  SiteTab siteTab = new SiteTab();
     public AdminDashboard() {
         setUpUi();
@@ -69,11 +70,15 @@ private  SiteTab siteTab = new SiteTab();
 
 
         // Add tabs
+        tabbedPane.addTab("Auditor Management", auditorManagementTab);
+        tabbedPane.addTab("Responsible Management", responsibleTab);
         tabbedPane.addTab("Organization Management", organizationManagementTab);
         tabbedPane.addTab("Site Management", siteTab);
-        tabbedPane.addTab("Auditor Management", auditorManagementTab);
-        tabbedPane.addTab("Clause Management", createTabPanel("Clause Management"));
         tabbedPane.addTab("Requirements Management", createTabPanel("Requirements Management"));
+        tabbedPane.addTab("Standards Management", createTabPanel("Standards Management"));
+        tabbedPane.addTab("Clause Management", createTabPanel("Clause Management"));
+
+
 
         tabbedPane.addTab("System Management",managementSystemManagementTab);
 

@@ -1,6 +1,6 @@
 package view.pages.AdminDashboard;
 
-import controller.uiControllers.adminDashboard.Taps.AuditorManagementTabController;
+import controller.uiControllers.adminDashboard.Tabs.AuditorManagementTabController;
 import model.Accounts.Account;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;

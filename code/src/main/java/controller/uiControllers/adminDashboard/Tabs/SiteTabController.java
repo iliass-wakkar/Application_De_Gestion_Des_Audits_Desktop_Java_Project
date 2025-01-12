@@ -1,51 +1,49 @@
-package controller.uiControllers.adminDashboard.Taps;
+package controller.uiControllers.adminDashboard.Tabs;
 
-import model.SystemManagement.ManagementSystem;
+import model.Organization.Site;
 import utils.ControllersGetter;
 import utils.SaveUtil;
 import utils.interfaces.IButtonEditorEventsHandler;
 import utils.interfaces.IFormDialogEventHandler;
-import utils.interfaces.objectConverter.ManagementSystemConverter;
+import utils.interfaces.objectConverter.SiteConverter;
 import view.pages.AdminDashboard.ButtonEditor;
 import view.pages.AdminDashboard.FormDialog;
-import view.pages.AdminDashboard.ManagementSystemManagementTab;
+import view.pages.AdminDashboard.SiteTab;
 
 import javax.swing.*;
 
-public class ManagementSystemManagementTabController {
-    private ManagementSystemManagementTab view;
-    private FormDialog createManagementSystemForm;
-    private FormDialog editManagementSystemForm;
-    private String[] columnNames = ManagementSystemManagementTab.getColumnNamesCreateEdit();
-    private SaveUtil<ManagementSystem> saveUtil = new SaveUtil(new ManagementSystemConverter());
+public class SiteTabController {
+    private SiteTab view;
+    private FormDialog createSiteForm;
+    private FormDialog editSiteForm;
+    private String[] columnNames = SiteTab.getColumnNamesCreateEdit();
+    private SaveUtil<Site> saveUtil = new SaveUtil(new SiteConverter());
 
-    public ManagementSystemManagementTabController(ManagementSystemManagementTab view) {
+    public SiteTabController(SiteTab view) {
         this.view = view;
         initController();
     }
 
     private void initController() {
-        addCreateManagementSystemButtonEvent();
+        addCreateSiteButtonEvent();
     }
 
-    private void addCreateManagementSystemButtonEvent() {
+    private void addCreateSiteButtonEvent() {
         view.getCreateButton().addActionListener(ActionEvent -> {
-            createManagementSystemForm = new FormDialog("Create Management System", columnNames, saveCreateManagementSystemIFormEventHandler);
+            createSiteForm = new FormDialog("Create Site", columnNames, saveCreateSiteIFormEventHandler);
         });
     }
 
-    private IFormDialogEventHandler saveEditManagementSystemIFormEventHandler = (formDialog) -> {
+    private IFormDialogEventHandler saveEditSiteIFormEventHandler = (formDialog) -> {
         try {
             if (formDialog.validateForm()) {
-                ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = managementSystem.getIdOrg(); // Get the organization ID
-                System.out.println(idOrg+"\t"+formDialog.getId()+"here we go");
-
-                ControllersGetter.organizationController.editManagementSystemInOrganization(idOrg, formDialog.getId(), managementSystem);
+                Site site = saveUtil.saveFormData(formDialog.getFormData());
+                String idOrg = site.getIdOrg(); // Get the organization ID
+                ControllersGetter.organizationsController.editSiteInOrganization(idOrg, formDialog.getId(), site);
                 view.refreshTable();
                 JOptionPane.showMessageDialog(
-                        editManagementSystemForm,
-                        "Management System updated successfully!",
+                        editSiteForm,
+                        "Site updated successfully!",
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE
                 );
@@ -61,7 +59,7 @@ public class ManagementSystemManagementTabController {
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(
-                    editManagementSystemForm,
+                    editSiteForm,
                     "An error occurred: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE
@@ -69,16 +67,15 @@ public class ManagementSystemManagementTabController {
         }
     };
 
-    private IFormDialogEventHandler saveCreateManagementSystemIFormEventHandler = (formDialog) -> {
-        System.out.println("ManagementSystemManagementTabController saveCreateManagementSystemIFormEventHandler");
+    private IFormDialogEventHandler saveCreateSiteIFormEventHandler = (formDialog) -> {
         try {
             if (formDialog.validateForm()) {
-                ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
-                String idOrg = managementSystem.getIdOrg(); // Get the organization ID
-                ControllersGetter.organizationController.addManagementSystemToOrganization(idOrg, managementSystem);
+                Site site = saveUtil.saveFormData(formDialog.getFormData());
+                String idOrg = site.getIdOrg(); // Get the organization ID
+                ControllersGetter.organizationsController.addSiteToOrganization(idOrg, site);
                 JOptionPane.showMessageDialog(
                         formDialog,
-                        "New Management System added successfully!",
+                        "New Site added successfully!",
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE
                 );
@@ -106,28 +103,29 @@ public class ManagementSystemManagementTabController {
     private IButtonEditorEventsHandler iButtonEditorEventsHandler = new IButtonEditorEventsHandler() {
         @Override
         public void editObjectEventHandler(ButtonEditor view) {
-            String[] columnNames = ManagementSystemManagementTab.getColumnNamesCreateEdit();
-            editManagementSystemForm = new FormDialog("Edit", columnNames, view.getRowData(), saveEditManagementSystemIFormEventHandler, view.getId());
+            String[] columnNames = SiteTab.getColumnNamesCreateEdit();
+            editSiteForm = new FormDialog("Edit", columnNames, view.getRowData(), saveEditSiteIFormEventHandler, view.getId());
         }
+
         @Override
         public void deleteObjectEventHandler(ButtonEditor buttonEditorView) {
             try {
                 int response = JOptionPane.showConfirmDialog(
                         null,
-                        "Are you sure you want to delete this Management System?",
+                        "Are you sure you want to delete this Site?",
                         "Confirm Delete",
                         JOptionPane.YES_NO_OPTION
                 );
 
                 if (response == JOptionPane.YES_OPTION) {
                     String idOrg = buttonEditorView.getRowData()[0].toString(); // Get the organization ID
-                    ControllersGetter.organizationController.deleteManagementSystemFromOrganization(idOrg, buttonEditorView.getId());
+                    ControllersGetter.organizationsController.deleteSiteFromOrganization(idOrg, buttonEditorView.getId());
                     view.refreshTable();
-                    System.out.println("Deleting Management System");
+                    System.out.println("Deleting Site");
                 } else {
                     System.out.println("Deleting operation canceled.");
                 }
-            }catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(
                         null,

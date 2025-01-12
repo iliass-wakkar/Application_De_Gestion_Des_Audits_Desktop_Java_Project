@@ -9,7 +9,7 @@ public class Responsible {
     private String email;
     private String phoneNumber;
     private String domain;
-    private String accountType;
+
 
     // Constructor
     public Responsible() {
@@ -19,18 +19,16 @@ public class Responsible {
         this.email = "unknown";
         this.phoneNumber = "unknown";
         this.domain = "unknown";
-        this.accountType = "unknown";
 
     }
     public Responsible(String firstName, String lastName, String email,
-                       String phoneNumber, String domain, String accountType) {
+                       String phoneNumber, String domain) {
         this.idResponsible =UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.domain = domain;
-        this.accountType = accountType;
     }
 
     public String getIdResponsible() {
@@ -38,14 +36,13 @@ public class Responsible {
     }
 
     public Responsible(String idAccount, String firstName, String lastName, String email,
-                       String phoneNumber, String domain, String accountType) {
+                       String phoneNumber, String domain) {
         this.idResponsible = idAccount;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.domain = domain;
-        this.accountType = accountType;
     }
 
 
@@ -89,13 +86,7 @@ public class Responsible {
         this.domain = domain;
     }
 
-    public String getAccountType() {
-        return accountType;
-    }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
-    }
 
 
 
@@ -107,7 +98,7 @@ public class Responsible {
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", domain='" + domain + '\'' +
-                ", accountType='" + accountType + '\'' +
+
                 '}';
     }
 
@@ -119,8 +110,7 @@ public class Responsible {
                         ", lastName='" + lastName + '\'' +
                         ", email='" + email + '\'' +
                         ", phoneNumber='" + phoneNumber + '\'' +
-                        ", domain='" + domain + '\'' +
-                        ", accountType='" + accountType + '\''
+                        ", domain='" + domain + '\''
                 ;
     }
 }

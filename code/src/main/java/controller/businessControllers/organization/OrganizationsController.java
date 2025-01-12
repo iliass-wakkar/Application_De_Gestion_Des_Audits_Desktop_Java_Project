@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import model.Organization.Organization;
 import model.Organization.Site;
 import model.SystemManagement.ManagementSystem;
+import model.SystemManagement.Requirement;
+import model.SystemManagement.Standard.Standard;
 import utils.JsonFileHandler;
 
 import java.io.IOException;
@@ -11,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class OrganizationController {
+public class OrganizationsController {
     private static final String ORGANIZATION_FILE_PATH = JsonFileHandler.ORGANIZATION_FILE_PATH;
     private static ArrayList<Organization> organizations = new ArrayList<>();
 
 
-    public OrganizationController() {
+    public OrganizationsController() {
         loadOrganizations();
         System.out.println("Organizations loaded successfully: " + organizations);
     }
@@ -115,6 +117,83 @@ public class OrganizationController {
         }
     }
 
+
+    // Method to get a ManagementSystem by ID
+    private ManagementSystem getSystemManagementById(String idOrg, String idManagementSystem) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+
+        if (organization != null) {
+            ManagementSystem managementSystem = organization.findSystemById(idManagementSystem);
+            if (managementSystem != null) {
+                return managementSystem;
+            } else {
+                throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+            }
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Method to get a Standard by ID
+    public Standard getSystemManagementStandardById(String idOrg, String idManagementSystem, String idStandard) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            Standard standard = managementSystem.getStandardById(idStandard);
+            if (standard != null) {
+                return standard;
+            } else {
+                throw new Exception("Standard with ID " + idStandard + " not found.");
+            }
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+    // Method to create a new Standard
+    public void createSystemManagementStandard(String idOrg, String idManagementSystem, Standard newStandard) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            managementSystem.createStandard(newStandard);
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+    // Method to edit a Standard by ID
+    public void editSystemManagementStandardById(String idOrg, String idManagementSystem, String idStandard, Standard updatedStandard) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            boolean isUpdated = managementSystem.editStandard(idStandard, updatedStandard);
+            if (!isUpdated) {
+                throw new Exception("Standard with ID " + idStandard + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+    // Method to delete a Standard by ID
+    public void deleteSystemManagementStandardById(String idOrg, String idManagementSystem, String idStandard) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            boolean isDeleted = managementSystem.deleteStandard(idStandard);
+            if (!isDeleted) {
+                throw new Exception("Standard with ID " + idStandard + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+
+
     // Edit a management system in an organization
     public boolean editManagementSystemInOrganization(String idOrg, String idManagementSystem, ManagementSystem updatedSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
@@ -150,6 +229,48 @@ public class OrganizationController {
     }
 
 
+    // Method to create a new Requirement
+    public void createSystemManagementRequirement(String idOrg, String idManagementSystem, Requirement newRequirement) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            managementSystem.createRequirement(newRequirement);
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+    // Method to edit a Requirement by ID
+    public void editSystemManagementRequirementById(String idOrg, String idManagementSystem, String idRequirement, Requirement updatedRequirement) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            boolean isUpdated = managementSystem.editRequirement(idRequirement, updatedRequirement);
+            if (!isUpdated) {
+                throw new Exception("Requirement with ID " + idRequirement + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
+    // Method to delete a Requirement by ID
+    public void deleteSystemManagementRequirementById(String idOrg, String idManagementSystem, String idRequirement) throws Exception {
+        ManagementSystem managementSystem = getSystemManagementById(idOrg, idManagementSystem);
+
+        if (managementSystem != null) {
+            boolean isDeleted = managementSystem.deleteRequirement(idRequirement);
+            if (!isDeleted) {
+                throw new Exception("Requirement with ID " + idRequirement + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Management System with ID " + idManagementSystem + " not found.");
+        }
+    }
+
 
     // Get all management systems across all organizations
     public List<ManagementSystem> getAllManagementSystems() {
@@ -168,6 +289,27 @@ public class OrganizationController {
 
 
         return allSites;
+    }
+    // Get all requirements across all management systems in all organizations
+    public List<Requirement> getAllRequirements() {
+        List<Requirement> allRequirements = new ArrayList<>();
+        for (Organization organization : organizations) {
+            for (ManagementSystem managementSystem : organization.getManagementSystems()) {
+                allRequirements.addAll(managementSystem.getRequirements());
+            }
+        }
+        return allRequirements;
+    }
+
+    // Get all standards across all management systems in all organizations
+    public List<Standard> getAllStandards() {
+        List<Standard> allStandards = new ArrayList<>();
+        for (Organization organization : organizations) {
+            for (ManagementSystem managementSystem : organization.getManagementSystems()) {
+                allStandards.addAll(managementSystem.getStandards());
+            }
+        }
+        return allStandards;
     }
 
     // Add a site to an organization
