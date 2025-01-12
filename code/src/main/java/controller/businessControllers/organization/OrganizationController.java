@@ -1,8 +1,8 @@
-package controller;
+package controller.businessControllers.organization;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import model.Accounts.Account;
 import model.Organization.Organization;
+import model.Organization.Site;
 import model.SystemManagement.ManagementSystem;
 import utils.JsonFileHandler;
 
@@ -103,41 +103,37 @@ public class OrganizationController {
     }
 
     // Add a management system to an organization
-    public boolean addManagementSystemToOrganization(String idOrg, ManagementSystem managementSystem) {
+    public void addManagementSystemToOrganization(String idOrg, ManagementSystem managementSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
-            managementSystem.setIdOrg(idOrg); // Ensure the system is linked to the organization
             organization.addSystem(managementSystem);
             saveOrganizations();
             System.out.println("Management System added to organization successfully.");
-            return true;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            // Throw an exception if the organization is not found
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
 
     // Edit a management system in an organization
-    public boolean editManagementSystemInOrganization(String idOrg, String idManagementSystem, ManagementSystem updatedSystem) {
+    public boolean editManagementSystemInOrganization(String idOrg, String idManagementSystem, ManagementSystem updatedSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
-            updatedSystem.setIdOrg(idOrg); // Ensure the system is linked to the organization
-            boolean result = organization.editSystem(updatedSystem);
+            boolean result = organization.editSystem(idManagementSystem, updatedSystem);
             if (result) {
                 saveOrganizations();
                 System.out.println("Management System updated successfully.");
             } else {
-                System.out.println("Management System not found.");
+                throw new Exception("Management System not found." + idManagementSystem + " not found.");
             }
             return result;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
 
     // Delete a management system from an organization
-    public boolean deleteManagementSystemFromOrganization(String idOrg, String idManagementSystem) {
+    public boolean deleteManagementSystemFromOrganization(String idOrg, String idManagementSystem) throws Exception {
         Organization organization = getOrganizationById(idOrg);
         if (organization != null) {
             boolean result = organization.deleteSystem(idManagementSystem);
@@ -145,14 +141,15 @@ public class OrganizationController {
                 saveOrganizations();
                 System.out.println("Management System deleted successfully.");
             } else {
-                System.out.println("Management System not found.");
+                throw new Exception("Management System not found." + idManagementSystem + " not found.");
             }
             return result;
         } else {
-            System.out.println("Organization not found.");
-            return false;
+            throw new Exception("Organization with ID " + idOrg + " not found.");
         }
     }
+
+
 
     // Get all management systems across all organizations
     public List<ManagementSystem> getAllManagementSystems() {
@@ -162,4 +159,75 @@ public class OrganizationController {
         }
         return allManagementSystems;
     }
+    // Get all sites across all organizations
+    public List<Site> getAllSites() {
+        List<Site> allSites = new ArrayList<>();
+        for (Organization organization : organizations) {
+            allSites.addAll(organization.getSites());
+        }
+
+
+        return allSites;
+    }
+
+    // Add a site to an organization
+    public void addSiteToOrganization(String idOrg, Site site) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+        if (organization != null) {
+            organization.addSite(site);
+            saveOrganizations();
+            System.out.println("Site added to organization successfully.");
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Edit a site in an organization
+    public boolean editSiteInOrganization(String idOrg, String idSite, Site updatedSite) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+        if (organization != null) {
+            boolean result = organization.editSite(idSite, updatedSite);
+            if (result) {
+                saveOrganizations();
+                System.out.println("Site updated successfully.");
+            } else {
+                throw new Exception("Site not found. ID: " + idSite);
+            }
+            return result;
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Create a site in an organization
+    public void createSiteInOrganization(String idOrg, Site site) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+        if (organization != null) {
+            organization.addSite(site);
+            saveOrganizations();
+            System.out.println("Site created successfully.");
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Delete a site from an organization
+    public boolean deleteSiteFromOrganization(String idOrg, String idSite) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+        if (organization != null) {
+            boolean result = organization.deleteSite(idSite);
+            if (result) {
+                saveOrganizations();
+                System.out.println("Site deleted successfully.");
+            } else {
+                throw new Exception("Site not found. ID: " + idSite);
+            }
+            return result;
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+
+
 }

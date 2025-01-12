@@ -1,6 +1,6 @@
-package view.AdminDashboard;
+package view.pages.AdminDashboard;
 
-import controller.ButtonEditorController;
+import controller.uiControllers.ButtonEditorController;
 import utils.interfaces.IButtonEditorEventsHandler;
 
 import javax.swing.*;

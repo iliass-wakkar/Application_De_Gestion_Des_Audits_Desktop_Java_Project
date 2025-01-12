@@ -1,4 +1,4 @@
-package controller;
+package controller.businessControllers.account;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import model.Accounts.Account;

@@ -1,10 +1,10 @@
-package view.AdminDashboard;
+package view.pages.AdminDashboard;
 
-import controller.ManagementSystemManagementTabController;
-import model.SystemManagement.ManagementSystem;
+import controller.uiControllers.adminDashboard.Taps.SiteTabController;
+import model.Organization.Site;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
-import view.ButtonRenderer;
+import view.components.ButtonRenderer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,19 +12,20 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.List;
 
-public class ManagementSystemManagementTab extends JPanel {
+public class SiteTab extends JPanel {
 
-    private JButton createButton = new JButton("Create New Management System");
+    private JButton createButton = new JButton("Create New Site");
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
-    private List<ManagementSystem> data;
-    private ManagementSystemManagementTabController managementSystemManagementTabController;
-    private static String[] columnNamesCreateEdit = { "description", "certificate" };
+    private List<Site> data;
+    private SiteTabController siteTabController;
+    private static String[] columnNamesCreateEdit = {"idOrg", "name", "address", "description"};
     DefaultTableModel model;
-    JTable managementSystemTable;
+    JTable siteTable;
 
-    public ManagementSystemManagementTab() {
-        this.data = ControllersGetter.organizationController.getAllManagementSystems(); // Get all management systems
-        managementSystemManagementTabController = new ManagementSystemManagementTabController(this);
+    public SiteTab() {
+        this.data = ControllersGetter.organizationController.getAllSites(); // Get all sites
+
+        siteTabController = new SiteTabController(this);
         setUpUi();
     }
 
@@ -69,7 +70,7 @@ public class ManagementSystemManagementTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = { "idManagementSystem", "idOrg", "description", "certificate", "Actions" };
+        String[] columnNames = {"idSite", "idOrg", "name", "address", "description", "Actions"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -77,75 +78,76 @@ public class ManagementSystemManagementTab extends JPanel {
         model = new DefaultTableModel(tableData, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only the "Actions" column (column index 4) is editable {accept event}
-                return column == 4;
+                // Only the "Actions" column (column index 5) is editable {accept event}
+                return column == 5;
             }
         };
 
-        managementSystemTable = new JTable(model);
-        managementSystemTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        managementSystemTable.setRowHeight(30);
-        managementSystemTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        managementSystemTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
-        managementSystemTable.getTableHeader().setForeground(Color.WHITE);
-        managementSystemTable.setFillsViewportHeight(true);
+        siteTable = new JTable(model);
+        siteTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        siteTable.setRowHeight(30);
+        siteTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
+        siteTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        siteTable.getTableHeader().setForeground(Color.WHITE);
+        siteTable.setFillsViewportHeight(true);
 
         // Add action buttons (Edit and Delete) to each row
-        TableColumn actionsColumn = managementSystemTable.getColumnModel().getColumn(4);
+        TableColumn actionsColumn = siteTable.getColumnModel().getColumn(5);
         actionsColumn.setCellRenderer(buttonRenderer);
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), managementSystemTable, managementSystemManagementTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), siteTable, siteTabController.getIButtonEditorEventsHandler()));
 
         // Add the table to a scroll pane
-        JScrollPane scrollPane = new JScrollPane(managementSystemTable);
+        JScrollPane scrollPane = new JScrollPane(siteTable);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         this.add(scrollPane, BorderLayout.CENTER);
     }
 
     public void refreshTable() {
         // Fetch the latest data
-        data = ControllersGetter.organizationController.getAllManagementSystems();
+        data = ControllersGetter.organizationController.getAllSites();
         System.out.println(data);
         // Clear the existing table data
         model.setRowCount(0);
 
         // Add the new data to the table
-        for (ManagementSystem managementSystem : data) {
+        for (Site site : data) {
             Object[] rowData = {
-                    managementSystem.getIdManagementSystem(),
-                    managementSystem.getIdOrg(), // Include the organization ID
-                    managementSystem.getDescription(),
-                    managementSystem.getCertificate(),
+                    site.getIdSite(),
+                    site.getIdOrg(), // Include the organization ID
+                    site.getName(),
+                    site.getAddress(),
+                    site.getDescription(),
                     "Actions" // Placeholder for the action buttons
             };
             model.addRow(rowData);
         }
 
-        TableColumn actionsColumn = managementSystemTable.getColumnModel().getColumn(4);
-        managementSystemTable.removeColumn(actionsColumn);
+        TableColumn actionsColumn = siteTable.getColumnModel().getColumn(5);
+        siteTable.removeColumn(actionsColumn);
 
         // Recreate the "Actions" column with a new ButtonRenderer and ButtonEditor
-        actionsColumn = new TableColumn(4);
+        actionsColumn = new TableColumn(5);
         actionsColumn.setHeaderValue("Actions");
         actionsColumn.setCellRenderer(new ButtonRenderer());
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), managementSystemTable, managementSystemManagementTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), siteTable, siteTabController.getIButtonEditorEventsHandler()));
 
         // Re-add the "Actions" column to the table
-        managementSystemTable.addColumn(actionsColumn);
+        siteTable.addColumn(actionsColumn);
 
         // Repaint the table to reflect the changes
-        managementSystemTable.repaint();
+        siteTable.repaint();
     }
 
     public static void main(String[] args) {
-        // Create a JFrame to display the ManagementSystemManagementTab
-        JFrame frame = new JFrame("Management Systems Management");
+        // Create a JFrame to display the SiteTab
+        JFrame frame = new JFrame("Sites Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1024, 768);
         frame.setLocationRelativeTo(null); // Center the frame
 
-        // Add the ManagementSystemManagementTab panel to the frame
-        ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
-        frame.add(managementSystemManagementTab);
+        // Add the SiteTab panel to the frame
+        SiteTab siteTab = new SiteTab();
+        frame.add(siteTab);
 
         // Display the frame
         frame.setVisible(true);

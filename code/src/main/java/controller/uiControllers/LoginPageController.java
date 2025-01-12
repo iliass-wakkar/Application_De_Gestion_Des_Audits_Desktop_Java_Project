@@ -1,9 +1,9 @@
-package controller;
+package controller.uiControllers;
 
+import controller.businessControllers.account.AccountSessionHandler;
 import model.Accounts.Account;
 import utils.PageSwitcher;
-import utils.TokenHandler;
-import view.LoginPage;
+import view.pages.LoginPage;
 
 
 import javax.swing.*;

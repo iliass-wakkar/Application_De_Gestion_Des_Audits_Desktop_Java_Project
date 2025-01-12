@@ -1,4 +1,4 @@
-package controller;
+package controller.businessControllers.account;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import model.Accounts.AccountToken;
@@ -7,7 +7,6 @@ import utils.JsonFileHandler;
 import utils.PageSwitcher;
 import utils.TokenHandler;
 
-import javax.naming.ldap.Control;
 import java.io.IOException;
 
 public class AccountSessionHandler {

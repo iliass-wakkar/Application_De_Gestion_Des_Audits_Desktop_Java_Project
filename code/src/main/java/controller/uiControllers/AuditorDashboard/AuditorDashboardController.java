@@ -1,6 +1,7 @@
-package controller;
+package controller.uiControllers.AuditorDashboard;
 
-import view.AuditorDashboard;
+import controller.businessControllers.account.AccountSessionHandler;
+import view.pages.auditorDashboard.AuditorDashboard;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

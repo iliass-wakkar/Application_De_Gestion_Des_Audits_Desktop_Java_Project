@@ -4,10 +4,22 @@ import java.util.UUID;
 
 public class Site {
     private String idSite;
+    private String idOrg ;
     private String address;
     private String description;
     private String name;
 
+    public void setIdSite(String idSite) {
+        this.idSite = idSite;
+    }
+
+    public String getIdOrg() {
+        return idOrg;
+    }
+
+    public void setIdOrg(String idOrg) {
+        this.idOrg = idOrg;
+    }
 
     public Site() {
         this.idSite = UUID.randomUUID().toString();
@@ -16,12 +28,18 @@ public class Site {
         this.name = "unknown";
     }
 
-    public Site(String idArrSite, String address, String description, String name, String FK_Organization) {
-        this.idSite = idArrSite;
+    public Site(String idSite, String idOrg,String address, String description, String name) {
+        this.idSite = idSite;
+        this.idOrg = idOrg;
         this.address = address;
         this.description = description;
         this.name = name;
 
+    }
+    public void editSite(Site updatedSite){
+         this.setAddress(updatedSite.getAddress());
+         this.setDescription(updatedSite.getDescription());
+         this.setName(updatedSite.getName());
     }
 
 
@@ -56,7 +74,8 @@ public class Site {
     @Override
     public String toString() {
         return "Site{" +
-                "idArrSite='" + idSite + '\'' +
+                "idSite='" + idSite + '\'' +
+                "idOrg='" + idOrg + '\'' +
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
                 ", name='" + name + '\'' +

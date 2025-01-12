@@ -1,20 +1,17 @@
-package controller;
+package controller.uiControllers.adminDashboard.Taps;
 
-import model.Accounts.Account;
 import model.Organization.Organization;
 import utils.ControllersGetter;
 import utils.SaveUtil;
 import utils.interfaces.IButtonEditorEventsHandler;
 import utils.interfaces.IFormDialogEventHandler;
 import utils.interfaces.objectConverter.OrganizationConverter;
-import view.AdminDashboard.AuditorManagementTab;
-import view.AdminDashboard.ButtonEditor;
-import view.AdminDashboard.FormDialog;
-import view.AdminDashboard.OrganizationManagementTab;
+import view.pages.AdminDashboard.ButtonEditor;
+import view.pages.AdminDashboard.FormDialog;
+import view.pages.AdminDashboard.OrganizationManagementTab;
 
 import javax.swing.*;
 
-import static utils.ControllersGetter.accountsController;
 import static utils.ControllersGetter.organizationController;
 
 

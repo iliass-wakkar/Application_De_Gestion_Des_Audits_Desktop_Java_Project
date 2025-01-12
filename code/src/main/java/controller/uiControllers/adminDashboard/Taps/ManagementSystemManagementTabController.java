@@ -1,4 +1,4 @@
-package controller;
+package controller.uiControllers.adminDashboard.Taps;
 
 import model.SystemManagement.ManagementSystem;
 import utils.ControllersGetter;
@@ -6,9 +6,9 @@ import utils.SaveUtil;
 import utils.interfaces.IButtonEditorEventsHandler;
 import utils.interfaces.IFormDialogEventHandler;
 import utils.interfaces.objectConverter.ManagementSystemConverter;
-import view.AdminDashboard.ButtonEditor;
-import view.AdminDashboard.FormDialog;
-import view.AdminDashboard.ManagementSystemManagementTab;
+import view.pages.AdminDashboard.ButtonEditor;
+import view.pages.AdminDashboard.FormDialog;
+import view.pages.AdminDashboard.ManagementSystemManagementTab;
 
 import javax.swing.*;
 
@@ -39,7 +39,9 @@ public class ManagementSystemManagementTabController {
             if (formDialog.validateForm()) {
                 ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
                 String idOrg = managementSystem.getIdOrg(); // Get the organization ID
-                ControllersGetter.organizationController.editManagementSystemInOrganization(idOrg, managementSystem.getIdManagementSystem(), managementSystem);
+                System.out.println(idOrg+"\t"+formDialog.getId()+"here we go");
+
+                ControllersGetter.organizationController.editManagementSystemInOrganization(idOrg, formDialog.getId(), managementSystem);
                 view.refreshTable();
                 JOptionPane.showMessageDialog(
                         editManagementSystemForm,
@@ -109,20 +111,30 @@ public class ManagementSystemManagementTabController {
         }
         @Override
         public void deleteObjectEventHandler(ButtonEditor buttonEditorView) {
-            int response = JOptionPane.showConfirmDialog(
-                    null,
-                    "Are you sure you want to delete this Management System?",
-                    "Confirm Delete",
-                    JOptionPane.YES_NO_OPTION
-            );
+            try {
+                int response = JOptionPane.showConfirmDialog(
+                        null,
+                        "Are you sure you want to delete this Management System?",
+                        "Confirm Delete",
+                        JOptionPane.YES_NO_OPTION
+                );
 
-            if (response == JOptionPane.YES_OPTION) {
-                String idOrg = buttonEditorView.getRowData()[1].toString(); // Get the organization ID
-                ControllersGetter.organizationController.deleteManagementSystemFromOrganization(idOrg, buttonEditorView.getId());
-                view.refreshTable();
-                System.out.println("Deleting Management System");
-            } else {
-                System.out.println("Deleting operation canceled.");
+                if (response == JOptionPane.YES_OPTION) {
+                    String idOrg = buttonEditorView.getRowData()[0].toString(); // Get the organization ID
+                    ControllersGetter.organizationController.deleteManagementSystemFromOrganization(idOrg, buttonEditorView.getId());
+                    view.refreshTable();
+                    System.out.println("Deleting Management System");
+                } else {
+                    System.out.println("Deleting operation canceled.");
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(
+                        null,
+                        "An error occurred: " + e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
             }
         }
     };

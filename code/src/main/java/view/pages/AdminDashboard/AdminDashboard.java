@@ -1,8 +1,7 @@
-package view.AdminDashboard;
+package view.pages.AdminDashboard;
 
-import controller.AdminDashboardController;
+import controller.uiControllers.adminDashboard.AdminDashboardController;
 import utils.PageSwitcher;
-import view.AdminDashboard.AdminDashboard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +15,7 @@ public class AdminDashboard extends JPanel {
     private AuditorManagementTab auditorManagementTab = new AuditorManagementTab();
     private OrganizationManagementTab organizationManagementTab = new OrganizationManagementTab();
 private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
+private  SiteTab siteTab = new SiteTab();
     public AdminDashboard() {
         setUpUi();
         adminDashboardController = new AdminDashboardController(this);
@@ -70,6 +70,7 @@ private  ManagementSystemManagementTab managementSystemManagementTab = new Manag
 
         // Add tabs
         tabbedPane.addTab("Organization Management", organizationManagementTab);
+        tabbedPane.addTab("Site Management", siteTab);
         tabbedPane.addTab("Auditor Management", auditorManagementTab);
         tabbedPane.addTab("Clause Management", createTabPanel("Clause Management"));
         tabbedPane.addTab("Requirements Management", createTabPanel("Requirements Management"));

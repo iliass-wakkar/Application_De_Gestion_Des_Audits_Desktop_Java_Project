@@ -1,10 +1,10 @@
-package view.AdminDashboard;
+package view.pages.AdminDashboard;
 
-import controller.AuditorManagementTabController;
+import controller.uiControllers.adminDashboard.Taps.AuditorManagementTabController;
 import model.Accounts.Account;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
-import view.ButtonRenderer;
+import view.components.ButtonRenderer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AuditorManagementTab extends JPanel {
 
-    private JButton createButton =new JButton("Create New Audit");
+    private JButton createButton =new JButton("Create New Auditor");
     private ButtonRenderer buttonRenderer  = new ButtonRenderer();
     private DefaultTableModel model;
     private JTable auditTable;

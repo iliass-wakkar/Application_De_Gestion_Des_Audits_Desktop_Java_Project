@@ -83,11 +83,11 @@ public class Organization {
     }
 
 
-    public boolean editSite(Site updatedSite) {
+    public boolean editSite(String idSite ,Site updatedSite) {
         for (int i = 0; i < sites.size(); i++) {
-            if (sites.get(i).getIdSite().equals(updatedSite.getIdSite())) {
+            if (sites.get(i).getIdSite().equals(idSite)) {
                 // Replace the site at the same index
-                sites.set(i, updatedSite);
+                sites.get(i).editSite(updatedSite);
                 return true;
             }
         }
@@ -123,11 +123,12 @@ public class Organization {
 
 
 
-    public boolean editSystem(ManagementSystem updatedSystem) {
+    public boolean editSystem(String idManagementSystem,ManagementSystem updatedSystem) {
         for (int i = 0; i < managementSystems.size(); i++) {
-            if (managementSystems.get(i).getIdManagementSystem().equals(updatedSystem.getIdManagementSystem())) {
+            if (managementSystems.get(i).getIdManagementSystem().equals(idManagementSystem)) {
                 // Replace the system at the same index
-                managementSystems.set(i, updatedSystem);
+                managementSystems.get(i).editManagementSystem(updatedSystem);
+
                 return true;
             }
         }

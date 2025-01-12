@@ -1,10 +1,10 @@
-package view.AdminDashboard;
+package view.pages.AdminDashboard;
 
-import controller.OrganizationManagementTabController;
+import controller.uiControllers.adminDashboard.Taps.OrganizationManagementTabController;
 import model.Organization.Organization;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
-import view.ButtonRenderer;
+import view.components.ButtonRenderer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

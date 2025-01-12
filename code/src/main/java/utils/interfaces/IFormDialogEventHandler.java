@@ -1,7 +1,7 @@
 package utils.interfaces;
 
 
-import view.AdminDashboard.FormDialog;
+import view.pages.AdminDashboard.FormDialog;
 
 import java.awt.*;
 

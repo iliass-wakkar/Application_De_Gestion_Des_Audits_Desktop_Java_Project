@@ -1,7 +1,7 @@
-package view;
+package view.pages.auditorDashboard;
 
 
-import controller.AuditorDashboardController;
+import controller.uiControllers.AuditorDashboard.AuditorDashboardController;
 
 
 import javax.swing.*;

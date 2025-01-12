@@ -1,7 +1,7 @@
-package controller;
+package controller.uiControllers;
 
 import utils.interfaces.IFormDialogEventHandler;
-import view.AdminDashboard.FormDialog;
+import view.pages.AdminDashboard.FormDialog;
 
 public class FormDialogController {
   FormDialog view;

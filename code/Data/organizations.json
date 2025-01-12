@@ -3,66 +3,23 @@
   "name" : "Green Energy Solutions",
   "description" : "A company focused on renewable energy and sustainability.",
   "sites" : [ {
-    "idSite" : "3",
-    "address" : "789 Solar Avenue, Green City, GC 54321",
-    "description" : "Primary office for solar energy projects.",
-    "name" : "Solar Energy Hub"
-  }, {
-    "idSite" : "4",
-    "address" : "101 Windmill Road, Eco Town, ET 98765",
-    "description" : "Research and development center for wind energy.",
-    "name" : "Wind Energy Lab"
-  } ],
-  "managementSystems" : [
-    {
-    "idManagementSystem" : "3",
+    "idSite" : "1",
     "idOrg" : "2",
-    "description" : "Environmental Management System for sustainability.",
-    "certificate" : "ISO 14001:2015",
-    "standards" : [ {
-      "idStandard" : "3",
-      "name" : "ISO 14001",
-      "description" : "ISO 14001 Environmental Management System",
-      "reference" : "ISO 14001:2015",
-      "clauses" : [ {
-        "idClause" : "4.3",
-        "name" : "Scope of the EMS",
-        "description" : "Determining the scope of the environmental management system.",
-        "reference" : "ISO 14001:2015 Clause 4.3"
-      }, {
-        "idClause" : "6.1",
-        "name" : "Environmental Risk Assessment",
-        "description" : "Actions to address risks and opportunities.",
-        "reference" : "ISO 14001:2015 Clause 6.1"
-      } ]
-    } ],
-    "otherRequirements" : [ {
-      "idOtherRequirement" : "4",
-      "description" : "Waste management requirements for recycling.",
-      "reference" : "Waste Management Policy",
-      "name" : "Waste Management",
-      "process" : {
-        "idProcess" : "1c9ae7ee-588e-4805-aa34-0e9acd7a2e51",
-        "name" : "Unknown",
-        "description" : "Unknown"
-      }
-    }, {
-      "idOtherRequirement" : "5",
-      "description" : "Energy efficiency requirements for facilities.",
-      "reference" : "Energy Efficiency Policy",
-      "name" : "Energy Efficiency",
-      "process" : {
-        "idProcess" : "a57e6bb8-d11e-43b2-b161-6dc65d49af4b",
-        "name" : "Unknown",
-        "description" : "Unknown"
-      }
-    } ]
-  },
-    {
+    "address" : "Solar 2Avenue, Green City, GC 54321",
+    "description" : "Primary3 office for solar energy projects.",
+    "name" : "nice"
+  }, {
+    "idSite" : "df2e2cf4-c31d-4c59-a129-7fe17de2401c",
+    "idOrg" : "2",
+    "address" : "add",
+    "description" : "des",
+    "name" : "name"
+  } ],
+  "managementSystems" : [ {
     "idManagementSystem" : "4",
-      "idOrg" : "2",
+    "idOrg" : "2",
     "description" : "Occupational Health and Safety Management System for employee safety.",
-    "certificate" : "ISO 45001:2018",
+    "certificate" : "dsfsd",
     "standards" : [ {
       "idStandard" : "4",
       "name" : "ISO 45001",
@@ -91,11 +48,25 @@
         "description" : "Unknown"
       }
     } ]
+  }, {
+    "idManagementSystem" : "fe0e912b-0ead-49db-b590-8d4cc0b37515",
+    "idOrg" : "2",
+    "description" : "gfmkglkmfk;l",
+    "certificate" : "dfjklnlnfrtkklmy444444",
+    "standards" : [ ],
+    "otherRequirements" : [ ]
+  }, {
+    "idManagementSystem" : "67e1c1f4-2c04-410c-b1e6-148de2461e58",
+    "idOrg" : "2",
+    "description" : "sdf",
+    "certificate" : "sdf",
+    "standards" : [ ],
+    "otherRequirements" : [ ]
   } ]
 }, {
-  "idOrg" : "bc114a19-9c58-4165-85b7-5282408393b6",
-  "name" : "Tech nationd",
-  "description" : "A company focused on renewable tech hhhddddd",
+  "idOrg" : "938d3e0f-c702-4928-afce-298ef42baea2",
+  "name" : "dd",
+  "description" : "dddd",
   "sites" : [ ],
   "managementSystems" : [ ]
 } ]

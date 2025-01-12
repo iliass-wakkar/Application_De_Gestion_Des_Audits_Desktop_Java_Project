@@ -1,8 +1,10 @@
 package utils;
 
 import javax.swing.*;
-import  view.*;
-import view.AdminDashboard.AdminDashboard;
+
+import view.pages.AdminDashboard.AdminDashboard;
+import view.pages.auditorDashboard.AuditorDashboard;
+import view.pages.LoginPage;
 
 public class PagesGetter {
       static public JPanel LoginPage =new LoginPage();

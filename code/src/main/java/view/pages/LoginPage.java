@@ -1,8 +1,8 @@
-package view;
+package view.pages;
 
 import javax.swing.*;
 import java.awt.*;
-import controller.LoginPageController;
+import controller.uiControllers.LoginPageController;
 
 public class LoginPage extends JPanel {
     private final LoginPageController loginPageController;

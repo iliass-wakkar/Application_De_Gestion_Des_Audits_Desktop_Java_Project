@@ -1,7 +1,7 @@
 package utils;
 
-import controller.AccountsController;
-import controller.OrganizationController;
+import controller.businessControllers.account.AccountsController;
+import controller.businessControllers.organization.OrganizationController;
 import model.Accounts.AccountToken;
 
 public class ControllersGetter {

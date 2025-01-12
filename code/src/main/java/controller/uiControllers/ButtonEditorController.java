@@ -1,10 +1,10 @@
-package controller;
+package controller.uiControllers;
 
 import utils.interfaces.IButtonEditorEventsHandler;
 import utils.interfaces.IFormDialogEventHandler;
-import view.AdminDashboard.AuditorManagementTab;
-import view.AdminDashboard.ButtonEditor;
-import view.AdminDashboard.FormDialog;
+import view.pages.AdminDashboard.AuditorManagementTab;
+import view.pages.AdminDashboard.ButtonEditor;
+import view.pages.AdminDashboard.FormDialog;
 
 public class ButtonEditorController {
     private ButtonEditor view;
