@@ -128,12 +128,14 @@ public class AccountsController {
         return accounts.stream().filter(acc->acc.getAccountType().equals(AUDITOR_ACCOUNT_TYPE)).toList();
     }
     // Get an auditor account by ID
-    public Account getAuditorById(String idAuditor) {
+    public Account getAuditorById(String idAuditor) throws Exception {
         Optional<Account> auditorAccount = accounts.stream()
                 .filter(acc -> acc.getAccountType().equals(AUDITOR_ACCOUNT_TYPE)
                         && acc.getIdAccount().equals(idAuditor))
                 .findFirst();
-        return auditorAccount.orElse(null);
+
+        // Throw an exception if the auditor is not found
+        return auditorAccount.orElseThrow(() -> new Exception("Auditor not found with ID: " + idAuditor));
     }
 
 }

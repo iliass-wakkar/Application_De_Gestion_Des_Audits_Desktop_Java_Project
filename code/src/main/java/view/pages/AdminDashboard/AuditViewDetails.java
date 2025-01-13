@@ -53,9 +53,11 @@ public class AuditViewDetails extends JFrame {
             throw new Exception("Organization not found with ID: " + audit.getIdOrganization());
         }
 
-        auditor = ControllersGetter.accountsController.getAuditorById(audit.getIdAuditor());
-        if (auditor == null) {
-            throw new Exception("Auditor not found with ID: " + audit.getIdAuditor());
+        // Fetch auditor details with try-catch
+        try {
+            auditor = ControllersGetter.accountsController.getAuditorById(audit.getIdAuditor());
+        } catch (Exception e) {
+            throw new Exception("Error fetching auditor: " + e.getMessage());
         }
 
         managementSystem = ControllersGetter.organizationsController.getSystemManagementById(
@@ -129,6 +131,7 @@ public class AuditViewDetails extends JFrame {
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         add(scrollPane, BorderLayout.CENTER);
     }
+
     private void addSection(JPanel parent, String title, String[][] data) {
         // Create a section panel
         JPanel sectionPanel = new JPanel();
@@ -171,7 +174,7 @@ public class AuditViewDetails extends JFrame {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("ID");
         tableModel.addColumn("Status");
-        tableModel.addColumn("Solotion");
+        tableModel.addColumn("Solution");
 
         // Add data to the table model
         for (RequirementStat requirementStat : requirementsStat) {
@@ -217,7 +220,7 @@ public class AuditViewDetails extends JFrame {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("ID");
         tableModel.addColumn("Status");
-        tableModel.addColumn("Solotion");
+        tableModel.addColumn("Solution");
 
         // Add data to the table model
         for (StandardStat standardStat : standardsStat) {

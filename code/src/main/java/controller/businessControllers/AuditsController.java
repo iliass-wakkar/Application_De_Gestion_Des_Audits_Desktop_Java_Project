@@ -48,6 +48,7 @@ public class AuditsController {
     // Create a new audit
     public void createAudit(Audit auditData) throws Exception{
         ControllersGetter.organizationsController.getManagementSystemById(auditData.getIdOrganization(),auditData.getIdSystemManagement());
+        ControllersGetter.accountsController.getAuditorById(auditData.getIdAuditor());
         audits.add(auditData);
         System.out.println("New Audit added successfully.");
         saveAudits();
@@ -56,6 +57,7 @@ public class AuditsController {
     // Edit an existing audit by ID
     public boolean editAudit(String id, Audit updatedAudit) throws Exception{
         ControllersGetter.organizationsController.getManagementSystemById(updatedAudit.getIdOrganization(),updatedAudit.getIdSystemManagement());
+        ControllersGetter.accountsController.getAuditorById(updatedAudit.getIdAuditor());
         Optional<Audit> existingAudit = audits.stream()
                 .filter(audit -> audit.getIdAudit().equals(id))
                 .findFirst();

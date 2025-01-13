@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31badfcb-97cc-4006-8fe0-eb3d97110bf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ClauseAuditorTab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Accounts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/audits.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/audits.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/AuditsTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/AuditsTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/interfaces/objectConverter/AuditConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/interfaces/objectConverter/AuditConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" afterDir="false" />
     </list>
@@ -95,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736781203882</updated>
-      <workItem from="1736781206609" duration="9758000" />
+      <workItem from="1736781206609" duration="15377000" />
     </task>
     <servers />
   </component>
