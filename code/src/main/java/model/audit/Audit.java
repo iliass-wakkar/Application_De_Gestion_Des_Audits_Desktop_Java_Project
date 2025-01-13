@@ -8,52 +8,52 @@ import java.util.UUID;
 public class Audit {
     private final String idAudit;
     private String dateDebut;
-    private String ExpDate;
+    private String expDate;
     private String subject;
     private String status;
     private String idAuditor;
     private String idOrganization;
     private String idSystemManagement;
     private FinalReport finalReport;
-    private boolean isTakeCertificate;
+    private boolean takeCertificate;
     private String isPass;
-    private List<StandardStat> arrStandardStat;
-    private List<RequirementStat> arrExigenceStat;
+    private List<StandardStat> StandardsStat;
+    private List<RequirementStat> RequirementsStat;
 
     // Default Constructor
     public Audit() {
         this.idAudit = UUID.randomUUID().toString();
         this.dateDebut = "unknown";
-        this.ExpDate = "unknown";
+        this.expDate = "unknown";
         this.subject = "unknown";
         this.status = "pending";
         this.idAuditor = "unknown";
         this.idOrganization = "unknown";
         this.idSystemManagement = "unknown";
         this.finalReport = new FinalReport();
-        this.isTakeCertificate = false;
+        this.takeCertificate = false;
         this.isPass = "notYet";
-        this.arrStandardStat =  new ArrayList<StandardStat>();
-        this.arrExigenceStat = new ArrayList<RequirementStat>();
+        this.StandardsStat =  new ArrayList<StandardStat>();
+        this.RequirementsStat = new ArrayList<RequirementStat>();
     }
 
     // Parameterized Constructor
     public Audit(String dateDebut, String ExpDate, String subject, String status, String idAuditor, String idOrganization,
-                 String idSystemManagement, FinalReport finalRapport, boolean isTakeCertificate, String isPass,
-                 List<StandardStat> arrStandardStat, List<RequirementStat> arrExigenceStat) {
+                 String idSystemManagement, FinalReport finalRapport, boolean takeCertificate, String isPass,
+                 List<StandardStat> StandardsStat, List<RequirementStat> RequirementsStat) {
         this.idAudit = UUID.randomUUID().toString();
         this.dateDebut = dateDebut;
-        this.ExpDate = ExpDate;
+        this.expDate = ExpDate;
         this.subject = subject;
         this.status = status;
         this.idAuditor = idAuditor;
         this.idOrganization = idOrganization;
         this.idSystemManagement = idSystemManagement;
         this.finalReport = finalRapport;
-        this.isTakeCertificate = isTakeCertificate;
+        this.takeCertificate = takeCertificate;
         this.isPass = isPass;
-        this.arrStandardStat = arrStandardStat;
-        this.arrExigenceStat = arrExigenceStat;
+        this.StandardsStat = StandardsStat;
+        this.RequirementsStat = RequirementsStat;
     }
 
     // Getters and Setters
@@ -70,11 +70,11 @@ public class Audit {
     }
 
     public String getExpDate() {
-        return ExpDate;
+        return expDate;
     }
 
     public void setExpDate(String ExpDate) {
-        this.ExpDate = ExpDate;
+        this.expDate = ExpDate;
     }
 
     public String getSubject() {
@@ -132,11 +132,11 @@ public class Audit {
     }
 
     public boolean isTakeCertificate() {
-        return isTakeCertificate;
+        return takeCertificate;
     }
 
     public void setTakeCertificate(boolean takeCertificate) {
-        isTakeCertificate = takeCertificate;
+        this.takeCertificate = takeCertificate;
     }
 
     public String getIsPass() {
@@ -154,20 +154,20 @@ public class Audit {
 
     }
 
-    public List<StandardStat> getArrStandardStat() {
-        return arrStandardStat;
+    public List<StandardStat> getStandardsStat() {
+        return StandardsStat;
     }
 
-    public void setArrStandardStat(List<StandardStat> arrStandardStat) {
-        this.arrStandardStat = arrStandardStat;
+    public void setStandardsStat(List<StandardStat> standardsStat) {
+        this.StandardsStat = standardsStat;
     }
 
-    public List<RequirementStat> getArrExigenceStat() {
-        return arrExigenceStat;
+    public List<RequirementStat> getRequirementsStat() {
+        return RequirementsStat;
     }
 
-    public void setArrExigenceStat(List<RequirementStat> arrExigenceStat) {
-        this.arrExigenceStat = arrExigenceStat;
+    public void setRequirementsStat(List<RequirementStat> requirementsStat) {
+        this.RequirementsStat = requirementsStat;
     }
 
     @Override
@@ -175,17 +175,17 @@ public class Audit {
         return "Audit{" +
                 "idAudit='" + idAudit + '\'' +
                 ", dateDebut='" + dateDebut + '\'' +
-                ", ExpDate='" + ExpDate + '\'' +
+                ", ExpDate='" + expDate + '\'' +
                 ", intitule='" + subject + '\'' +
                 ", status='" + status + '\'' +
                 ", idAuditor='" + idAuditor + '\'' +
                 ", idOrg='" + idOrganization + '\'' +
                 ", idSystemManagement='" + idSystemManagement + '\'' +
                 ", finalRapport=" + finalReport +
-                ", isTakeCertificate=" + isTakeCertificate +
+                ", isTakeCertificate=" + takeCertificate +
                 ", isPass='" + isPass + '\'' +
-                ", arrStandardStat=" + arrStandardStat +
-                ", arrExigenceStat=" + arrExigenceStat +
+                ", arrStandardStat=" + StandardsStat +
+                ", arrExigenceStat=" + RequirementsStat +
                 '}';
     }
 }

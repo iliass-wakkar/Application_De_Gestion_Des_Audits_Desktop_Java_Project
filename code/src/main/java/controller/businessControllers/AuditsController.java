@@ -67,8 +67,8 @@ public class AuditsController {
             existingAudit.get().setFinalReport(updatedAudit.getFinalReport());
             existingAudit.get().setTakeCertificate(updatedAudit.isTakeCertificate());
             existingAudit.get().setIsPass(updatedAudit.getIsPass());
-            existingAudit.get().setArrStandardStat(updatedAudit.getArrStandardStat());
-            existingAudit.get().setArrExigenceStat(updatedAudit.getArrExigenceStat());
+            existingAudit.get().setStandardsStat(updatedAudit.getStandardsStat());
+            existingAudit.get().setRequirementsStat(updatedAudit.getRequirementsStat());
 
             System.out.println("Audit updated successfully.");
             saveAudits();
@@ -188,7 +188,7 @@ public class AuditsController {
     public boolean addStandardStatToAudit(String idAudit, StandardStat standardStat) {
         Audit audit = getAuditById(idAudit);
         if (audit != null) {
-            audit.getArrStandardStat().add(standardStat);
+            audit.getStandardsStat().add(standardStat);
             saveAudits();
             System.out.println("Standard stat added to audit successfully.");
             return true;
@@ -202,7 +202,7 @@ public class AuditsController {
     public boolean addRequirementStatToAudit(String idAudit, RequirementStat requirementStat) {
         Audit audit = getAuditById(idAudit);
         if (audit != null) {
-            audit.getArrExigenceStat().add(requirementStat);
+            audit.getRequirementsStat().add(requirementStat);
             saveAudits();
             System.out.println("Requirement stat added to audit successfully.");
             return true;
