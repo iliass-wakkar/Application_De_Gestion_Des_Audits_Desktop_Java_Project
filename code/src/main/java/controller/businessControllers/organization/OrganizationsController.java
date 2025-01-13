@@ -1,10 +1,12 @@
 package controller.businessControllers.organization;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import model.Organization.OrgProcess;
 import model.Organization.Organization;
 import model.Organization.Site;
 import model.SystemManagement.ManagementSystem;
 import model.SystemManagement.Requirement;
+import model.SystemManagement.Standard.Clause;
 import model.SystemManagement.Standard.Standard;
 import utils.JsonFileHandler;
 
@@ -26,7 +28,8 @@ public class OrganizationsController {
     // Load organizations from the JSON file
     public void loadOrganizations() {
         try {
-            List<Organization> loadedOrganizations = JsonFileHandler.loadData(ORGANIZATION_FILE_PATH, new TypeReference<List<Organization>>() {});
+            List<Organization> loadedOrganizations = JsonFileHandler.loadData(ORGANIZATION_FILE_PATH, new TypeReference<List<Organization>>() {
+            });
             organizations = new ArrayList<>(loadedOrganizations);
             System.out.println(organizations.size() + " organizations loaded successfully.");
         } catch (IOException e) {
@@ -53,7 +56,7 @@ public class OrganizationsController {
     }
 
     // Add or edit an organization
-    public boolean editOrganization(String id,Organization updatedOrganization) {
+    public boolean editOrganization(String id, Organization updatedOrganization) {
         Optional<Organization> existingOrganization = organizations.stream()
                 .filter(org -> org.getIdOrganization().equals(id))
                 .findFirst();
@@ -65,8 +68,7 @@ public class OrganizationsController {
             System.out.println("Organization updated successfully.");
             saveOrganizations();
             return true;
-        }
-        else{
+        } else {
             System.out.println("Organization not found.");
             return false;
         }
@@ -194,6 +196,60 @@ public class OrganizationsController {
         }
     }
 
+    // Get all clauses across all standards in all management systems in all organizations
+    public List<Clause> getAllClauses() {
+        List<Clause> allClauses = new ArrayList<>();
+        for (Organization organization : organizations) {
+            for (ManagementSystem managementSystem : organization.getManagementSystems()) {
+                for (Standard standard : managementSystem.getStandards()) {
+                    allClauses.addAll(standard.getClauses());
+                }
+            }
+        }
+        return allClauses;
+    }
+
+    // Method to create a new Clause
+    public void createSystemManagementStandardClause(String idOrg, String idManagementSystem, String idStandard, Clause newClause) throws Exception {
+        Standard standard = getSystemManagementStandardById(idOrg, idManagementSystem, idStandard);
+
+        if (standard != null) {
+            standard.createClause(newClause);
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Standard with ID " + idStandard + " not found.");
+        }
+    }
+
+    // Method to edit a Clause by ID
+    public void editSystemManagementStandardClauseById(String idOrg, String idManagementSystem, String idStandard, String idClause, Clause updatedClause) throws Exception {
+        Standard standard = getSystemManagementStandardById(idOrg, idManagementSystem, idStandard);
+
+        if (standard != null) {
+            boolean isUpdated = standard.editClause(idClause, updatedClause);
+            if (!isUpdated) {
+                throw new Exception("Clause with ID " + idClause + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Standard with ID " + idStandard + " not found.");
+        }
+    }
+
+    // Method to delete a Clause by ID
+    public void deleteSystemManagementStandardClauseById(String idOrg, String idManagementSystem, String idStandard, String idClause) throws Exception {
+        Standard standard = getSystemManagementStandardById(idOrg, idManagementSystem, idStandard);
+
+        if (standard != null) {
+            boolean isDeleted = standard.deleteClause(idClause);
+            if (!isDeleted) {
+                throw new Exception("Clause with ID " + idClause + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+        } else {
+            throw new Exception("Standard with ID " + idStandard + " not found.");
+        }
+    }
 
 
     // Edit a management system in an organization
@@ -283,16 +339,7 @@ public class OrganizationsController {
         }
         return allManagementSystems;
     }
-    // Get all sites across all organizations
-    public List<Site> getAllSites() {
-        List<Site> allSites = new ArrayList<>();
-        for (Organization organization : organizations) {
-            allSites.addAll(organization.getSites());
-        }
 
-
-        return allSites;
-    }
     // Get all requirements across all management systems in all organizations
     public List<Requirement> getAllRequirements() {
         List<Requirement> allRequirements = new ArrayList<>();
@@ -313,6 +360,18 @@ public class OrganizationsController {
             }
         }
         return allStandards;
+    }
+
+
+    // Get all sites across all organizations
+    public List<Site> getAllSites() {
+        List<Site> allSites = new ArrayList<>();
+        for (Organization organization : organizations) {
+            allSites.addAll(organization.getSites());
+        }
+
+
+        return allSites;
     }
 
     // Add a site to an organization
@@ -373,6 +432,58 @@ public class OrganizationsController {
         }
     }
 
+    // Get all processes across all organizations
+    public List<OrgProcess> getAllProcesses() {
+        List<OrgProcess> allProcesses = new ArrayList<>();
+        for (Organization organization : organizations) {
+            allProcesses.addAll(organization.getOrgProcesses());
+        }
+        return allProcesses;
+    }
 
+    // Method to create a new Process
+    public void createProcess(String idOrg, OrgProcess newProcess) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+
+        if (organization != null) {
+            organization.addOrgProcess(newProcess);
+            saveOrganizations(); // Save changes to the JSON file
+            System.out.println("the OrgProcess added to organization successfully.");
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Method to edit a Process by ID
+    public void editOrgProcess(String idOrg, String idOrgProcess, OrgProcess updatedOrgProcess) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+
+        if (organization != null) {
+            boolean isUpdated = organization.editOrgProcess(idOrgProcess, updatedOrgProcess);
+            if (!isUpdated) {
+                throw new Exception("Process with ID " + updatedOrgProcess + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+            System.out.println("Process updated successfully.");
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
+    // Method to delete a Process by ID
+    public void deleteProcess(String idOrg, String idProcess) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+
+        if (organization != null) {
+            boolean isDeleted = organization.deleteOrgProcess(idProcess);
+            if (!isDeleted) {
+                throw new Exception("Process with ID " + idProcess + " not found.");
+            }
+            saveOrganizations(); // Save changes to the JSON file
+            System.out.println("Process deleted successfully.");
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
 
 }

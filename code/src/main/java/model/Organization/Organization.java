@@ -1,6 +1,5 @@
 package model.Organization;
 
-
 import model.SystemManagement.ManagementSystem;
 
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ public class Organization {
     private String description;
     private ArrayList<Site> sites = new ArrayList<>();
     private ArrayList<ManagementSystem> managementSystems = new ArrayList<>();
+    private ArrayList<OrgProcess> orgProcesses = new ArrayList<>();
 
     // Constructors
     public Organization() {
@@ -28,6 +28,15 @@ public class Organization {
     }
 
     // Getters
+    public ArrayList<OrgProcess> getOrgProcesses() {
+        return orgProcesses;
+    }
+
+    // Setters
+    public void setOrgProcesses(ArrayList<OrgProcess> orgProcesses) {
+        this.orgProcesses = orgProcesses;
+    }
+
     public String getIdOrganization() {
         return idOrganization;
     }
@@ -36,54 +45,50 @@ public class Organization {
         return name;
     }
 
+    public void setName(String name) {
+        if (name != null && !name.isEmpty())
+            this.name = name;
+    }
+
     public String getDescription() {
         return description;
-    }
-
-    public ArrayList<Site> getSites() {
-        return sites;
-    }
-
-    public ArrayList<ManagementSystem> getManagementSystems() {
-        return managementSystems;
-    }
-
-    // Setters
-    public void setName(String name) {
-      if(name != null && !name.isEmpty())
-          this.name = name;
-
-
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public ArrayList<Site> getSites() {
+        return sites;
+    }
+
     public void setSites(ArrayList<Site> sites) {
         this.sites = sites;
+    }
+
+    public ArrayList<ManagementSystem> getManagementSystems() {
+        return managementSystems;
     }
 
     public void setManagementSystems(ArrayList<ManagementSystem> ManagementSystems) {
         this.managementSystems = ManagementSystems;
     }
 
-
+    // Method to update the Organization object
     public void editOrganization(Organization updatedOrganization) {
-            this.setName(updatedOrganization.name);
-            this.setDescription(updatedOrganization.description);
+        this.setName(updatedOrganization.name);
+        this.setDescription(updatedOrganization.description);
     }
 
-
-
+    // Method to add a Site
     public void addSite(Site site) {
         if (site != null) {
             this.sites.add(site);
         }
     }
 
-
-    public boolean editSite(String idSite ,Site updatedSite) {
+    // Method to edit a Site by ID
+    public boolean editSite(String idSite, Site updatedSite) {
         for (int i = 0; i < sites.size(); i++) {
             if (sites.get(i).getIdSite().equals(idSite)) {
                 // Replace the site at the same index
@@ -94,6 +99,7 @@ public class Organization {
         return false;
     }
 
+    // Method to delete a Site by ID
     public boolean deleteSite(String siteId) {
         Optional<Site> siteToDelete = sites.stream()
                 .filter(site -> site.getIdSite().equals(siteId))
@@ -106,7 +112,7 @@ public class Organization {
         return false;
     }
 
-
+    // Method to find a Site by ID
     public Site findSiteById(String siteId) {
         return sites.stream()
                 .filter(site -> site.getIdSite().equals(siteId))
@@ -114,28 +120,26 @@ public class Organization {
                 .orElse(null);
     }
 
-
+    // Method to add a ManagementSystem
     public void addSystem(ManagementSystem system) {
         if (system != null) {
             this.managementSystems.add(system);
         }
     }
 
-
-
-    public boolean editSystem(String idManagementSystem,ManagementSystem updatedSystem) {
+    // Method to edit a ManagementSystem by ID
+    public boolean editSystem(String idManagementSystem, ManagementSystem updatedSystem) {
         for (int i = 0; i < managementSystems.size(); i++) {
             if (managementSystems.get(i).getIdManagementSystem().equals(idManagementSystem)) {
                 // Replace the system at the same index
                 managementSystems.get(i).editManagementSystem(updatedSystem);
-
                 return true;
             }
         }
         return false;
     }
 
-    // Delete a System by ID
+    // Method to delete a ManagementSystem by ID
     public boolean deleteSystem(String systemId) {
         Optional<ManagementSystem> systemToDelete = managementSystems.stream()
                 .filter(system -> system.getIdManagementSystem().equals(systemId))
@@ -148,10 +152,50 @@ public class Organization {
         return false;
     }
 
-    // Find a System by ID
+    // Method to find a ManagementSystem by ID
     public ManagementSystem findSystemById(String systemId) {
         return managementSystems.stream()
                 .filter(system -> system.getIdManagementSystem().equals(systemId))
+                .findFirst()
+                .orElse(null);
+    }
+
+    // Method to add a Process
+    public void addOrgProcess(OrgProcess orgProcess) {
+        if (orgProcess != null) {
+            this.orgProcesses.add(orgProcess);
+        }
+    }
+
+    // Method to edit a Process by ID
+    public boolean editOrgProcess(String idProcess, OrgProcess updatedOrgProcess) {
+        for (int i = 0; i < orgProcesses.size(); i++) {
+            if (orgProcesses.get(i).getIdOrgProcess().equals(idProcess)) {
+                // Replace the process at the same index
+                orgProcesses.get(i).editProcess(updatedOrgProcess);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Method to delete a Process by ID
+    public boolean deleteOrgProcess(String processId) {
+        Optional<OrgProcess> processToDelete = orgProcesses.stream()
+                .filter(orgProcess -> orgProcess.getIdOrgProcess().equals(processId))
+                .findFirst();
+
+        if (processToDelete.isPresent()) {
+            orgProcesses.remove(processToDelete.get());
+            return true;
+        }
+        return false;
+    }
+
+    // Method to find a Process by ID
+    public OrgProcess findProcessById(String processId) {
+        return orgProcesses.stream()
+                .filter(orgProcess -> orgProcess.getIdOrgProcess().equals(processId))
                 .findFirst()
                 .orElse(null);
     }
@@ -164,6 +208,7 @@ public class Organization {
                 ", description='" + description + '\'' +
                 ", sites=" + sites +
                 ", systems=" + managementSystems +
+                ", orgProcesses=" + orgProcesses +
                 '}';
     }
 }

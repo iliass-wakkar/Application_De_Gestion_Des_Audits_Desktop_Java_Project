@@ -29,14 +29,20 @@
       "reference" : "upd ISO 45001:2018",
       "clauses" : [ {
         "idClause" : "5.1",
-        "name" : "Leadership",
-        "description" : "Leadership and commitment for occupational health and safety.",
+        "idManagementSystem" : "4",
+        "idOrganization" : "2",
+        "idStandard" : "4",
+        "name" : "up",
+        "description" : "u[",
         "reference" : "ISO 45001:2018 Clause 5.1"
       }, {
-        "idClause" : "6.1",
-        "name" : "Hazard Identification and Risk Assessment",
-        "description" : "Actions to address risks and opportunities.",
-        "reference" : "ISO 45001:2018 Clause 6.1"
+        "idClause" : "11fac8ee-948e-4813-8a80-9e4976f0f23c",
+        "idManagementSystem" : "4",
+        "idOrganization" : "2",
+        "idStandard" : "4",
+        "name" : "dd1",
+        "description" : "dd2",
+        "reference" : "dd13"
       } ]
     }, {
       "idStandard" : "6d60c1be-39e5-44c2-abc7-d9ef00ce3b07",
@@ -76,11 +82,13 @@
     "certificate" : "sdf",
     "standards" : [ ],
     "requirements" : [ ]
-  } ]
+  } ],
+  "orgProcesses" : [ ]
 }, {
   "idOrganization" : "938d3e0f-c702-4928-afce-298ef42baea2",
   "name" : "dd",
   "description" : "dddd",
   "sites" : [ ],
-  "managementSystems" : [ ]
+  "managementSystems" : [ ],
+  "orgProcesses" : [ ]
 } ]

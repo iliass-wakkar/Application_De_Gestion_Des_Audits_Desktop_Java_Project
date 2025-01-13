@@ -1,7 +1,6 @@
 package model.SystemManagement;
 
 import java.util.UUID;
-import model.SystemManagement.Standard.Process;
 
 public class Requirement {
     private String idRequirement;
