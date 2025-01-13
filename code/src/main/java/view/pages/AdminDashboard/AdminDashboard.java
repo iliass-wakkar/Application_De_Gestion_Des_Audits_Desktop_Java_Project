@@ -21,6 +21,7 @@ private  StandardTab StandardTab = new StandardTab();
 private RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
 private  ClauseTab clauseTab = new ClauseTab();
 private  OrgProcessTab OrgProcessTab = new OrgProcessTab();
+private AuditsTab auditsTab = new AuditsTab();
     public AdminDashboard() {
         setUpUi();
         adminDashboardController = new AdminDashboardController(this);
@@ -84,6 +85,7 @@ private  OrgProcessTab OrgProcessTab = new OrgProcessTab();
         tabbedPane.addTab("Clause Management", clauseTab);
 
         tabbedPane.addTab("System Management",managementSystemManagementTab);
+        tabbedPane.addTab("Audits Management",auditsTab);
 
         // Add panels to the main panel
         this.add(topPanel, BorderLayout.NORTH);

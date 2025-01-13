@@ -3,42 +3,28 @@
 		"idAudit": 1,
 		"dateDebut": "",
 		"ExpDate": "",
-		"intitule": "",
+		"subject": "",
 		"status": "[pending, in progress, done]",
 		"idAuditor": 1,
-		"idOrg": 1,
+		"idOrganization": 1,
 		"idSystemManagement": 1,
 		"FinalReport": {
 			"idReport": 1,
-			"url": ""
+			"description": ""
 		},
 		"isTakeCertificate": false,
 		"isPass": "[notYet | pass | fail]",
-		"arrStandardStat": [
+		"standardsStat": [
 			{
-				"idStandard": 1,
-				"arrClauseStat": [
-					{
-						"idClause": 1,
-						"passStat": "[notYet | pass | fail]",
-						
-                        "Solution":{
-                            "idSolution":1,
-                            "type":"[correction | action]",
-                            "idResponsible":1
-                        }
-					}
-				]
+				"idStandardStat": 1,
+				"passStat": "[notYet | pass | fail]"
+
 			}
 		],
-        "arrOtherRequirement": [
+        "RequirementsStat": [
 					{
-						"idOtherRequirement": 1,
+						"idRequirementStat": 1,
 						"passStat": "[notYet | pass | fail]",
-						"clauseRapport": {
-							"idRapport": 1,
-							"url": ""
-						},
                         "Solution":{
                             "idSolution":1,
                             "type":"[correction | action]",

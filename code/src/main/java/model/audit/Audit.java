@@ -9,45 +9,45 @@ public class Audit {
     private final String idAudit;
     private String dateDebut;
     private String ExpDate;
-    private String intitule;
+    private String subject;
     private String status;
     private String idAuditor;
-    private String idOrg;
+    private String idOrganization;
     private String idSystemManagement;
     private FinalReport finalReport;
     private boolean isTakeCertificate;
     private String isPass;
     private List<StandardStat> arrStandardStat;
-    private List<requirementStat> arrExigenceStat;
+    private List<RequirementStat> arrExigenceStat;
 
     // Default Constructor
     public Audit() {
         this.idAudit = UUID.randomUUID().toString();
         this.dateDebut = "unknown";
         this.ExpDate = "unknown";
-        this.intitule = "unknown";
+        this.subject = "unknown";
         this.status = "pending";
         this.idAuditor = "unknown";
-        this.idOrg = "unknown";
+        this.idOrganization = "unknown";
         this.idSystemManagement = "unknown";
         this.finalReport = new FinalReport();
         this.isTakeCertificate = false;
         this.isPass = "notYet";
         this.arrStandardStat =  new ArrayList<StandardStat>();
-        this.arrExigenceStat = new ArrayList<requirementStat>();
+        this.arrExigenceStat = new ArrayList<RequirementStat>();
     }
 
     // Parameterized Constructor
-    public Audit(String dateDebut, String ExpDate, String intitule, String status, String idAuditor, String idOrg,
+    public Audit(String dateDebut, String ExpDate, String subject, String status, String idAuditor, String idOrganization,
                  String idSystemManagement, FinalReport finalRapport, boolean isTakeCertificate, String isPass,
-                 List<StandardStat> arrStandardStat, List<requirementStat> arrExigenceStat) {
+                 List<StandardStat> arrStandardStat, List<RequirementStat> arrExigenceStat) {
         this.idAudit = UUID.randomUUID().toString();
         this.dateDebut = dateDebut;
         this.ExpDate = ExpDate;
-        this.intitule = intitule;
+        this.subject = subject;
         this.status = status;
         this.idAuditor = idAuditor;
-        this.idOrg = idOrg;
+        this.idOrganization = idOrganization;
         this.idSystemManagement = idSystemManagement;
         this.finalReport = finalRapport;
         this.isTakeCertificate = isTakeCertificate;
@@ -77,12 +77,12 @@ public class Audit {
         this.ExpDate = ExpDate;
     }
 
-    public String getIntitule() {
-        return intitule;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setIntitule(String intitule) {
-        this.intitule = intitule;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getStatus() {
@@ -107,12 +107,12 @@ public class Audit {
         this.idAuditor = idAuditor;
     }
 
-    public String getIdOrg() {
-        return idOrg;
+    public String getIdOrganization() {
+        return idOrganization;
     }
 
-    public void setIdOrg(String idOrg) {
-        this.idOrg = idOrg;
+    public void setIdOrganization(String idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
     public String getIdSystemManagement() {
@@ -162,11 +162,11 @@ public class Audit {
         this.arrStandardStat = arrStandardStat;
     }
 
-    public List<requirementStat> getArrExigenceStat() {
+    public List<RequirementStat> getArrExigenceStat() {
         return arrExigenceStat;
     }
 
-    public void setArrExigenceStat(List<requirementStat> arrExigenceStat) {
+    public void setArrExigenceStat(List<RequirementStat> arrExigenceStat) {
         this.arrExigenceStat = arrExigenceStat;
     }
 
@@ -176,10 +176,10 @@ public class Audit {
                 "idAudit='" + idAudit + '\'' +
                 ", dateDebut='" + dateDebut + '\'' +
                 ", ExpDate='" + ExpDate + '\'' +
-                ", intitule='" + intitule + '\'' +
+                ", intitule='" + subject + '\'' +
                 ", status='" + status + '\'' +
                 ", idAuditor='" + idAuditor + '\'' +
-                ", idOrg='" + idOrg + '\'' +
+                ", idOrg='" + idOrganization + '\'' +
                 ", idSystemManagement='" + idSystemManagement + '\'' +
                 ", finalRapport=" + finalReport +
                 ", isTakeCertificate=" + isTakeCertificate +

@@ -1,25 +1,27 @@
 package model.audit;
 
-import java.util.List;
 import java.util.UUID;
 
 public class StandardStat {
-    private final String idStandard;
+    private final String idStandardStat;
     private String passStat;
     private Solution solution;
 
 
     // Default Constructor
     public StandardStat() {
-        this.idStandard = UUID.randomUUID().toString();
+        this.idStandardStat = UUID.randomUUID().toString();
+        this.passStat = "notYet";
+        this.solution = new Solution();
     }
+
 
     // Parameterized Constructor
 
 
-    public StandardStat(String idStandard, String passStat, Solution solution) {
-        this.idStandard = idStandard;
-        this.passStat = passStat;
+    public StandardStat(String idStandardStat, String passStat, Solution solution) {
+        this.idStandardStat = idStandardStat;
+        this.setPassStat(passStat);
         this.solution = solution;
     }
 
@@ -30,12 +32,18 @@ public class StandardStat {
         return solution;
     }
     // Getters and Setters
-    public String getIdStandard() {
-        return idStandard;
+    public String getIdStandardStat() {
+        return idStandardStat;
     }
 
     public void setPassStat(String passStat) {
-        this.passStat = passStat;
+
+        if(passStat.equals("notYet") || passStat.equals("Pass") || passStat.equals("fail") )  {
+            this.passStat = passStat;
+        }
+        else {
+            System.out.println("Invalid Pass Stat");
+        }
     }
 
     public void setSolution(Solution solution) {
@@ -45,7 +53,7 @@ public class StandardStat {
     @Override
     public String toString() {
         return "StandardStat{" +
-                "idStandard='" + idStandard +
+                "idStandard='" + idStandardStat +
                 '}';
     }
 }

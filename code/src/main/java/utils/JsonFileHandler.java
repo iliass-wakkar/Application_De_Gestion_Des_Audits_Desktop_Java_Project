@@ -13,6 +13,7 @@ public class JsonFileHandler {
     public  static final String  ACCOUNTS_SESSION_FILE_PATH=System.getProperty("user.dir") + File.separator + "Data" + File.separator + "AccountSession.json";
     public  static final String  ORGANIZATION_FILE_PATH=System.getProperty("user.dir") + File.separator + "Data" + File.separator + "organizations.json";
     public  static final String  RESPONSIBLE_FILE_PATH=System.getProperty("user.dir") + File.separator + "Data" + File.separator + "responsibles.json";
+    public  static final String  AUDITS_FILE_PATH=System.getProperty("user.dir") + File.separator + "Data" + File.separator + "audits.json";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
 
