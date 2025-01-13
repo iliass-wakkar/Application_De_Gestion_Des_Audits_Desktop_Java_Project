@@ -1,6 +1,6 @@
 package view.pages.AdminDashboard;
 
-import controller.uiControllers.adminDashboard.Tabs.RequirementManagementTabController;
+import controller.uiControllers.adminDashboard.Tabs.RequirementTabController;
 import model.SystemManagement.Requirement;
 import utils.ControllersGetter;
 import view.components.ButtonRenderer;
@@ -16,7 +16,7 @@ public class RequirementManagementTab extends JPanel {
     private JButton createButton = new JButton("Create New Management System");
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Requirement> data;
-    private RequirementManagementTabController requirementManagementTabController;
+    private RequirementTabController RequirementManagementTabController;
     private static String[] columnNamesCreateEdit = {
             "IdOrganization", "IdManagementSystem", "Description", "Reference", "Name"
     };
@@ -26,7 +26,7 @@ public class RequirementManagementTab extends JPanel {
     public RequirementManagementTab() {
         this.data = ControllersGetter.organizationsController.getAllRequirements(); // Get all management systems
         System.out.println("Fetched data: " + data); // Debug statement
-        requirementManagementTabController = new RequirementManagementTabController(this);
+        RequirementManagementTabController = new RequirementTabController(this);
         setUpUi();
     }
 
@@ -95,7 +95,7 @@ public class RequirementManagementTab extends JPanel {
         // Add action buttons (Edit and Delete) to each row
         TableColumn actionsColumn = requirementTable.getColumnModel().getColumn(6);
         actionsColumn.setCellRenderer(buttonRenderer);
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), requirementTable, requirementManagementTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), requirementTable, RequirementManagementTabController.getIButtonEditorEventsHandler()));
 
         // Add the table to a scroll pane
         JScrollPane scrollPane = new JScrollPane(requirementTable);
@@ -135,7 +135,7 @@ public class RequirementManagementTab extends JPanel {
         actionsColumn = new TableColumn(6);
         actionsColumn.setHeaderValue("Actions");
         actionsColumn.setCellRenderer(new ButtonRenderer());
-        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), requirementTable, requirementManagementTabController.getIButtonEditorEventsHandler()));
+        actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), requirementTable, RequirementManagementTabController.getIButtonEditorEventsHandler()));
 
         // Re-add the "Actions" column to the table
         requirementTable.addColumn(actionsColumn);

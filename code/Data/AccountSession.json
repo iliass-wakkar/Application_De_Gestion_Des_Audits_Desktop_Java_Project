@@ -1,5 +1,5 @@
 {
-  "idAccountToken" : "SDK1213E",
-  "accountType" : "admin",
-  "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTREsxMjEzRSIsImFjY291bnRUeXBlIjoiYWRtaW4iLCJpYXQiOjE3MzY3MDY4MjYsImV4cCI6MTczNjc5MzIyNn0.lpNef1SylaQXQ-EDDGBBgwawKu2qaev2F82DRTcPL9s"
+  "idAccountToken" : "448fbf2c-16f6-463a-ae72-05ab7655c120",
+  "accountType" : "auditor",
+  "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0NDhmYmYyYy0xNmY2LTQ2M2EtYWU3Mi0wNWFiNzY1NWMxMjAiLCJhY2NvdW50VHlwZSI6ImF1ZGl0b3IiLCJpYXQiOjE3MzY3NjkyNDcsImV4cCI6MTczNjg1NTY0N30.v8GJf0Vk-x-GOL1aHi7baAZcpJdumvh_Yv-dWEgOx18"
 }

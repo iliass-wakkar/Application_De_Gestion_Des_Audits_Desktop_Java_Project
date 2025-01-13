@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="223e7f4e-0ddf-41d7-a08c-ba580861f572" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ClauseTabController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/OrgProcessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/interfaces/objectConverter/ClauseConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/interfaces/objectConverter/OrgProcessConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ClauseTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/OrgProcessTab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/RequirementTabController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorRequirementManagementTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/organizations.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/organizations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Organization/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Organization/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Requirement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Clause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Clause.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Organization/OrgProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Standard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Standard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/AuditorDashboard/AuditorDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/AuditorDashboard/AuditorDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/RequirementManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/AuditorDashboard/tabs/AuditorRequirementManagementTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/auditorDashboard/AuditorDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/auditorDashboard/ManagementSystemAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ManagementSystemAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/auditorDashboard/RequirementAuditorTab.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +66,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller.uiControllers.AuditorDashboard.tabs" />
       <recent name="utils.interfaces.objectConverter" />
     </key>
   </component>
@@ -108,7 +107,7 @@
       <updated>1736699906593</updated>
       <workItem from="1736699908805" duration="6419000" />
       <workItem from="1736708080670" duration="8169000" />
-      <workItem from="1736765896798" duration="1798000" />
+      <workItem from="1736765896798" duration="3349000" />
     </task>
     <servers />
   </component>

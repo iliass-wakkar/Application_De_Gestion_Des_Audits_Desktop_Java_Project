@@ -18,7 +18,7 @@ private  ManagementSystemManagementTab managementSystemManagementTab = new Manag
 private  ResponsibleTab responsibleTab = new ResponsibleTab();
 private  SiteTab siteTab = new SiteTab();
 private  StandardTab StandardTab = new StandardTab();
-private  RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
+private RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
 private  ClauseTab clauseTab = new ClauseTab();
 private  OrgProcessTab OrgProcessTab = new OrgProcessTab();
     public AdminDashboard() {

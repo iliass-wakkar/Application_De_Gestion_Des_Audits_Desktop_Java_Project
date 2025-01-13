@@ -1,4 +1,4 @@
-package controller.uiControllers.adminDashboard.Tabs;
+package controller.uiControllers.AuditorDashboard.tabs;
 
 import model.SystemManagement.Requirement;
 import utils.ControllersGetter;
@@ -7,18 +7,18 @@ import utils.interfaces.IButtonEditorEventsHandler;
 import utils.interfaces.IFormDialogEventHandler;
 import view.pages.AdminDashboard.ButtonEditor;
 import view.pages.AdminDashboard.FormDialog;
-import view.pages.AdminDashboard.RequirementManagementTab;
+import view.pages.AuditorDashboard.AuditorRequirementManagementTab;
 
 import javax.swing.*;
 
-public class RequirementManagementTabController {
-    private RequirementManagementTab view;
+public class AuditorRequirementManagementTabController {
+    private AuditorRequirementManagementTab view;
     private FormDialog createRequirementForm;
     private FormDialog editRequirementForm;
-    private String[] columnNames = RequirementManagementTab.getColumnNamesCreateEdit();
+    private String[] columnNames = AuditorRequirementManagementTab.getColumnNamesCreateEdit();
     private SaveUtil<Requirement> saveUtil = new SaveUtil<>(Requirement::new);
 
-    public RequirementManagementTabController(RequirementManagementTab view) {
+    public AuditorRequirementManagementTabController(AuditorRequirementManagementTab view) {
         this.view = view;
         initController();
     }
@@ -104,7 +104,7 @@ public class RequirementManagementTabController {
     private IButtonEditorEventsHandler iButtonEditorEventsHandler = new IButtonEditorEventsHandler() {
         @Override
         public void editObjectEventHandler(ButtonEditor view) {
-            String[] columnNames = RequirementManagementTab.getColumnNamesCreateEdit();
+            String[] columnNames = AuditorRequirementManagementTab.getColumnNamesCreateEdit();
             editRequirementForm = new FormDialog("Edit Requirement", columnNames, view.getRowData(), saveEditRequirementIFormEventHandler, view.getId());
         }
 

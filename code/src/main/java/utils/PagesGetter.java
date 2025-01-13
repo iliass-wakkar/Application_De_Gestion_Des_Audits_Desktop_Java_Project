@@ -3,7 +3,7 @@ package utils;
 import javax.swing.*;
 
 import view.pages.AdminDashboard.AdminDashboard;
-import view.pages.auditorDashboard.AuditorDashboard;
+import view.pages.AuditorDashboard.AuditorDashboard;
 import view.pages.LoginPage;
 
 public class PagesGetter {

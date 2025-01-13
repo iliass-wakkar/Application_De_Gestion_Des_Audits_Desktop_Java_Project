@@ -1,7 +1,8 @@
-package view.pages.auditorDashboard;
+package view.pages.AuditorDashboard;
 
 
 import controller.uiControllers.AuditorDashboard.AuditorDashboardController;
+import model.SystemManagement.ManagementSystem;
 
 
 import javax.swing.*;
@@ -15,6 +16,8 @@ public class AuditorDashboard extends JPanel {
     public JButton getLogoutButton() {
         return logoutButton;
     }
+    private  AuditorRequirementManagementTab auditorRequirementManagementTab = new AuditorRequirementManagementTab();
+    private ManagementSystemAuditorTab managementSystemAuditorTab = new ManagementSystemAuditorTab();
 
     private JButton logoutButton;
 
@@ -54,8 +57,8 @@ public class AuditorDashboard extends JPanel {
 
         // Add tabs
         tabbedPane.addTab("Audits Management", createTabPanel("Audits Management"));
-        tabbedPane.addTab("Requirements Management", createTabPanel("Requirements Management"));
-        tabbedPane.addTab("System Management", createTabPanel("System Management"));
+        tabbedPane.addTab("Requirements Management", auditorRequirementManagementTab);
+        tabbedPane.addTab("System Management", managementSystemAuditorTab);
 
         // Add panels to the main panel
         this.add(topPanel, BorderLayout.NORTH);

@@ -1,7 +1,7 @@
 package controller.uiControllers.AuditorDashboard;
 
 import controller.businessControllers.account.AccountSessionHandler;
-import view.pages.auditorDashboard.AuditorDashboard;
+import view.pages.AuditorDashboard.AuditorDashboard;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
