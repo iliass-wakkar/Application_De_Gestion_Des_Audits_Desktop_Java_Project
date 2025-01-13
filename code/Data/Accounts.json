@@ -25,4 +25,13 @@
   "phoneNumber" : "0345343",
   "domain" : "tech",
   "accountType" : "auditor"
+}, {
+  "idAccount" : "eadc93b4-cab0-4829-abd9-d58573a3454e",
+  "firstName" : "me",
+  "lastName" : "me",
+  "email" : "me2@gmail.com",
+  "password" : "string",
+  "phoneNumber" : "0648415152",
+  "domain" : "???",
+  "accountType" : "auditor"
 } ]

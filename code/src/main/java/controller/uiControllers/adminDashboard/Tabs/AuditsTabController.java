@@ -17,7 +17,9 @@ public class AuditsTabController {
     private FormDialog createAuditForm;
     private FormDialog editAuditForm;
     private String[] columnNames = AuditsTab.getColumnNamesCreateEdit();
-    private SaveUtil<Audit> saveUtil = new SaveUtil(new AuditConverter());
+    private SaveUtil<Audit> saveUtil = new SaveUtil(()->{
+        return new Audit();
+    });
 
     public AuditsTabController(AuditsTab view) {
         this.view = view;
@@ -31,6 +33,11 @@ public class AuditsTabController {
     private void addCreateAuditButtonEvent() {
         view.getCreateButton().addActionListener(ActionEvent -> {
             createAuditForm = new FormDialog("Create Audit", columnNames, saveCreateAuditIFormEventHandler);
+        });
+    }
+    private  void addViewDetailsButtonEvent() {
+        view.getViewDetailsButton().addActionListener(ActionEvent -> {
+
         });
     }
 

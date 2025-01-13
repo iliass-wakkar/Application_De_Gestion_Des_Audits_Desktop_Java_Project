@@ -17,6 +17,7 @@ public class AuditorDashboard extends JPanel {
     }
     private RequirementAuditorTab requirementAuditorTab = new RequirementAuditorTab();
     private ManagementSystemAuditorTab managementSystemAuditorTab = new ManagementSystemAuditorTab();
+    private StandardAuditorTab standardAuditorTab = new StandardAuditorTab();
 
     private JButton logoutButton;
 
@@ -58,6 +59,9 @@ public class AuditorDashboard extends JPanel {
         tabbedPane.addTab("Audits Management", createTabPanel("Audits Management"));
         tabbedPane.addTab("Requirements Management", requirementAuditorTab);
         tabbedPane.addTab("System Management", managementSystemAuditorTab);
+        tabbedPane.addTab("System Management", standardAuditorTab);
+
+
 
         // Add panels to the main panel
         this.add(topPanel, BorderLayout.NORTH);

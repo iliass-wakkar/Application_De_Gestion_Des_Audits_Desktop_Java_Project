@@ -1,9 +1,11 @@
 package utils.interfaces.objectConverter;
 
 
-public class AuditConverter implements ObjectConverter<AuditConverter> {
+import model.audit.Audit;
+
+public class AuditConverter implements ObjectConverter<Audit> {
     @Override
-    public AuditConverter convertObject(){
-        return new AuditConverter();
+    public Audit convertObject(){
+        return new Audit();
     }
 }

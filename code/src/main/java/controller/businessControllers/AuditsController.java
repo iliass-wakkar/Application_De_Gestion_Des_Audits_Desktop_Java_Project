@@ -2,9 +2,11 @@ package controller.businessControllers;
 
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import model.Organization.Organization;
 import model.audit.Audit;
 import model.audit.RequirementStat;
 import model.audit.StandardStat;
+import utils.ControllersGetter;
 import utils.JsonFileHandler;
 
 import java.io.IOException;
@@ -44,14 +46,16 @@ public class AuditsController {
     }
 
     // Create a new audit
-    public void createAudit(Audit auditData) {
+    public void createAudit(Audit auditData) throws Exception{
+        ControllersGetter.organizationsController.getManagementSystemById(auditData.getIdOrganization(),auditData.getIdSystemManagement());
         audits.add(auditData);
         System.out.println("New Audit added successfully.");
         saveAudits();
     }
 
     // Edit an existing audit by ID
-    public boolean editAudit(String id, Audit updatedAudit) {
+    public boolean editAudit(String id, Audit updatedAudit) throws Exception{
+        ControllersGetter.organizationsController.getManagementSystemById(updatedAudit.getIdOrganization(),updatedAudit.getIdSystemManagement());
         Optional<Audit> existingAudit = audits.stream()
                 .filter(audit -> audit.getIdAudit().equals(id))
                 .findFirst();

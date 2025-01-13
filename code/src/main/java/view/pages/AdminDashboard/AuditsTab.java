@@ -8,6 +8,7 @@ import view.components.ButtonRenderer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.List;
@@ -18,12 +19,15 @@ public class AuditsTab extends JPanel {
     private ButtonRenderer buttonRenderer = new ButtonRenderer();
     private List<Audit> data;
     private AuditsTabController auditsTabController;
-    private static String[] columnNamesCreateEdit = {"IdAudit", "DateDebut", "ExpDate", "Subject", "Status", "IdAuditor", "IdOrganization", "IdSystemManagement"};
+    private static String[] columnNamesCreateEdit = { "DateDebut", "ExpDate", "Subject", "Status", "takeCertificate", "IdAuditor", "IdOrganization", "IdSystemManagement"};
+    private JButton viewDetailsButton;
+    private AuditViewDetails openAuditDetailsPage ;
     DefaultTableModel model;
     JTable auditsTable;
 
     public AuditsTab() {
         this.data = ControllersGetter.auditsController.getAllAudits(); // Get all audits
+        System.out.println("data data data \t"+data);
         auditsTabController = new AuditsTabController(this);
         setUpUi();
     }
@@ -42,6 +46,10 @@ public class AuditsTab extends JPanel {
 
     public JButton getDeleteButton() {
         return buttonRenderer.getDeleteButton();
+    }
+
+    public JButton getViewDetailsButton() {
+        return viewDetailsButton;
     }
 
     private void setUpUi() {
@@ -69,7 +77,7 @@ public class AuditsTab extends JPanel {
         this.add(buttonPanel, BorderLayout.NORTH);
 
         // Define column names
-        String[] columnNames = {"IdAudit", "DateDebut", "ExpDate", "Subject", "Status", "IdAuditor", "IdOrganization", "IdSystemManagement", "Actions"};
+        String[] columnNames = {"IdAudit", "DateDebut", "ExpDate", "Subject", "Status", "takeCertificate", "IdAuditor", "IdOrganization", "IdSystemManagement", "Actions", "View Details"};
 
         Object[][] tableData = TableConverterUtility.convertToTableData(data, columnNames);
 
@@ -77,8 +85,8 @@ public class AuditsTab extends JPanel {
         model = new DefaultTableModel(tableData, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only the "Actions" column (column index 8) is editable {accept event}
-                return column == 8;
+                // Only the "Actions" and "View Details" columns are editable
+                return column == 9 || column == 10;
             }
         };
 
@@ -90,10 +98,53 @@ public class AuditsTab extends JPanel {
         auditsTable.getTableHeader().setForeground(Color.WHITE);
         auditsTable.setFillsViewportHeight(true);
 
-        // Add action buttons (Edit and Delete) to each row
-        TableColumn actionsColumn = auditsTable.getColumnModel().getColumn(8);
+        // Add action buttons (Edit and Delete) to the "Actions" column
+        TableColumn actionsColumn = auditsTable.getColumnModel().getColumn(9);
         actionsColumn.setCellRenderer(buttonRenderer);
         actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), auditsTable, auditsTabController.getIButtonEditorEventsHandler()));
+
+        // Add "View Details" button to the "View Details" column
+        TableColumn viewDetailsColumn = auditsTable.getColumnModel().getColumn(10);
+        viewDetailsColumn.setCellRenderer(new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                viewDetailsButton = new JButton("View Details");
+                viewDetailsButton.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                viewDetailsButton.setBackground(Color.white); // Blue color
+                viewDetailsButton.setForeground(Color.black);
+                viewDetailsButton.setFocusPainted(false);
+                viewDetailsButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+                viewDetailsButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+
+
+                return viewDetailsButton;
+            }
+        });
+
+        viewDetailsColumn.setCellEditor(new DefaultCellEditor(new JCheckBox()) {
+            @Override
+            public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+                JButton viewDetailsButton = new JButton("View Details");
+                viewDetailsButton.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                viewDetailsButton.setBackground(new Color(52, 152, 219)); // Blue color
+                viewDetailsButton.setForeground(Color.WHITE);
+                viewDetailsButton.setFocusPainted(false);
+                viewDetailsButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+                viewDetailsButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+                // Add action listener for "View Details" button
+                viewDetailsButton.addActionListener(e -> {
+                    int selectedRow = table.getSelectedRow();
+                    if (selectedRow != -1) {
+                        String idAudit = (String) table.getValueAt(selectedRow, 0); // Get the ID from the first column
+                        openAuditDetailsPage =new AuditViewDetails(idAudit); // Open the AuditViewDetails page
+                    }
+                });
+
+                return viewDetailsButton;
+            }
+        });
 
         // Add the table to a scroll pane
         JScrollPane scrollPane = new JScrollPane(auditsTable);
@@ -101,6 +152,12 @@ public class AuditsTab extends JPanel {
         this.add(scrollPane, BorderLayout.CENTER);
     }
 
+    // Method to handle "View Details" button click
+    private void viewDetails(String idAudit) {
+        // Implement logic to view details of the selected audit
+        System.out.println("Viewing details for audit with ID: " + idAudit);
+        // You can open a new dialog or window to display the details
+    }
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.auditsController.getAllAudits();
@@ -116,6 +173,7 @@ public class AuditsTab extends JPanel {
                     audit.getExpDate(),
                     audit.getSubject(),
                     audit.getStatus(),
+                    audit.getTakeCertificate(),
                     audit.getIdAuditor(),
                     audit.getIdOrganization(),
                     audit.getIdSystemManagement(),
@@ -124,11 +182,11 @@ public class AuditsTab extends JPanel {
             model.addRow(rowData);
         }
 
-        TableColumn actionsColumn = auditsTable.getColumnModel().getColumn(8);
+        TableColumn actionsColumn = auditsTable.getColumnModel().getColumn(9);
         auditsTable.removeColumn(actionsColumn);
 
         // Recreate the "Actions" column with a new ButtonRenderer and ButtonEditor
-        actionsColumn = new TableColumn(8);
+        actionsColumn = new TableColumn(9);
         actionsColumn.setHeaderValue("Actions");
         actionsColumn.setCellRenderer(new ButtonRenderer());
         actionsColumn.setCellEditor(new ButtonEditor(new JCheckBox(), auditsTable, auditsTabController.getIButtonEditorEventsHandler()));

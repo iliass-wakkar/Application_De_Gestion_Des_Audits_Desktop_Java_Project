@@ -101,6 +101,22 @@ public class OrganizationsController {
         return organization.orElse(null);
     }
 
+    // Method to get a ManagementSystem by ID
+    public ManagementSystem getManagementSystemById(String idOrg, String idManagementSystem) throws Exception {
+        Organization organization = getOrganizationById(idOrg);
+
+        if (organization != null) {
+            ManagementSystem managementSystem = organization.findSystemById(idManagementSystem);
+            if (managementSystem != null) {
+                return managementSystem;
+            } else {
+                throw new Exception("Management System with ID " + idManagementSystem + " not found in organization " + idOrg + ".");
+            }
+        } else {
+            throw new Exception("Organization with ID " + idOrg + " not found.");
+        }
+    }
+
     // Get all organizations
     public List<Organization> getOrganizations() {
         return new ArrayList<>(organizations);
@@ -121,7 +137,7 @@ public class OrganizationsController {
 
 
     // Method to get a ManagementSystem by ID
-    private ManagementSystem getSystemManagementById(String idOrg, String idManagementSystem) throws Exception {
+    public ManagementSystem getSystemManagementById(String idOrg, String idManagementSystem) throws Exception {
         System.out.println(idOrg);
         Organization organization = getOrganizationById(idOrg);
 

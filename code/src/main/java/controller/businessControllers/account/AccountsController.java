@@ -127,9 +127,13 @@ public class AccountsController {
     public List<Account> getAccountsAuditor() {
         return accounts.stream().filter(acc->acc.getAccountType().equals(AUDITOR_ACCOUNT_TYPE)).toList();
     }
-
-
-
-
+    // Get an auditor account by ID
+    public Account getAuditorById(String idAuditor) {
+        Optional<Account> auditorAccount = accounts.stream()
+                .filter(acc -> acc.getAccountType().equals(AUDITOR_ACCOUNT_TYPE)
+                        && acc.getIdAccount().equals(idAuditor))
+                .findFirst();
+        return auditorAccount.orElse(null);
+    }
 
 }

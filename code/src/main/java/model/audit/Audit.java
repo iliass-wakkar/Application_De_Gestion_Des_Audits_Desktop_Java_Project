@@ -15,7 +15,7 @@ public class Audit {
     private String idOrganization;
     private String idSystemManagement;
     private FinalReport finalReport;
-    private boolean takeCertificate;
+    private String takeCertificate;
     private String isPass;
     private List<StandardStat> StandardsStat;
     private List<RequirementStat> RequirementsStat;
@@ -31,7 +31,7 @@ public class Audit {
         this.idOrganization = "unknown";
         this.idSystemManagement = "unknown";
         this.finalReport = new FinalReport();
-        this.takeCertificate = false;
+        setTakeCertificate("no");
         this.isPass = "notYet";
         this.StandardsStat =  new ArrayList<StandardStat>();
         this.RequirementsStat = new ArrayList<RequirementStat>();
@@ -39,18 +39,18 @@ public class Audit {
 
     // Parameterized Constructor
     public Audit(String dateDebut, String ExpDate, String subject, String status, String idAuditor, String idOrganization,
-                 String idSystemManagement, FinalReport finalRapport, boolean takeCertificate, String isPass,
+                 String idSystemManagement, FinalReport finalRapport, String takeCertificate, String isPass,
                  List<StandardStat> StandardsStat, List<RequirementStat> RequirementsStat) {
         this.idAudit = UUID.randomUUID().toString();
         this.dateDebut = dateDebut;
         this.expDate = ExpDate;
         this.subject = subject;
-        this.status = status;
+        setStatus(status);
         this.idAuditor = idAuditor;
         this.idOrganization = idOrganization;
         this.idSystemManagement = idSystemManagement;
         this.finalReport = finalRapport;
-        this.takeCertificate = takeCertificate;
+        setTakeCertificate(takeCertificate);
         this.isPass = isPass;
         this.StandardsStat = StandardsStat;
         this.RequirementsStat = RequirementsStat;
@@ -131,12 +131,18 @@ public class Audit {
         this.finalReport = finalReport;
     }
 
-    public boolean isTakeCertificate() {
+    public String isTakeCertificate() {
         return takeCertificate;
     }
 
-    public void setTakeCertificate(boolean takeCertificate) {
-        this.takeCertificate = takeCertificate;
+    public String getTakeCertificate() {
+        return takeCertificate;
+    }
+
+    public void setTakeCertificate(String takeCertificate) {
+        if(takeCertificate.equals("yes"))
+        this.takeCertificate = "yes";
+        else this.takeCertificate = "no";
     }
 
     public String getIsPass() {
@@ -182,7 +188,7 @@ public class Audit {
                 ", idOrg='" + idOrganization + '\'' +
                 ", idSystemManagement='" + idSystemManagement + '\'' +
                 ", finalRapport=" + finalReport +
-                ", isTakeCertificate=" + takeCertificate +
+                ", takeCertificate=" + takeCertificate +
                 ", isPass='" + isPass + '\'' +
                 ", arrStandardStat=" + StandardsStat +
                 ", arrExigenceStat=" + RequirementsStat +
