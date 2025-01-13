@@ -63,6 +63,7 @@ public class ClauseTab extends JPanel {
         createButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         buttonPanel.add(createButton);
+//        edit
 
         // Add the button panel to the top of the tab
         this.add(buttonPanel, BorderLayout.NORTH);

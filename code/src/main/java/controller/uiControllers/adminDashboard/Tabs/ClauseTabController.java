@@ -111,7 +111,7 @@ public class ClauseTabController {
             String[] columnNames = ClauseTab.getColumnNamesCreateEdit();
             editClauseForm = new FormDialog("Edit", columnNames, view.getRowData(), saveEditClauseIFormEventHandler, view.getId());
         }
-
+//edit
         @Override
         public void deleteObjectEventHandler(ButtonEditor buttonEditorView) {
             try {
