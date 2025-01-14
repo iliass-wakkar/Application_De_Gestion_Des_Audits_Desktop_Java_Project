@@ -7,36 +7,38 @@ import model.audit.StandardStat;
 import model.Organization.Organization;
 import model.SystemManagement.ManagementSystem;
 import utils.ControllersGetter;
+import utils.PageSwitcher; // Import the PageSwitcher utility
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 
-public class AuditViewDetails extends JFrame {
+public class AuditViewDetails extends JPanel {
 
     private Audit audit;
     private Organization organization;
     private Account auditor;
     private ManagementSystem managementSystem;
+    private String getBackPage;
 
-    public AuditViewDetails(String idAudit) {
+    public AuditViewDetails() {
+        // Default constructor
+    }
+
+    public AuditViewDetails(String idAudit, String getBackPage) {
+        loadAuditDetails(idAudit, getBackPage);
+    }
+
+    public void loadAuditDetails(String idAudit, String getBackPage) {
         try {
+            this.getBackPage = getBackPage;
             // Fetch audit details and related entities
             fetchData(idAudit);
-
             // Set up the UI
             setUpUi();
-
-            // Set frame properties
-            setTitle("Audit Details");
-            setSize(1000, 800); // Increased size to accommodate tables
-            setLocationRelativeTo(null); // Center the frame
-            setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Close only this window
-            setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error loading audit details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            dispose(); // Close the window if an error occurs
         }
     }
 
@@ -70,7 +72,7 @@ public class AuditViewDetails extends JFrame {
     private void setUpUi() {
         // Set the layout manager for the panel
         setLayout(new BorderLayout());
-        getContentPane().setBackground(new Color(236, 240, 241)); // Light gray background
+        setBackground(new Color(236, 240, 241)); // Light gray background
 
         // Create a main panel to hold all components
         JPanel mainPanel = new JPanel();
@@ -85,7 +87,7 @@ public class AuditViewDetails extends JFrame {
                 {"Expiration Date", audit.getExpDate()},
                 {"Subject", audit.getSubject()},
                 {"Status", audit.getStatus()},
-                {"Take Certificate", audit.getTakeCertificate()},
+                {"Take Certificate", String.valueOf(audit.isTakeCertificate())},
                 {"Is Pass", audit.getIsPass()}
         });
 
@@ -130,6 +132,35 @@ public class AuditViewDetails extends JFrame {
         JScrollPane scrollPane = new JScrollPane(mainPanel);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         add(scrollPane, BorderLayout.CENTER);
+
+        // Add a "Back" button at the bottom
+        addBackButton();
+    }
+
+    private void addBackButton() {
+        // Create a "Back" button
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        backButton.setBackground(new Color(52, 152, 219)); // Blue color
+        backButton.setForeground(Color.WHITE);
+        backButton.setFocusPainted(false);
+        backButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        // Add action listener to the button
+        backButton.addActionListener(e -> {
+            // Switch back to the main page using PageSwitcher
+            PageSwitcher.switchPage(getBackPage);
+        });
+
+        // Create a panel to hold the button
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.setBackground(new Color(236, 240, 241)); // Light gray background
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Add padding
+        buttonPanel.add(backButton);
+
+        // Add the button panel to the bottom of the main panel
+        add(buttonPanel, BorderLayout.SOUTH);
     }
 
     private void addSection(JPanel parent, String title, String[][] data) {
@@ -252,6 +283,16 @@ public class AuditViewDetails extends JFrame {
 
     public static void main(String[] args) {
         // Example usage
-        new AuditViewDetails("665e8952-9b4a-4b5f-84e5-2b083b97242f");
+        JFrame frame = new JFrame("Audit Details");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1000, 800); // Set the size of the frame
+        frame.setLocationRelativeTo(null); // Center the frame
+
+        // Create and add the AuditViewDetails panel to the frame
+        AuditViewDetails auditViewDetails = new AuditViewDetails("665e8952-9b4a-4b5f-84e5-2b083b97242f", "MainPage");
+        frame.add(auditViewDetails);
+
+        // Display the frame
+        frame.setVisible(true);
     }
 }

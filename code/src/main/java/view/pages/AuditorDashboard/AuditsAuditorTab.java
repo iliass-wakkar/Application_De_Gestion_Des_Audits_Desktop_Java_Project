@@ -1,6 +1,7 @@
-package view.pages.AdminDashboard;
+package view.pages.AuditorDashboard;
 
 import model.audit.Audit;
+import utils.PageSwitcher;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
 
@@ -15,7 +16,6 @@ public class AuditsAuditorTab extends JPanel {
 
     private List<Audit> data;
     private JButton viewDetailsButton;
-    private AuditViewDetails openAuditDetailsPage;
     private DefaultTableModel model;
     private JTable auditsTable;
 
@@ -87,7 +87,7 @@ public class AuditsAuditorTab extends JPanel {
                     int selectedRow = table.getSelectedRow();
                     if (selectedRow != -1) {
                         String idAudit = (String) table.getValueAt(selectedRow, 0); // Get the ID from the first column
-                        openAuditDetailsPage = new AuditViewDetails(idAudit); // Open the AuditViewDetails page
+                        PageSwitcher.switchToAuditDetails(idAudit,"auditorDashboard");
                     }
                 });
 
@@ -163,7 +163,7 @@ public class AuditsAuditorTab extends JPanel {
                     int selectedRow = table.getSelectedRow();
                     if (selectedRow != -1) {
                         String idAudit = (String) table.getValueAt(selectedRow, 0); // Get the ID from the first column
-                        openAuditDetailsPage = new AuditViewDetails(idAudit); // Open the AuditViewDetails page
+                        PageSwitcher.switchToAuditDetails(idAudit,"auditorDashboard");
                     }
                 });
 

@@ -3,6 +3,7 @@ package utils;
 
 
 import controller.businessControllers.account.AccountSessionHandler;
+import view.pages.AdminDashboard.AuditViewDetails;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,6 @@ public class PageSwitcher {
   static    private JPanel mainPanel;
     static private CardLayout cardLayout;
    static   private Map<String, JPanel> pages; // Map to store pages by name
-
 
 
     public PageSwitcher() {
@@ -39,6 +39,8 @@ public class PageSwitcher {
         addPage("login", PagesGetter.LoginPage );
         addPage("adminDashboard", PagesGetter.AdminDashBoardPage );
         addPage("auditorDashboard", PagesGetter.AuditorDashboardPage );
+        addPage("AuditViewDetails",PagesGetter.auditViewDetailsPage);
+
 
 
 
@@ -78,6 +80,14 @@ public class PageSwitcher {
         } else {
             System.out.println("Page not found: " + pageName);
         }
+    }
+
+    static public void switchToAuditDetails(String idAudit,String getBackPage) {
+        PagesGetter.auditViewDetailsPage.loadAuditDetails(idAudit,getBackPage);
+        switchPage("AuditViewDetails");
+
+
+
     }
 
     public static void main(String[] args) {

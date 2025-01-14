@@ -2,7 +2,7 @@ package view.pages.AuditorDashboard;
 
 import controller.uiControllers.AuditorDashboard.AuditorDashboardController;
 import utils.PageSwitcher;
-import view.pages.AdminDashboard.AuditsAuditorTab;
+
 
 import javax.swing.*;
 import java.awt.*;

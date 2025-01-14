@@ -4,45 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31badfcb-97cc-4006-8fe0-eb3d97110bf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" afterDir="false" />
+    <list default="true" id="fef9432e-9d34-4d8c-a7b4-c9c690ef2678" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/audits.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/audits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SaveUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SaveUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  "customColor": "",
+  "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2rZz5QwSamzhIlpX7S7cwGZEavf" />
+  <component name="ProjectId" id="2ray8JPKhD5F6LiJDyXCSrK51TJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AuditViewDetails.executor": "Run",
-    "Application.AuditsTab.executor": "Run",
-    "Application.RunIt.executor": "Run",
+    "Application.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -51,23 +42,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="RunIt" type="Application" factoryName="Application">
+    <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="utils.PageSwitcher" />
       <module name="Application_De_Gestion_Des_Audits_Desktop_Java_Project_new" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,20 +58,20 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="31badfcb-97cc-4006-8fe0-eb3d97110bf4" name="Changes" comment="" />
-      <created>1736781203882</created>
+      <changelist id="fef9432e-9d34-4d8c-a7b4-c9c690ef2678" name="Changes" comment="" />
+      <created>1736811321332</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1736781203882</updated>
-      <workItem from="1736781206609" duration="15377000" />
+      <updated>1736811321332</updated>
+      <workItem from="1736811323595" duration="2676000" />
     </task>
     <servers />
   </component>

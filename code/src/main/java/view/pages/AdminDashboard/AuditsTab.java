@@ -2,6 +2,7 @@ package view.pages.AdminDashboard;
 
 import controller.uiControllers.adminDashboard.Tabs.AuditsTabController;
 import model.audit.Audit;
+import utils.PageSwitcher;
 import utils.TableConverterUtility;
 import utils.ControllersGetter;
 import view.components.ButtonRenderer;
@@ -21,7 +22,6 @@ public class AuditsTab extends JPanel {
     private AuditsTabController auditsTabController;
     private static String[] columnNamesCreateEdit = { "DateDebut", "ExpDate", "Subject", "Status", "takeCertificate", "IdAuditor", "IdOrganization", "IdSystemManagement"};
     private JButton viewDetailsButton;
-    private AuditViewDetails openAuditDetailsPage ;
     DefaultTableModel model;
     JTable auditsTable;
 
@@ -138,7 +138,7 @@ public class AuditsTab extends JPanel {
                     int selectedRow = table.getSelectedRow();
                     if (selectedRow != -1) {
                         String idAudit = (String) table.getValueAt(selectedRow, 0); // Get the ID from the first column
-                        openAuditDetailsPage =new AuditViewDetails(idAudit); // Open the AuditViewDetails page
+                        PageSwitcher.switchToAuditDetails(idAudit,"adminDashboard");
                     }
                 });
 
@@ -237,7 +237,7 @@ public class AuditsTab extends JPanel {
                     int selectedRow = table.getSelectedRow();
                     if (selectedRow != -1) {
                         String idAudit = (String) table.getValueAt(selectedRow, 0); // Get the ID from the first column
-                        openAuditDetailsPage = new AuditViewDetails(idAudit); // Open the AuditViewDetails page
+                     PageSwitcher.switchToAuditDetails(idAudit,"adminDashboard");
                     }
                 });
 
