@@ -8,7 +8,6 @@ import view.pages.LoginPage;
 
 import javax.swing.*;
 import utils.ControllersGetter;
-
 public class LoginPageController {
     private final LoginPage view;
 
