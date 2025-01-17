@@ -16,7 +16,6 @@ public class StandardAuditorTab extends JPanel {
     private JTable standardTable;
 
     public StandardAuditorTab() {
-        System.out.println("The data: " + data); // Debug statement
         setUpUi();
     }
 
@@ -63,7 +62,6 @@ public class StandardAuditorTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.organizationsController.getAllStandards();
-        System.out.println("Refreshed data: " + data); // Debug statement
 
         // Clear the existing table data
         model.setRowCount(0);

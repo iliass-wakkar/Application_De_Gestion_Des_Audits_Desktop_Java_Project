@@ -20,7 +20,7 @@ public class AuditsController {
 
     public AuditsController() {
         loadAudits();
-        System.out.println("Audits loaded successfully: " + audits);
+
     }
 
     // Load audits from the JSON file
@@ -29,7 +29,6 @@ public class AuditsController {
             List<Audit> loadedAudits = JsonFileHandler.loadData(AUDITS_FILE_PATH, new TypeReference<List<Audit>>() {
             });
             audits = new ArrayList<>(loadedAudits);
-            System.out.println(audits.size() + " audits loaded successfully.");
         } catch (IOException e) {
             System.err.println("Error loading audits: " + e.getMessage());
         }

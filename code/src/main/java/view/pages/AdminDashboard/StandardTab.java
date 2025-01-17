@@ -24,7 +24,6 @@ public class StandardTab extends JPanel {
 
     public StandardTab() {
         standardTabController = new StandardTabController(this);
-        System.out.println("the data :" + data);
         setUpUi();
     }
 

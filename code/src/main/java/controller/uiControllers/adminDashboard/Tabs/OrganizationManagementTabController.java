@@ -48,7 +48,6 @@ public class OrganizationManagementTabController  {
     private IFormDialogEventHandler saveEditOrganizationIFormEventHandler = (formDialog)->{
 
 
-        System.out.println("OrganizationManagementTabController saveEditOrganizationIFormEventHandler");
 
         try {
             if (formDialog.validateForm()) {
@@ -88,7 +87,7 @@ public class OrganizationManagementTabController  {
 
     private IFormDialogEventHandler saveCreateOrganizationIFormEventHandler = (formDialog)->{
 
-        System.out.println("AuditorManagementTabController saveCreateOrganizationIFormEventHandler");
+
         try {
             if (formDialog.validateForm()) {
                 Organization organization = saveUtil.saveFormData(formDialog.getFormData());
@@ -126,7 +125,7 @@ public class OrganizationManagementTabController  {
     };
     private IFormDialogEventHandler saveDeleteOrganizationIFormEventHandler = (formDialog)->{
 
-        System.out.println("AuditorManagementTabController saveDeleteOrganizationIFormEventHandler");
+
     };
 
     public IFormDialogEventHandler getSaveDeleteOrganizationIFormEventHandler() {
@@ -147,7 +146,6 @@ public class OrganizationManagementTabController  {
         @Override
         public void editObjectEventHandler(ButtonEditor view) {
             String[] columnNames = OrganizationManagementTab.getColumnNamesCreateEdit();
-            System.out.println( "the columns name"+columnNames);
             editOrganizationForm=new FormDialog(" Edit",columnNames,view.getRowData(), saveEditOrganizationIFormEventHandler,view.getId());
 
         }

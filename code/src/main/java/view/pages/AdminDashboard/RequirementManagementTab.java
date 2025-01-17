@@ -25,7 +25,6 @@ public class RequirementManagementTab extends JPanel {
 
     public RequirementManagementTab() {
         this.data = ControllersGetter.organizationsController.getAllRequirements(); // Get all management systems
-        System.out.println("Fetched data: " + data); // Debug statement
         RequirementManagementTabController = new RequirementTabController(this);
         setUpUi();
     }
@@ -109,7 +108,6 @@ public class RequirementManagementTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.organizationsController.getAllRequirements();
-        System.out.println("Refreshed data: " + data); // Debug statement
 
         // Clear the existing table data
         model.setRowCount(0);

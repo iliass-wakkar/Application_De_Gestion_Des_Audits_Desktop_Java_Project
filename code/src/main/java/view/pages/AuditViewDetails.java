@@ -5,14 +5,12 @@ import model.Accounts.Account;
 import model.SystemManagement.Requirement;
 import model.SystemManagement.Standard.Standard;
 import model.audit.Audit;
-import model.audit.RequirementStat;
 import model.Organization.Organization;
 import model.SystemManagement.ManagementSystem;
 import utils.ControllersGetter;
 import utils.PageSwitcher; // Import the PageSwitcher utility
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 
@@ -24,7 +22,7 @@ public class AuditViewDetails extends JPanel {
     private ManagementSystem managementSystem;
     private String getBackPage;
     private AuditsController auditsController= new AuditsController();
-
+ private  String idAudit;
     public AuditViewDetails() {
         // Default constructor
     }
@@ -36,16 +34,15 @@ public class AuditViewDetails extends JPanel {
     public void loadAuditDetails(String idAudit, String getBackPage) {
         try {
             this.getBackPage = getBackPage;
-            // Fetch audit details and related entities
-            fetchData(idAudit);
-            // Set up the UI
-            setUpUi();
+            this.idAudit = idAudit;
+            refreshPage();
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error loading audit details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    private void fetchData(String idAudit) throws Exception {
+    private void fetchData() throws Exception {
         // Fetch audit details
         audit = ControllersGetter.auditsController.getAuditById(idAudit);
         if (audit == null) {
@@ -91,23 +88,36 @@ public class AuditViewDetails extends JPanel {
 
         // Add dynamic button/label based on audit status
         String auditStatus = audit.getStatus(); // Get the audit status
-        switch (auditStatus.toLowerCase()) {
-            case "pending":
-                addLaunchAuditButton(topPanel);
-                break;
-            case "in progress":
-                addCompleteAuditButton(topPanel);
-                break;
-            case "completed":
-                addCompletedLabel(topPanel);
-                break;
-            default:
-                // Handle unknown status (optional)
-                JLabel unknownLabel = new JLabel("Unknown Status: " + auditStatus);
-                unknownLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-                unknownLabel.setForeground(Color.RED);
-                topPanel.add(unknownLabel);
-                break;
+
+
+
+
+
+        if(getBackPage.equals("adminDashboard")){
+
+            addAuditStatLabel(topPanel,auditStatus);
+        }
+        else{
+
+
+            switch (auditStatus.toLowerCase()) {
+                case "pending":
+                    addLaunchAuditButton(topPanel);
+                    break;
+                case "in progress":
+                    addCompleteAuditButton(topPanel);
+                    break;
+                case "completed":
+                    addCompletedLabel(topPanel);
+                    break;
+                default:
+                    // Handle unknown status (optional)
+                    JLabel unknownLabel = new JLabel("Unknown Status: " + auditStatus);
+                    unknownLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+                    unknownLabel.setForeground(Color.RED);
+                    topPanel.add(unknownLabel);
+                    break;
+            }
         }
 
         // Add the top panel to the main panel
@@ -171,14 +181,20 @@ public class AuditViewDetails extends JPanel {
     }
 
 
-    private void refreshPage() {
-        // Remove all components from the panel
-        removeAll();
-        // Revalidate and repaint the panel to reflect the changes
-        revalidate();
-        repaint();
-        // Reload the audit details
-        loadAuditDetails(audit.getIdAudit(), getBackPage);
+    private void refreshPage(){
+        try {
+            // Remove all components from the panel
+            removeAll();
+            // Revalidate and repaint the panel to reflect the changes
+            revalidate();
+            repaint();
+            fetchData();
+            setUpUi();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(this, "Error loading audit details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
     }
 
 
@@ -193,6 +209,7 @@ public class AuditViewDetails extends JPanel {
         launchAuditButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         // Add action listener to the button
+
         launchAuditButton.addActionListener(e -> {
             // Define what happens when the button is clicked
             boolean auditLaunched = audit.setStatus("in progress");
@@ -211,6 +228,16 @@ public class AuditViewDetails extends JPanel {
     }
 
 
+
+    private void addAuditStatLabel(JPanel topPanel, String status) {
+        JLabel completedLabel = new JLabel(status);
+        completedLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        completedLabel.setForeground(new Color(46, 204, 113)); // Green color
+        completedLabel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+
+
+        topPanel.add(completedLabel);
+    }
 
     private void addCompleteAuditButton(JPanel topPanel) {
         // Create the "Complete Audit" button

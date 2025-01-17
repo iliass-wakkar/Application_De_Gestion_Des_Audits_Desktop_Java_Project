@@ -76,7 +76,6 @@ public class ButtonEditor extends DefaultCellEditor {
         }
         id= (String)table.getModel().getValueAt(row, 0);
 
-        System.out.println("Row data saved for row: " + row);
         return panel; // Return the panel containing the buttons
     }
 

@@ -69,7 +69,7 @@ public class StandardTabController {
     };
 
     private IFormDialogEventHandler saveCreateStandardIFormEventHandler = (formDialog) -> {
-        System.out.println("StandardTabController saveCreateStandardIFormEventHandler");
+
         try {
             if (formDialog.validateForm()) {
                 Standard standard = saveUtil.saveFormData(formDialog.getFormData());

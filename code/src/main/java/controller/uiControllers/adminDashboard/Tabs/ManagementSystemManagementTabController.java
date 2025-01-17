@@ -39,7 +39,7 @@ public class ManagementSystemManagementTabController {
             if (formDialog.validateForm()) {
                 ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());
                 String idOrg = managementSystem.getIdOrganization(); // Get the organization ID
-                System.out.println(idOrg+"\t"+formDialog.getId()+"here we go");
+
 
                 ControllersGetter.organizationsController.editManagementSystemInOrganization(idOrg, formDialog.getId(), managementSystem);
                 view.refreshTable();
@@ -70,7 +70,7 @@ public class ManagementSystemManagementTabController {
     };
 
     private IFormDialogEventHandler saveCreateManagementSystemIFormEventHandler = (formDialog) -> {
-        System.out.println("ManagementSystemManagementTabController saveCreateManagementSystemIFormEventHandler");
+
         try {
             if (formDialog.validateForm()) {
                 ManagementSystem managementSystem = saveUtil.saveFormData(formDialog.getFormData());

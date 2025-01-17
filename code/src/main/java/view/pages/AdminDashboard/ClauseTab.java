@@ -104,7 +104,6 @@ public class ClauseTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.organizationsController.getAllClauses();
-        System.out.println(data);
         // Clear the existing table data
         model.setRowCount(0);
 

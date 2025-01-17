@@ -27,7 +27,6 @@ public class AuditsTab extends JPanel {
 
     public AuditsTab() {
         this.data = ControllersGetter.auditsController.getAllAudits(); // Get all audits
-        System.out.println("data data data \t"+data);
         auditsTabController = new AuditsTabController(this);
         setUpUi();
     }
@@ -161,7 +160,6 @@ public class AuditsTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.auditsController.getAllAudits();
-        System.out.println(data);
 
         // Clear the existing table data
         model.setRowCount(0);

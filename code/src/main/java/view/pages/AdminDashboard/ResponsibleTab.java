@@ -103,7 +103,6 @@ public class ResponsibleTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.responsiblesController.getAllResponsibles();
-        System.out.println(data);
         // Clear the existing table data
         model.setRowCount(0);
 

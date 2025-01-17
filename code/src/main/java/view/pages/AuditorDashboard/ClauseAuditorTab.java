@@ -62,7 +62,6 @@ public class ClauseAuditorTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.organizationsController.getAllClauses();
-        System.out.println("Refreshed data: " + data); // Debug statement
 
         // Clear the existing table data
         model.setRowCount(0);

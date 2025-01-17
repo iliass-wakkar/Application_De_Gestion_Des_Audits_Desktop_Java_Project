@@ -67,7 +67,6 @@ public class ResponsibleTabController {
     };
 
     private IFormDialogEventHandler saveCreateResponsibleIFormEventHandler = (formDialog) -> {
-        System.out.println("ResponsibleTabController saveCreateResponsibleIFormEventHandler");
         try {
             if (formDialog.validateForm()) {
                 Responsible responsible = saveUtil.saveFormData(formDialog.getFormData());

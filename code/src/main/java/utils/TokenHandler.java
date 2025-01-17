@@ -58,7 +58,7 @@ public class TokenHandler {
                     .anyMatch(account -> account.getIdAccount().equals(idAccount));
 
             if (!accountExists) {
-//                System.out.println("Account with ID " + idAccount + " does not exist.");
+
                 return false;
             }
 
@@ -74,17 +74,15 @@ public class TokenHandler {
     }
 
     public static void main(String[] args) {
-        System.out.println("Test case:");
+
 
         // Generate a token
         String idAccount = "SDK1213E";
         String accountType = "Admin";
         AccountToken accountToken = generateToken(idAccount, accountType);
-        System.out.println("Generated Token: " + accountToken.getToken());
 
         // Check if the token is valid
         boolean isValid = checkToken(accountToken.getToken());
-        System.out.println("Is the token valid? " + isValid);
 
         // Decrypt the token
         AccountToken decryptedToken = decryptToken(accountToken.getToken());

@@ -4,14 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711c1c60-6364-461a-8a3a-e9aa6a061eab" name="Changes" comment="">
+    <list default="true" id="01e47f33-73e7-4ccd-a8a1-afe0fd6c8ac1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/audits.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/audits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/organization/OrganizationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PageSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PagesGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditViewDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ManagementSystemManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ManagementSystemManagementTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/OrganizationManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/OrganizationManagementTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ResponsibleTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ResponsibleTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/StandardTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/StandardTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditorManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditorManagementTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ButtonEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ButtonEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ClauseTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ClauseTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ResponsibleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ResponsibleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/SiteTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/SiteTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/StandardTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/StandardTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditViewDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ClauseAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ClauseAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ManagementSystemAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ManagementSystemAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/RequirementAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/RequirementAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/StandardAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/StandardAuditorTab.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,19 +41,18 @@
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
-  "associatedIndex": 6
+  "associatedIndex": 1
 }]]></component>
-  <component name="ProjectId" id="2rlDOtrrH7l46eZbIo8yzC7K1xt" />
+  <component name="ProjectId" id="2rlz2hgkiMtKSB8IOiHFRnyfPkA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AuditViewDetails.executor": "Run",
+    "Application.pageSwitcher.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -46,19 +63,9 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="RunIt" type="Application" factoryName="Application">
+    <configuration name="pageSwitcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="utils.PageSwitcher" />
       <module name="Application_De_Gestion_Des_Audits_Desktop_Java_Project_new" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,20 +74,20 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="711c1c60-6364-461a-8a3a-e9aa6a061eab" name="Changes" comment="" />
-      <created>1737124740403</created>
+      <changelist id="01e47f33-73e7-4ccd-a8a1-afe0fd6c8ac1" name="Changes" comment="" />
+      <created>1737148245524</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1737124740403</updated>
-      <workItem from="1737124743042" duration="5389000" />
+      <updated>1737148245524</updated>
+      <workItem from="1737148248108" duration="3425000" />
     </task>
     <servers />
   </component>

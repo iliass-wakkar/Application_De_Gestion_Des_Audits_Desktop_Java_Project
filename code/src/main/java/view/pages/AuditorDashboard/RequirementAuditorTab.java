@@ -20,7 +20,6 @@ public class RequirementAuditorTab extends JPanel {
 
     public RequirementAuditorTab() {
         this.data = ControllersGetter.organizationsController.getAllRequirements(); // Get all requirements
-        System.out.println("Fetched data: " + data); // Debug statement
         setUpUi();
     }
 
@@ -69,7 +68,7 @@ public class RequirementAuditorTab extends JPanel {
     public void refreshTable() {
         // Fetch the latest data
         data = ControllersGetter.organizationsController.getAllRequirements();
-        System.out.println("Refreshed data: " + data); // Debug statement
+
 
         // Clear the existing table data
         model.setRowCount(0);

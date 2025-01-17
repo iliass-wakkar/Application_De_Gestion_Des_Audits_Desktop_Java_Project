@@ -17,7 +17,6 @@ public class AccountSessionHandler {
 //  to do check token :
 
 
-          System.out.println( "the current account session is : "+ControllersGetter.currentAccountSession);
            if(ControllersGetter.currentAccountSession==null || !TokenHandler.checkToken(ControllersGetter.currentAccountSession.getToken())) {
                ClearCurrentAccountSession();
            }
