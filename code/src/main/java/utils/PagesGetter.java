@@ -5,7 +5,7 @@ import javax.swing.*;
 import view.pages.AdminDashboard.AdminDashboard;
 import view.pages.AuditorDashboard.AuditorDashboard;
 import view.pages.LoginPage;
-import  view.pages.AdminDashboard.AuditViewDetails;
+import view.pages.AuditViewDetails;
 
 
 public class PagesGetter {

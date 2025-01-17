@@ -379,6 +379,7 @@ public class OrganizationsController {
     }
 
 
+
     // Get all sites across all organizations
     public List<Site> getAllSites() {
         List<Site> allSites = new ArrayList<>();

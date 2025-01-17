@@ -89,12 +89,14 @@ public class Audit {
         return status;
     }
 
-    public void setStatus(String status) {
-        if(status.equals("pending") || status.equals("notYet") || status.equals("in progress") || status.equals("completed"))  {
+    public boolean setStatus(String status) {
+        if(status.equals("pending") || status.equals("in progress") || status.equals("completed"))  {
             this.status = status;
+            return true;
         }
         else {
             System.out.println("Invalid status");
+            return false;
         }
 
     }
