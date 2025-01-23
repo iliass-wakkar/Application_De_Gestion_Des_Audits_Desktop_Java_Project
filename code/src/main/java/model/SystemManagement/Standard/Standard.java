@@ -13,6 +13,16 @@ public class Standard {
     private String reference;
     private ArrayList<Clause> clauses = new ArrayList<>();
 
+    private  String status="not yet";
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
     // Constructors
     public Standard() {
         this.idStandard = UUID.randomUUID().toString();

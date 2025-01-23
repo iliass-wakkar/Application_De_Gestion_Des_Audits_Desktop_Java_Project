@@ -14,14 +14,14 @@ public class AdminDashboard extends JPanel {
     private JButton logoutButton;
     private AuditorManagementTab auditorManagementTab = new AuditorManagementTab();
     private OrganizationManagementTab organizationManagementTab = new OrganizationManagementTab();
-private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
-private  ResponsibleTab responsibleTab = new ResponsibleTab();
-private  SiteTab siteTab = new SiteTab();
-private  StandardTab StandardTab = new StandardTab();
-private RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
-private  ClauseTab clauseTab = new ClauseTab();
-private  OrgProcessTab OrgProcessTab = new OrgProcessTab();
-private AuditsTab auditsTab = new AuditsTab();
+    private  ManagementSystemManagementTab managementSystemManagementTab = new ManagementSystemManagementTab();
+    private  ResponsibleTab responsibleTab = new ResponsibleTab();
+    private  SiteTab siteTab = new SiteTab();
+    private  StandardTab StandardTab = new StandardTab();
+    private RequirementManagementTab requirementManagementTab = new RequirementManagementTab();
+    private  ClauseTab clauseTab = new ClauseTab();
+    private  OrgProcessTab OrgProcessTab = new OrgProcessTab();
+    private AuditsTab auditsTab = new AuditsTab();
     public AdminDashboard() {
         setUpUi();
         adminDashboardController = new AdminDashboardController(this);
@@ -35,11 +35,11 @@ private AuditsTab auditsTab = new AuditsTab();
         // Set the layout manager for the panel
         this.setLayout(new BorderLayout());
 
-        UIManager.put("TabbedPane.selected", new Color(231, 76, 60)); // Change selected tab background color
+        UIManager.put("TabbedPane.selected", new Color(128, 108, 166)); // Change selected tab background color
 
         // Create a top panel for the title and logout button
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.setBackground(new Color(44, 62, 80)); // Dark blue background
+        topPanel.setBackground(new Color(98, 78, 136)); // Dark blue background
         topPanel.setPreferredSize(new Dimension(getWidth(), 80));
         topPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
@@ -52,7 +52,7 @@ private AuditsTab auditsTab = new AuditsTab();
         // Add the logout button
         logoutButton = new JButton("Logout");
         logoutButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        logoutButton.setBackground(new Color(231, 76, 60)); // Red color for logout
+        logoutButton.setBackground(new Color(128, 108, 166)); // Red color for logout
         logoutButton.setForeground(Color.WHITE);
         logoutButton.setFocusPainted(false);
         logoutButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -69,7 +69,7 @@ private AuditsTab auditsTab = new AuditsTab();
         // Create a tabbed pane for the dashboard
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        tabbedPane.setBackground(new Color(52, 73, 94)); // Dark blue background
+        tabbedPane.setBackground(new Color(98, 78, 136)); // Dark blue background
         tabbedPane.setForeground(Color.WHITE);
         tabbedPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -100,7 +100,7 @@ private AuditsTab auditsTab = new AuditsTab();
         // Add content to the tab (customize as needed)
         JLabel label = new JLabel("Welcome to " + tabName);
         label.setFont(new Font("Segoe UI", Font.BOLD, 24));
-        label.setForeground(new Color(44, 62, 80)); // Dark blue text
+        label.setForeground(new Color(98, 78, 136)); // Dark blue text
         label.setHorizontalAlignment(SwingConstants.CENTER);
         tabPanel.add(label, BorderLayout.CENTER);
 

@@ -83,7 +83,7 @@ public class FormDialog extends JDialog {
             // Create a label for the field
             JLabel label = new JLabel(fieldName + ":");
             label.setFont(new Font("Segoe UI", Font.BOLD, 14));
-            label.setForeground(new Color(52, 73, 94)); // Dark blue text
+            label.setForeground(new Color(98, 78, 136)); // Dark blue text
             formPanel.add(label);
 
             // Create a text field for user input
@@ -117,7 +117,7 @@ public class FormDialog extends JDialog {
 
         // Cancel button
         cancelButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        cancelButton.setBackground(new Color(231, 76, 60)); // Red color
+        cancelButton.setBackground(new Color(128, 108, 166)); // Red color
         cancelButton.setForeground(Color.WHITE);
         cancelButton.setFocusPainted(false);
         cancelButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));

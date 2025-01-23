@@ -89,7 +89,7 @@ public class OrganizationManagementTab extends JPanel {
         auditTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         auditTable.setRowHeight(30);
         auditTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        auditTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        auditTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         auditTable.getTableHeader().setForeground(Color.WHITE);
         auditTable.setFillsViewportHeight(true);
 

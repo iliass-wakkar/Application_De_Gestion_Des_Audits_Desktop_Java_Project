@@ -87,7 +87,7 @@ public class OrgProcessTab extends JPanel {
         orgProcessTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         orgProcessTable.setRowHeight(30);
         orgProcessTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        orgProcessTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        orgProcessTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         orgProcessTable.getTableHeader().setForeground(Color.WHITE);
         orgProcessTable.setFillsViewportHeight(true);
 

@@ -48,7 +48,7 @@ public class ButtonEditor extends DefaultCellEditor {
         // Create Delete button
         deleteButton = new JButton("Delete");
         deleteButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
-        deleteButton.setBackground(new Color(231, 76, 60)); // Red color
+        deleteButton.setBackground(new Color(128, 108, 166)); // Red color
         deleteButton.setForeground(Color.WHITE);
         deleteButton.setFocusPainted(false);
         deleteButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));

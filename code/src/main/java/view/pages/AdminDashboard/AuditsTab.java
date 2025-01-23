@@ -93,7 +93,7 @@ public class AuditsTab extends JPanel {
         auditsTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         auditsTable.setRowHeight(30);
         auditsTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        auditsTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        auditsTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         auditsTable.getTableHeader().setForeground(Color.WHITE);
         auditsTable.setFillsViewportHeight(true);
 

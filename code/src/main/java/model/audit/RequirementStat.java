@@ -4,20 +4,20 @@ import java.util.UUID;
 
 public class RequirementStat {
     private final String idRequirementStat;
-    private String passStat;
+    private String status;
     private Solution solution;
 
     // Default Constructor
     public RequirementStat() {
         this.idRequirementStat = UUID.randomUUID().toString();
-        this.passStat = "notYet";
+        this.status = "notYet";
         this.solution = new Solution();
     }
 
     // Parameterized Constructor
-    public RequirementStat(String passStat, FinalReport clauseRapport, Solution solution) {
+    public RequirementStat(String status, FinalReport clauseRapport, Solution solution) {
         this.idRequirementStat = UUID.randomUUID().toString();
-        this.setPassStat(passStat);
+        this.setStatus(status);
         this.solution = solution;
     }
 
@@ -26,19 +26,17 @@ public class RequirementStat {
         return idRequirementStat;
     }
 
-    public String getPassStat() {
-        return passStat;
+    public String getStatus() {
+        return status;
 
     }
 
-    public void setPassStat(String passStat) {
-        if(passStat.equals("notYet") || passStat.equals("Pass") || passStat.equals("fail")  )  {
-            this.passStat = passStat;
+    public void setStatus(String status) {
+
+            this.status = status;
         }
-        else {
-            System.out.println("Invalid Pass Stat");
-        }
-    }
+
+
 
 
 
@@ -54,7 +52,7 @@ public class RequirementStat {
     public String toString() {
         return "ExigenceStat{" +
                 "idExigence='" + idRequirementStat + '\'' +
-                ", passStat='" + passStat + '\'' +
+                ", passStat='" + status + '\'' +
                 ", Solution=" + solution +
                 '}';
     }

@@ -7,29 +7,36 @@
     <list default="true" id="01e47f33-73e7-4ccd-a8a1-afe0fd6c8ac1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/AccountSession.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AccountSession.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Accounts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/audits.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/audits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/AuditsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/businessControllers/account/AccountSessionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ManagementSystemManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ManagementSystemManagementTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/OrganizationManagementTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/OrganizationManagementTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ResponsibleTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/ResponsibleTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/StandardTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/uiControllers/adminDashboard/Tabs/StandardTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TokenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/organizations.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/organizations.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Requirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Standard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SystemManagement/Standard/Standard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audit/Audit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/audit/RequirementStat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audit/RequirementStat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/audit/StandardStat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audit/StandardStat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/ButtonRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/ButtonRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AdminDashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditorManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditorManagementTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/AuditsTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ButtonEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ButtonEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ClauseTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ClauseTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/FormDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/FormDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ManagementSystemManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ManagementSystemManagementTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/OrgProcessTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/OrgProcessTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/OrganizationManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/OrganizationManagementTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/RequirementManagementTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ResponsibleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/ResponsibleTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/SiteTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/SiteTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/StandardTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AdminDashboard/StandardTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditViewDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditorDashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/AuditsAuditorTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ClauseAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ClauseAuditorTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ManagementSystemAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/ManagementSystemAuditorTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/RequirementAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/RequirementAuditorTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/StandardAuditorTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/AuditorDashboard/StandardAuditorTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pages/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,29 +46,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2rlz2hgkiMtKSB8IOiHFRnyfPkA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.pageSwitcher.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.pageSwitcher.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="pageSwitcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="utils.PageSwitcher" />
@@ -87,7 +95,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737148245524</updated>
-      <workItem from="1737148248108" duration="3425000" />
+      <workItem from="1737148248108" duration="4343000" />
+      <workItem from="1737376773698" duration="47000" />
+      <workItem from="1737376849970" duration="5192000" />
+      <workItem from="1737408931790" duration="65000" />
+      <workItem from="1737657673081" duration="4860000" />
     </task>
     <servers />
   </component>

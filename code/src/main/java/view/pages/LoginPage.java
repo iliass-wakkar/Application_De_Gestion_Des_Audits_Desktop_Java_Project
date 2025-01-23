@@ -34,7 +34,7 @@ public class LoginPage extends JPanel {
         // Welcome label
         welcomeLabel = new JLabel("Welcome! Please log in.");
         welcomeLabel.setFont(new Font("Segoe UI", Font.BOLD, 24)); // Modern font
-        welcomeLabel.setForeground(new Color(70, 130, 180)); // Light blue text
+        welcomeLabel.setForeground(new Color(98, 78, 136)); // Light blue text
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2; // Span across two columns
@@ -85,7 +85,7 @@ public class LoginPage extends JPanel {
         // Login button
         loginButton = new JButton("Log In");
         loginButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        loginButton.setBackground(new Color(70, 130, 180)); // Light blue background
+        loginButton.setBackground(new Color(98, 78, 136)); // Light blue background
         loginButton.setForeground(Color.WHITE); // White text
         loginButton.setFocusPainted(false);
         loginButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20)); // Padding

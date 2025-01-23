@@ -4,14 +4,14 @@ import java.util.UUID;
 
 public class StandardStat {
     private final String idStandardStat;
-    private String passStat;
+    private String status;
     private Solution solution;
 
 
     // Default Constructor
     public StandardStat() {
         this.idStandardStat = UUID.randomUUID().toString();
-        this.passStat = "notYet";
+        this.status = "notYet";
         this.solution = new Solution();
     }
 
@@ -19,14 +19,14 @@ public class StandardStat {
     // Parameterized Constructor
 
 
-    public StandardStat(String idStandardStat, String passStat, Solution solution) {
+    public StandardStat(String idStandardStat, String status, Solution solution) {
         this.idStandardStat = idStandardStat;
-        this.setPassStat(passStat);
+        this.setStatus(status);
         this.solution = solution;
     }
 
-    public String getPassStat() {
-        return passStat;
+    public String getStatus() {
+        return status;
     }
     public Solution getSolution() {
         return solution;
@@ -36,14 +36,10 @@ public class StandardStat {
         return idStandardStat;
     }
 
-    public void setPassStat(String passStat) {
+    public void setStatus(String status) {
 
-        if(passStat.equals("notYet") || passStat.equals("Pass") || passStat.equals("fail") )  {
-            this.passStat = passStat;
-        }
-        else {
-            System.out.println("Invalid Pass Stat");
-        }
+            this.status = status;
+
     }
 
     public void setSolution(Solution solution) {

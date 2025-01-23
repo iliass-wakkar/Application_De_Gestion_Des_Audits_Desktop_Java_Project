@@ -86,7 +86,7 @@ public class ManagementSystemManagementTab extends JPanel {
         managementSystemTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         managementSystemTable.setRowHeight(30);
         managementSystemTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        managementSystemTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        managementSystemTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         managementSystemTable.getTableHeader().setForeground(Color.WHITE);
         managementSystemTable.setFillsViewportHeight(true);
 

@@ -86,7 +86,7 @@ public class ClauseTab extends JPanel {
         clauseTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         clauseTable.setRowHeight(30);
         clauseTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        clauseTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        clauseTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         clauseTable.getTableHeader().setForeground(Color.WHITE);
         clauseTable.setFillsViewportHeight(true);
 

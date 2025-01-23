@@ -32,11 +32,11 @@ public class AuditorDashboard extends JPanel {
         this.setLayout(new BorderLayout());
 
         // Set the selected tab color
-        UIManager.put("TabbedPane.selected", new Color(231, 76, 60)); // Red color for selected tab
+        UIManager.put("TabbedPane.selected", new Color(128, 108, 166)); // Red color for selected tab
 
         // Create a top panel for the title and logout button
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.setBackground(new Color(44, 62, 80)); // Dark blue background
+        topPanel.setBackground(new Color(98, 78, 136)); // Dark blue background
         topPanel.setPreferredSize(new Dimension(getWidth(), 80));
         topPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
@@ -49,7 +49,7 @@ public class AuditorDashboard extends JPanel {
         // Add the logout button
         logoutButton = new JButton("Logout");
         logoutButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        logoutButton.setBackground(new Color(231, 76, 60)); // Red color for logout
+        logoutButton.setBackground(new Color(128, 108, 166)); // Red color for logout
         logoutButton.setForeground(Color.WHITE);
         logoutButton.setFocusPainted(false);
         logoutButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -66,7 +66,7 @@ public class AuditorDashboard extends JPanel {
         // Create a tabbed pane for the dashboard
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        tabbedPane.setBackground(new Color(52, 73, 94)); // Dark blue background
+        tabbedPane.setBackground(new Color(98, 78, 136)); // Dark blue background
         tabbedPane.setForeground(Color.WHITE);
         tabbedPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -89,7 +89,7 @@ public class AuditorDashboard extends JPanel {
         // Add content to the tab (customize as needed)
         JLabel label = new JLabel("Welcome to " + tabName);
         label.setFont(new Font("Segoe UI", Font.BOLD, 24));
-        label.setForeground(new Color(44, 62, 80)); // Dark blue text
+        label.setForeground(new Color(98, 78, 136)); // Dark blue text
         label.setHorizontalAlignment(SwingConstants.CENTER);
         tabPanel.add(label, BorderLayout.CENTER);
 

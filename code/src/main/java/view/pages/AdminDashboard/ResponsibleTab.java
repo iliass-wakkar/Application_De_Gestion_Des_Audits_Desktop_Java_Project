@@ -85,7 +85,7 @@ public class ResponsibleTab extends JPanel {
         responsibleTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         responsibleTable.setRowHeight(30);
         responsibleTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        responsibleTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        responsibleTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         responsibleTable.getTableHeader().setForeground(Color.WHITE);
         responsibleTable.setFillsViewportHeight(true);
 

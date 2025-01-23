@@ -87,7 +87,7 @@ public class RequirementManagementTab extends JPanel {
         requirementTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         requirementTable.setRowHeight(30);
         requirementTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        requirementTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        requirementTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         requirementTable.getTableHeader().setForeground(Color.WHITE);
         requirementTable.setFillsViewportHeight(true);
 

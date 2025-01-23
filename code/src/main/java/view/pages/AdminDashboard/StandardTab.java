@@ -85,7 +85,7 @@ public class StandardTab extends JPanel {
         standardTable.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         standardTable.setRowHeight(30);
         standardTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        standardTable.getTableHeader().setBackground(new Color(52, 73, 94)); // Dark blue header
+        standardTable.getTableHeader().setBackground(new Color(98, 78, 136)); // Dark blue header
         standardTable.getTableHeader().setForeground(Color.WHITE);
         standardTable.setFillsViewportHeight(true);
 
