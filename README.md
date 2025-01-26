@@ -2,7 +2,7 @@
 
 ## Project Overview
 ###Admin Dashboard 
-![ AdminDashboard](logo.png)
+![AdminDashboard](logo.png)
 
 - [linkedin post](https://www.linkedin.com/posts/youbista_java-auditmanagement-json-activity-7289340095797559298-ZMFj?utm_source=share&utm_medium=member_desktop)
 
